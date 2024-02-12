@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -74,13 +75,15 @@
             transition: transform 0.2s ease-in-out;
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 990px) {
+
             .search {
                 display: none;
             }
 
             .search-responsive {
                 display: flex;
+                justify-content: flex-end !important;
             }
 
             .navbar-nav {
@@ -103,12 +106,14 @@
                     <a class="navbar-brand mx-4" href="#">
                         <img src="./assets/logo-navbar.png" alt="Logo" width="170" height="75">
                     </a>
-                    <div class="d-flex align-items-center justify-content-center w-50 ">
+                    <div class="d-flex align-items-center justify-content-center w-50" id="nav-respo">
                         <ul class=" navbar-nav flex-row ">
                             <li class="nav-item" style="width: 40%">
                                 <div class="input-group rounded mt-2">
-                                    <img src="./assets/busqueda.svg" alt="Icono de búsqueda" width="26" height="26" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); z-index: 2;">
-                                    <input type="search" class="form-control rounded-5" placeholder="" aria-label="Buscar" />
+                                    <img src="./assets/busqueda.svg" alt="Icono de búsqueda" width="26" height="26"
+                                        style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); z-index: 2;">
+                                    <input type="search" class="form-control rounded-5" placeholder=""
+                                        aria-label="Buscar" />
                                 </div>
                             </li>
                             <li class="nav-item">
@@ -122,13 +127,16 @@
                                 </a>
                             </li>
                         </ul>
-                        <button class="navbar-toggler fs-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                        <button class="navbar-toggler fs-3" type="button" data-bs-toggle="offcanvas"
+                            data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar"
+                            aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
                     </div>
                 </div>
             </div>
-            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
                 <div class="offcanvas-header">
                     <h5 class="offcanvas-title" id="offcanvasNavbarLabel">MENÚ</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -153,7 +161,8 @@
 
                 <li class="nav-item" style="width: 40%">
                     <div class="input-group rounded">
-                        <img src="./assets/busqueda.svg" alt="Icono de búsqueda" width="26" height="26" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); z-index: 2;">
+                        <img src="./assets/busqueda.svg" alt="Icono de búsqueda" width="26" height="26"
+                            style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); z-index: 2;">
                         <input type="search" class="form-control rounded-5" placeholder="" aria-label="Buscar" />
                     </div>
                 </li>
@@ -172,13 +181,15 @@
         </div>
         </div>
     </nav>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
 
     <script>
         let lastScrollTop = 0;
         const navbar = document.querySelector('.navbar');
 
-        window.addEventListener('scroll', function() {
+        window.addEventListener('scroll', function () {
             let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
             if (scrollTop > lastScrollTop) {
                 navbar.classList.add('navbar-hide');
