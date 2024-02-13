@@ -177,7 +177,7 @@
 <body>
     <nav class="navbar navbar-expand-lg fixed-top py-0">
         <div class="container-fluid">
-            <a class="search navbar-brand mx-4" href="#">
+            <a class="search navbar-brand mx-4" href="index.php">
                 <img src="./assets/logo-navbar.png" alt="Logo" width="170" height="75">
             </a>
             <div class="search-responsive">
@@ -366,15 +366,15 @@
                             <button type="button" class="btn-close" onclick="closeModal()"></button>
                         </div>
                         <div class="modal-body m-3">
-                            <form>
+                            <form action="login2.php" method="POST">
                                 <div class="mb-3">
                                     <label for="exampleInputEmail1" class="form-label">Correo electrónico</label>
                                     <input type="email" class="form-control" id="exampleInputEmail1"
-                                        aria-describedby="emailHelp">
+                                        aria-describedby="emailHelp" name="email">
 
-                                    <label for="exampleInputPassword1" class="form-label">Contraseña</label>
-                                    <input type="password" class="form-control" id="exampleInputPassword1">
-                                    <div class="d-flex justify-content-center mt-3">
+                                    <label for=" exampleInputPassword1" class="form-label">Contraseña</label>
+                                    <input type="password" class="form-control" id="exampleInputPassword1" name="pass1">
+                                    <div class=" d-flex justify-content-center mt-3">
                                         <button class="acceder btn mt-2 fs-5 text-white"
                                             style="background-color: #847C7C; width:30vw; height: 5vh;"
                                             type="submit">ACCEDER</button>
@@ -382,7 +382,7 @@
                                 </div>
                             </form>
                             <hr class=" w-100" style="margin-top: 10%;">
-                            <div class=""><a href="" class="registrarse btn fs-5 text-white"
+                            <div class=""><a href="registrarse.php" class="registrarse btn fs-5 text-white"
                                     style="background-color: #847C7C; width:100%; height: 5vh;">REGISTRARSE </a>
                             </div>
                         </div>
@@ -396,6 +396,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
+
 
     <script>
         let lastScrollTop = 0;
