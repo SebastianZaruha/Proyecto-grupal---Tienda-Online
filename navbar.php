@@ -72,7 +72,7 @@
         }
 
         .nav-link {
-            font-size: 20px;
+            font-size: 1.5em;
             font-weight: 600;
             color: #3d3d47;
         }
@@ -152,12 +152,17 @@
             transition: all 0.1s ease-in-out;
         }
 
+        .mega-menu a {
+            font-size: 1.2rem;
+
+        }
+
         .mega-menu a:hover {
             font-weight: 600;
         }
 
         .mega-menu h5 {
-            font-size: 1.2rem;
+            font-size: 1.5rem;
             font-weight: 600;
             margin-bottom: .5rem;
         }
@@ -386,6 +391,8 @@
             </div>
         </div>
     </nav>
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>

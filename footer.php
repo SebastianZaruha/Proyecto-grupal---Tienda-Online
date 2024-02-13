@@ -16,7 +16,7 @@
             align-items: start;
         }
 
-        #redes .row2{
+        #redes .row2 {
             display: flex;
             flex-direction: row;
         }
