@@ -59,7 +59,10 @@ require_once 'navbar.php';
         </div>
     </div>
 
-    <script>
+    <?php
+    require_once "footer.php";
+    ?>
 
+    <script>
     </script>
 </body>
