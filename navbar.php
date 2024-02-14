@@ -93,7 +93,7 @@
             transition: transform 0.2s ease-in-out;
         }
 
-        @media (max-width: 990px) {
+        @media (max-width: 992px) {
 
             .search {
                 display: none;
@@ -128,9 +128,7 @@
 
         .modal {
             transition: all 0.3s;
-            background-color: rgba(0, 0, 0, 0.5);
         }
-
 
         .mega-menu {
             position: absolute;
@@ -214,7 +212,7 @@
                     </div>
                 </div>
             </div>
-            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+            <div class="offcanvas offcanvas-end w-50" tabindex="-1" id="offcanvasNavbar"
                 aria-labelledby="offcanvasNavbarLabel">
                 <div class="offcanvas-header">
                     <h5 class="offcanvas-title" id="offcanvasNavbarLabel">MENÚ</h5>
@@ -360,7 +358,7 @@
         <div style="display: none;" id="myModal">
             <div class="modal d-flex justify-content-center align-items-center ">
                 <div class="modal-dialog">
-                    <div class="modal-content" style="height: 50vh; width: 30vw; border: 1px solid black">
+                    <div class="modal-content" style="height: 48vh; width: 20vw; border: 1px solid black">
                         <div class=" modal-header">
                             <h5 class="modal-title " id="miModalLabel">INICIA SESIÓN</h5>
                             <button type="button" class="btn-close" onclick="closeModal()"></button>

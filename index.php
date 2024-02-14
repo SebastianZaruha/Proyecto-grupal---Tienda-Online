@@ -17,15 +17,28 @@ require_once 'navbar.php';
             transition: transform 2s ease-in-out;
         }
 
-        .carousel-control-prev-icon,
-        .carousel-control-next-icon {
-            scale: 3;
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 2%;
+            height: 10%;
+            background-color: black;
+            top: -13%;
+            border: 1px solid black;
+            border-radius: 10px;
+        }
+
+        .carousel-control-next {
+            right: 2%;
+        }
+
+        .carousel-control-prev {
+            left: 93%;
         }
     </style>
 </head>
 
 <body>
-    <img id="ima-ini" src="./assets/images/ima2.jpg">
+    <img id="ima-ini" src="./assets/images/ima2.jpg" class="w-100 h-100" style="object-fit: cover;">
 
     <div class="container-fluid">
         <div class="row m-5">
@@ -96,4 +109,8 @@ require_once 'navbar.php';
 
     <script>
     </script>
+
+    <?php
+    require_once 'footer.php';
+    ?>
 </body>

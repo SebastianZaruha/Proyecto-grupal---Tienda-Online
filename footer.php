@@ -1,79 +1,61 @@
 <head>
     <style>
-        .container-fluid {
-            margin-top: 20vh;
-        }
-
-        a {
-            text-decoration: none;
-            color: black;
-        }
-
-        .col {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: start;
-        }
-
-        #redes .row2 {
-            display: flex;
-            flex-direction: row;
+        footer {
+            background-color: #D2CBC4;
         }
 
         #redes a {
             color: #000;
+            padding: 3%;
         }
     </style>
 
 </head>
 
 <body>
-    <div class="container-fluid" style="width:100vw">
-        <div class="row" style="height: 20vh; background-color:#D2CBC4; ">
-            <div class="col"></div>
-            <div class="col">
-
-                <h4>registrate</h4>
-                <a href="#">lo que sea</a>
-                <a href="#">lo que sea</a>
-                <a href="#">lo que sea</a>
-            </div>
-            <div class="col">
-                <h4>acercate </h4>
-                <a href="#">lo que sea</a>
-                <a href="#">lo que sea</a>
-                <a href="#">lo que sea</a>
-            </div>
-            <div class="col">
-                <h4>Nuestras oliticas</h4>
-                <a href="#">lo que sea</a>
-                <a href="#">lo que sea</a>
-                <a href="#">lo que sea</a>
-            </div>
-            <div class="col">
-
-            </div>
-            <div class="col" id="redes">
-                <div class="row">
-                    <h4>redes</h4>
+    <footer class="mt-5 p-4 text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">MRTK</h5>
+                    <p>
+                        Info o una frase guapa. Algo de texto simempre viene bien.
+                    </p>
                 </div>
 
-                <div class="row2">
-                    <a href="#">
-                        <img src="./assets/redes/twitter.svg" alt="" height="30px" width="30px">
-                    </a>
-                    <a href="#">
-                        <img src="./assets/redes/reddit.svg" alt="" height="30px" width="30px">
-                    </a>
-                    <a href="#">
-                        <img src="./assets/redes/youtube.svg" alt="" height="30px" width="30px">
-                    </a>
-                    <a href="#">
-                        <img src="./assets/redes/instagram.svg" alt="" height="30px" width="30px">
-                    </a>
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Sobre nosotros</h5>
+                    <ul class="list-unstyled mb-0">
+                        <li><a href="#!">Enlace 1</a></li>
+                        <li><a href="#!">Enlace 2</a></li>
+                        <li><a href="#!">Enlace 3</a></li>
+                        <li><a href="#!">Enlace 4</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Contacto</h5>
+                    <ul class="list-unstyled mb-0">
+                        <li><a href="#!">Email</a></li>
+                        <li><a href="#!">Teléfono</a></li>
+                        <li><a href="#!">Dirección</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Nuestras redes</h5>
+                    <ul class="list-unstyled mb-0 d-flex justify-content-center">
+                        <li class="me-2"><a href="#!"><img src="./assets/redes/facebook.svg" height="30px" width="30px"
+                                    alt="redes1"></a></li>
+                        <li class="me-2"><a href="#!"><img src="./assets/redes/instagram.svg" height="30px" width="30px"
+                                    alt="redes2"></a></li>
+                        <li class="me-2"><a href="#!"><img src="./assets/redes/twitter.svg" height="30px" width="30px"
+                                    alt="redes3"></a></li>
+                        <li class="me-2"><a href="#!"><img src="./assets/redes/youtube.svg" height="30px" width="30px"
+                                    alt="redes4"></a></li>
+                    </ul>
                 </div>
             </div>
         </div>
-    </div>
+    </footer>
 </body>
