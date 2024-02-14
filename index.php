@@ -6,13 +6,6 @@ require_once 'navbar.php';
     <title>INICIO</title>
 
     <style>
-        #ima-ini {
-            width: 100vw;
-            margin-top: 4vh;
-            height: auto;
-            object-fit: cover;
-        }
-
         .carousel-item {
             transition: transform 2s ease-in-out;
         }
@@ -38,7 +31,7 @@ require_once 'navbar.php';
 </head>
 
 <body>
-    <img id="ima-ini" src="./assets/images/ima2.jpg" class="w-100 h-100" style="object-fit: cover;">
+    <img src="./assets/images/ima2.jpg" class="w-100 h-100" style="object-fit: cover;">
 
     <div class="container-fluid">
         <div class="row m-5">
