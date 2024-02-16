@@ -6,69 +6,114 @@ require_once 'navbar.php';
     <title>INICIO</title>
 
     <style>
-        #ima-ini {
-            width: 100vw;
-            margin-top: 4vh;
-            height: auto;
-            object-fit: cover;
+        .carousel-item {
+            transition: transform 2s ease-in-out;
         }
 
-        #slider {
-            position: relative;
-            overflow: hidden;
-            width: 100%;
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 2%;
+            height: 10%;
+            background-color: black;
+            top: -13%;
+            border: 1px solid black;
+            border-radius: 10px;
         }
 
-        .slide {
-            display: none;
-            position: absolute;
-            width: 100%;
-            transition: 1s;
+        .carousel-control-next {
+            right: 2%;
         }
 
-        .slide img {
-            width: 33.33%;
-            float: left;
+        .carousel-control-prev {
+            left: 93%;
         }
 
-        .slide.show {
-            display: block;
-            animation: slide-in 2s forwards;
-        }
-
-        @keyframes slide-in {
-            0% {
-                transform: translateX(100%);
-            }
-
-            100% {
-                transform: translateX(0);
-            }
+        .col-lg-4 {
+            margin-top: 2%;
+            height: 500px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
     </style>
 </head>
 
 <body>
-    <img id="ima-ini" src="./assets/images/ima2.jpg">
+    <img src="./assets/images/ima2.jpg" class="w-100 h-100" style="object-fit: cover;">
 
-    <div class="container">
-        <div class="row">
-            <h3>PRODUCTOS POPULARES</h3>
+    <div class="container-fluid">
+        <div class="row m-5">
+            <h2>NOVEDADES</h2>
+        </div>
+
+        <!-- Slider 1 -->
+        <div class="row m-3">
+            <div id="carousel1" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row pe-4">
+                            <div class="col-md-3">
+                                <a href="#"><img class="img-fluid mx-auto d-block" src="./assets/images/slider1-inicio/zapa1.avif"></a>
+                            </div>
+                            <div class="col-md-3">
+                                <a href="#"><img class="img-fluid mx-auto d-block" src="./assets/images/slider1-inicio/zapa2.avif"></a>
+                            </div>
+                            <div class="col-md-3">
+                                <a href="#"><img class="img-fluid mx-auto d-block" src="./assets/images/slider1-inicio/zapa3.avif"></a>
+                            </div>
+                            <div class="col-md-3">
+                                <a href="#"><img class="img-fluid mx-auto d-block" src="./assets/images/slider1-inicio/zapa4.avif"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row pe-4">
+                            <div class="col-md-3">
+                                <a href="#"><img class="img-fluid mx-auto d-block" src="./assets/images/slider1-inicio/zapa5.avif"></a>
+                            </div>
+                            <div class="col-md-3">
+                                <a href="#"><img class="img-fluid mx-auto d-block" src="./assets/images/slider1-inicio/zapa6.avif"></a>
+                            </div>
+                            <div class="col-md-3">
+                                <a href="#"><img class="img-fluid mx-auto d-block" src="./assets/images/slider1-inicio/zapa7.avif"></a>
+                            </div>
+                            <div class="col-md-3">
+                                <a href="#"><img class="img-fluid mx-auto d-block" src="./assets/images/slider1-inicio/zapa8.avif"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carousel1" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Anterior</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carousel1" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Siguiente</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="row m-5 justify-content-center">
+            <h2>IMPRESCINDIBLES</h2>
         </div>
         <div class="row justify-content-center">
-            <div class="col-4">
-                One of two columns
+            <div class="col-12 col-sm-12 col-md-4 col-lg-4" style="background-image: url(./assets/images/pava.avif);">
+                <br><br>
+                <button type="button" class="btn btn-light"><strong>COMPRAR AHORA</strong></button>
             </div>
-            <div class="col-4">
-                One of two columns
+            <div class="col-12 col-sm-12 col-md-4 col-lg-4" style="background-image: url(./assets/images/png2.avif);">
+                <br><br>
+                <button type="button" class="btn btn-light"><strong>COMPRAR AHORA</strong></button>
             </div>
         </div>
+        <br><br><br><br><br><br><br>
     </div>
-
-    <?php
-    //require_once "footer.php";
-    ?>
 
     <script>
     </script>
+
+    <?php
+    require_once 'footer.php';
+    ?>
 </body>

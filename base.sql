@@ -255,7 +255,7 @@ CREATE TABLE `usuario` (
   `tlf` varchar(20) DEFAULT NULL,
   `email` varchar(50) NOT NULL,
   `dni` varchar(20) DEFAULT NULL,
-  `contraseña` varchar(20) NOT NULL,
+  `contraseña` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -363,9 +363,9 @@ DELIMITER ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'NO_ZERO_IN_DATE,NO_ZERO_DATE,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `crear_usuario`( email_p varchar(100), contraseña_p varchar(20))
+CREATE DEFINER=`root`@`localhost` PROCEDURE `crear_usuario`( email_p varchar(100), contraseña_p varchar(50))
 BEGIN
-	insert into usuarios(email, contraseña) values (email_p, contraseña_p);
+    insert into usuario(email, contraseña) values (email_p, sha1(contraseña_p));
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -507,4 +507,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-02-12 20:18:09
+-- Dump completed on 2024-02-14 20:11:59
