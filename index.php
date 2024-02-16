@@ -27,14 +27,14 @@ require_once 'navbar.php';
         .carousel-control-prev {
             left: 93%;
         }
-        .col-lg-4{            
-            margin-top: 5%;
-            height: 500px;           
+
+        .col-lg-4 {
+            margin-top: 2%;
+            height: 500px;
             background-size: cover;
             background-position: center;
-            background-repeat: no-repeat;            
+            background-repeat: no-repeat;
         }
-
     </style>
 </head>
 
@@ -96,15 +96,17 @@ require_once 'navbar.php';
 
         <div class="row m-5 justify-content-center">
             <h2>IMPRESCINDIBLES</h2>
-            <div class="col-12 col-sm-6 col-md-6 col-lg-4"  style="background-image: url(./assets/images/pava.avif);">
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-12 col-sm-12 col-md-4 col-lg-4" style="background-image: url(./assets/images/pava.avif);">
                 <br><br>
                 <button type="button" class="btn btn-light"><strong>COMPRAR AHORA</strong></button>
             </div>
-            <div class="col-12 col-sm-6 col-md-6 col-lg-4"  style="background-image: url(./assets/images/png2.avif);">
+            <div class="col-12 col-sm-12 col-md-4 col-lg-4" style="background-image: url(./assets/images/png2.avif);">
                 <br><br>
                 <button type="button" class="btn btn-light"><strong>COMPRAR AHORA</strong></button>
             </div>
-        </div>    
+        </div>
         <br><br><br><br><br><br><br>
     </div>
 
