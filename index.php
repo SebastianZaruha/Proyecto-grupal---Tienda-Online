@@ -27,6 +27,15 @@ require_once 'navbar.php';
         .carousel-control-prev {
             left: 93%;
         }
+
+        .col-lg-5 {
+            margin-top: 2%;
+            height: 100%;   
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+        }
     </style>
 </head>
 
@@ -45,40 +54,32 @@ require_once 'navbar.php';
                     <div class="carousel-item active">
                         <div class="row pe-4">
                             <div class="col-md-3">
-                                <a href="#"><img class="img-fluid mx-auto d-block"
-                                        src="./assets/images/slider1-inicio/zapa1.avif"></a>
+                                <a href="#"><img class="img-fluid mx-auto d-block" src="./assets/images/slider1-inicio/zapa1.avif"></a>
                             </div>
                             <div class="col-md-3">
-                                <a href="#"><img class="img-fluid mx-auto d-block"
-                                        src="./assets/images/slider1-inicio/zapa2.avif"></a>
+                                <a href="#"><img class="img-fluid mx-auto d-block" src="./assets/images/slider1-inicio/zapa2.avif"></a>
                             </div>
                             <div class="col-md-3">
-                                <a href="#"><img class="img-fluid mx-auto d-block"
-                                        src="./assets/images/slider1-inicio/zapa3.avif"></a>
+                                <a href="#"><img class="img-fluid mx-auto d-block" src="./assets/images/slider1-inicio/zapa3.avif"></a>
                             </div>
                             <div class="col-md-3">
-                                <a href="#"><img class="img-fluid mx-auto d-block"
-                                        src="./assets/images/slider1-inicio/zapa4.avif"></a>
+                                <a href="#"><img class="img-fluid mx-auto d-block" src="./assets/images/slider1-inicio/zapa4.avif"></a>
                             </div>
                         </div>
                     </div>
                     <div class="carousel-item">
                         <div class="row pe-4">
                             <div class="col-md-3">
-                                <a href="#"><img class="img-fluid mx-auto d-block"
-                                        src="./assets/images/slider1-inicio/zapa5.avif"></a>
+                                <a href="#"><img class="img-fluid mx-auto d-block" src="./assets/images/slider1-inicio/zapa5.avif"></a>
                             </div>
                             <div class="col-md-3">
-                                <a href="#"><img class="img-fluid mx-auto d-block"
-                                        src="./assets/images/slider1-inicio/zapa6.avif"></a>
+                                <a href="#"><img class="img-fluid mx-auto d-block" src="./assets/images/slider1-inicio/zapa6.avif"></a>
                             </div>
                             <div class="col-md-3">
-                                <a href="#"><img class="img-fluid mx-auto d-block"
-                                        src="./assets/images/slider1-inicio/zapa7.avif"></a>
+                                <a href="#"><img class="img-fluid mx-auto d-block" src="./assets/images/slider1-inicio/zapa7.avif"></a>
                             </div>
                             <div class="col-md-3">
-                                <a href="#"><img class="img-fluid mx-auto d-block"
-                                        src="./assets/images/slider1-inicio/zapa8.avif"></a>
+                                <a href="#"><img class="img-fluid mx-auto d-block" src="./assets/images/slider1-inicio/zapa8.avif"></a>
                             </div>
                         </div>
                     </div>
@@ -95,7 +96,17 @@ require_once 'navbar.php';
         </div>
 
         <div class="row m-5">
-            <h2>OTRA VAINA</h2>
+            <h2>IMPRESCINDIBLES</h2>
+        </div>
+        <div class="row justify-content-center" style="height: 70vh;">
+            <div class="col-12 col-sm-12 col-md-8 col-lg-5" style="background-image: url(./assets/images/pava.avif);">
+                <br><br>
+                <button type="button" class="btn btn-light"><strong>COMPRAR AHORA</strong></button>
+            </div>
+            <div class="col-12 col-sm-12 col-md-8 col-lg-5" style="background-image: url(./assets/images/png2.avif);">
+                <br><br>
+                <button type="button" class="btn btn-light"><strong>COMPRAR AHORA</strong></button>
+            </div>
         </div>
         <br><br><br><br><br><br><br>
     </div>
