@@ -20,27 +20,27 @@ require_once 'navbar.php';
         <div class="row">
             <div class="col-1">
                 <div class="row">
-                    <img src="./assets/images/pagina_producto/sudadera.png" alt="" height="100px" width="400px">
+                    <img src="./assets/images/pagina_producto/foto1.jpg" alt="" height="100px" width="400px" onclick="seleccionarImagen(this)">
                 </div>
                 <br>
                 <div class="row">
-                    <img src="./assets/images/pagina_producto/sudadera.png" alt="" height="100px" width="400px">
+                    <img src="./assets/images/pagina_producto/foto2.jpg" alt="" height="100px" width="400px" onclick="seleccionarImagen(this)">
                 </div>
                 <br>
                 <div class="row">
-                    <img src="./assets/images/pagina_producto/sudadera.png" alt="" height="100px" width="400px">
+                    <img src="./assets/images/pagina_producto/foto3.jpg" alt="" height="100px" width="400px" onclick="seleccionarImagen(this)">
                 </div>
                 <br>
                 <div class="row">
-                    <img src="./assets/images/pagina_producto/sudadera.png" alt="" height="100px" width="400px">
+                    <img src="./assets/images/pagina_producto/foto4.jpg" alt="" height="100px" width="400px" onclick="seleccionarImagen(this)">
                 </div>
                 <br>
                 <div class="row">
-                    <img src="./assets/images/pagina_producto/sudadera.png" alt="" height="100px" width="400px">
+                    <img src="./assets/images/pagina_producto/foto5.jpg" alt="" height="100px" width="400px" onclick="seleccionarImagen(this)">
                 </div>
             </div>
             <div class="col">
-                <img src="./assets/images/pagina_producto/sudadera.png" alt="" height="600px" width="500px">
+                <img id="imagenSeleccionada" src="./assets/images/pagina_producto/foto1.jpg" alt="" height="600px" width="500px">
             </div>
             <div class="col">
                 <h4>Sudadera con capucha</h4>
@@ -78,16 +78,23 @@ require_once 'navbar.php';
 
             var buttons = document.querySelectorAll('.btn');
 
-            buttons.forEach(function(button) {
+            buttons.forEach(function (button) {
                 button.classList.remove('selected');
             });
 
             event.target.classList.add('selected');
         }
+
+        //Visto para sentencia
+        function seleccionarImagen(imagen) {
+            let imagenClonada = imagen.cloneNode(true);
+            document.getElementById('imagenSeleccionada').src = imagenClonada.src;
+        }
+
     </script>
 
     <?php
     require_once 'footer.php'
-    ?>
+        ?>
 
 </body>
