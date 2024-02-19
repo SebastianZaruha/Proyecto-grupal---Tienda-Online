@@ -4,8 +4,8 @@ require_once 'navbar.php';
 
 <head>
     <style>
-        .container {
-            margin-top: 20vh;
+        #cont_prod {
+            margin-top: 10%;
         }
 
         .selected {
@@ -24,7 +24,7 @@ require_once 'navbar.php';
 </head>
 
 <body>
-    <div class="container">
+    <div class="container" id="cont_prod">
         <div class="row">
             <div class="col-1">
                 <div class="row">
@@ -86,6 +86,13 @@ require_once 'navbar.php';
             </div>
         </div>
     </div>
+    <br><br><br><br>
+    <div class="row m-5">
+        <h2>TAMBIÉN TE PODRÍA INTERESAR</h2>
+    </div>
+
+    <?php require_once 'novedades.php'; ?>
+
     <script>
         function selectSize(size) {
 

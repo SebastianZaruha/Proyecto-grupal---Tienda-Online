@@ -14,6 +14,9 @@ require_once 'navbar.php';
 
     <?php require_once 'carrito.php'; ?>
 
+    <div class="row m-5">
+        <h2>NOVEDADES</h2>
+    </div>
     <?php require_once 'novedades.php'; ?>
 
     <?php require_once 'imprescindibles.php'; ?>
