@@ -4,6 +4,11 @@ require_once 'navbar.php';
 
 <head>
     <style>
+
+        .container{
+            margin-top: 20vh;
+        }
+
         input[type="text"],
         input[type="password"],
         input[type="email"] {
@@ -29,11 +34,27 @@ require_once 'navbar.php';
             background-color: grey;
         }
 
+        @media  screen and (max-width: 768px) {
+          .container {
+            width: 80%;
+            margin: 9% auto;
+            margin-top: 20vh;
+          }  
+        }
+
+        @media screen and (max-width: 576px) {
+            .container {
+                width: 90%;
+                margin: 9% auto;
+                margin-top: 20vh;
+            }
+        }
+
     </style>
 </head>
 
 <body>
-    <div class="" style="width: 30%;margin-top: 9%; margin-right: 8rem; margin-left: 12rem;">
+    <div class="container">
         <div class="rounded bg-white p-5" style="border: 1px solid grey;">
             <h1 style="font-size: 30px;">Datos personales</h1>
             <form>
