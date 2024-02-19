@@ -210,7 +210,7 @@ require_once 'conecta_bd.php';
     <nav class="navbar navbar-expand-lg fixed-top py-0">
         <div class="container-fluid">
             <a class="search navbar-brand mx-4" href="index.php">
-                <img src="./assets/logo-navbar.png" alt="Logo" width="170" height="75">
+                <img src="./assets/Logo-Velour.png" alt="Logo" width="170" height="75">
             </a>
             <div class="search-responsive">
                 <div class="d-flex justify-content-between">
