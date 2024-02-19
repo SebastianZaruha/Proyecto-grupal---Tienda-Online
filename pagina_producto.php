@@ -12,6 +12,14 @@ require_once 'navbar.php';
             background-color: rgba(0, 0, 0, 0.4);
             color: white;
         }
+
+        .im-cata {
+            cursor: pointer;
+        }
+
+        .im-cata:hover {
+            border: .5px solid black;
+        }
     </style>
 </head>
 
@@ -20,34 +28,39 @@ require_once 'navbar.php';
         <div class="row">
             <div class="col-1">
                 <div class="row">
-                    <img src="./assets/images/pagina_producto/foto1.jpg" alt="" height="100px" width="400px" onclick="seleccionarImagen(this)">
+                    <img class="im-cata" src="./assets/images/pagina_producto/foto1.jpg" alt="" height="100px"
+                        width="400px" onclick="seleccionarImagen(this)">
                 </div>
                 <br>
                 <div class="row">
-                    <img src="./assets/images/pagina_producto/foto2.jpg" alt="" height="100px" width="400px" onclick="seleccionarImagen(this)">
+                    <img class="im-cata" src="./assets/images/pagina_producto/foto2.jpg" alt="" height="100px"
+                        width="400px" onclick="seleccionarImagen(this)">
                 </div>
                 <br>
                 <div class="row">
-                    <img src="./assets/images/pagina_producto/foto3.jpg" alt="" height="100px" width="400px" onclick="seleccionarImagen(this)">
+                    <img class="im-cata" src="./assets/images/pagina_producto/foto3.jpg" alt="" height="100px"
+                        width="400px" onclick="seleccionarImagen(this)">
                 </div>
                 <br>
                 <div class="row">
-                    <img src="./assets/images/pagina_producto/foto4.jpg" alt="" height="100px" width="400px" onclick="seleccionarImagen(this)">
+                    <img class="im-cata" src="./assets/images/pagina_producto/foto4.jpg" alt="" height="100px"
+                        width="400px" onclick="seleccionarImagen(this)">
                 </div>
                 <br>
                 <div class="row">
-                    <img src="./assets/images/pagina_producto/foto5.jpg" alt="" height="100px" width="400px" onclick="seleccionarImagen(this)">
+                    <img class="im-cata" src="./assets/images/pagina_producto/foto5.jpg" alt="" height="100px"
+                        width="400px" onclick="seleccionarImagen(this)">
                 </div>
             </div>
             <div class="col">
-                <img id="imagenSeleccionada" src="./assets/images/pagina_producto/foto1.jpg" alt="" height="600px" width="500px">
+                <img id="imagenSeleccionada" src="./assets/images/pagina_producto/foto1.jpg" alt="" height="600px"
+                    width="500px">
             </div>
             <div class="col">
                 <h4>Sudadera con capucha</h4>
-                <a href="#">Descripción</a>
+                <h6>Descripción</h6>
                 <br>
-                <br>
-                <a href="#">29,99$</a>
+                <h6>29,99$</h6>
                 <br>
                 <br>
                 <a href="#">Tallas</a>
