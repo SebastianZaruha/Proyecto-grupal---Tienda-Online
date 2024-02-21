@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once 'conecta_bd.php';
-
+require_once 'carrito.php';
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -266,26 +266,26 @@ require_once 'conecta_bd.php';
                                         <div class="col-3">
                                             <h5>ROPA</h5>
                                             <ul>
-                                                <li><a href="#">Camisas y camisetas</a></li>
-                                                <li><a href="#">Pantalones</a></li>
-                                                <li><a href="#">Chaquetas y abrigos</a></li>
-                                                <li><a href="#">Sudaderas</a></li>
+                                                <li><a href="catalogo.php">Camisas y camisetas</a></li>
+                                                <li><a href="catalogo.php">Pantalones</a></li>
+                                                <li><a href="catalogo.php">Chaquetas y abrigos</a></li>
+                                                <li><a href="catalogo.php">Sudaderas</a></li>
                                             </ul>
                                         </div>
                                         <div class="col-3">
                                             <h5>ZAPATOS</h5>
                                             <ul>
-                                                <li><a href="#">Zapatillas</a></li>
-                                                <li><a href="#">Deportivas</a></li>
-                                                <li><a href="#">Formales</a></li>
+                                                <li><a href="catalogo.php">Zapatillas</a></li>
+                                                <li><a href="catalogo.php">Deportivas</a></li>
+                                                <li><a href="catalogo.php">Formales</a></li>
                                             </ul>
                                         </div>
                                         <div class="col-3">
                                             <h5>ACCESORIOS</h5>
                                             <ul>
-                                                <li><a href="#">Relojes</a></li>
-                                                <li><a href="#">Gorras</a></li>
-                                                <li><a href="#">Gafas</a></li>
+                                                <li><a href="catalogo.php">Relojes</a></li>
+                                                <li><a href="catalogo.php">Gorras</a></li>
+                                                <li><a href="catalogo.php">Gafas</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -300,30 +300,30 @@ require_once 'conecta_bd.php';
                                         <div class="col-3">
                                             <h5>ROPA</h5>
                                             <ul>
-                                                <li><a href="#">Camisas y blusas</a></li>
-                                                <li><a href="#">Pantalones</a></li>
-                                                <li><a href="#">Faldas</a></li>
-                                                <li><a href="#">Chaquetas y abrigos</a></li>
-                                                <li><a href="#">Vestidos y monos</a></li>
+                                                <li><a href="catalogo.php">Camisas y blusas</a></li>
+                                                <li><a href="catalogo.php">Pantalones</a></li>
+                                                <li><a href="catalogo.php">Faldas</a></li>
+                                                <li><a href="catalogo.php">Chaquetas y abrigos</a></li>
+                                                <li><a href="catalogo.php">Vestidos y monos</a></li>
                                             </ul>
                                         </div>
                                         <div class="col-3">
                                             <h5>ZAPATOS</h5>
                                             <ul>
-                                                <li><a href="#">Zapatillas</a></li>
-                                                <li><a href="#">Botas</a></li>
-                                                <li><a href="#">Zapatos planos</a></li>
-                                                <li><a href="#">Zapatos de tacón</a></li>
+                                                <li><a href="catalogo.php">Zapatillas</a></li>
+                                                <li><a href="catalogo.php">Botas</a></li>
+                                                <li><a href="catalogo.php">Zapatos planos</a></li>
+                                                <li><a href="catalogo.php">Zapatos de tacón</a></li>
                                             </ul>
                                         </div>
                                         <div class="col-3">
                                             <h5>ACCESORIOS</h5>
                                             <ul>
-                                                <li><a href="#">Bolsos</a></li>
-                                                <li><a href="#">Bisutería</a></li>
-                                                <li><a href="#">Sombreros</a></li>
-                                                <li><a href="#">Gafas</a></li>
-                                                <li><a href="#">Accesorios de pelo</a></li>
+                                                <li><a href="catalogo.php">Bolsos</a></li>
+                                                <li><a href="catalogo.php">Bisutería</a></li>
+                                                <li><a href="catalogo.php">Sombreros</a></li>
+                                                <li><a href="catalogo.php">Gafas</a></li>
+                                                <li><a href="catalogo.php">Accesorios de pelo</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -338,27 +338,27 @@ require_once 'conecta_bd.php';
                                         <div class="col-3">
                                             <h5>ROPA</h5>
                                             <ul>
-                                                <li><a href="#">Camisas y camisetas</a></li>
-                                                <li><a href="#">Pantalones</a></li>
-                                                <li><a href="#">Shorts</a></li>
-                                                <li><a href="#">Chaquetas y abrigos</a></li>
-                                                <li><a href="#">Sudaderas</a></li>
+                                                <li><a href="catalogo.php">Camisas y camisetas</a></li>
+                                                <li><a href="catalogo.php">Pantalones</a></li>
+                                                <li><a href="catalogo.php">Shorts</a></li>
+                                                <li><a href="catalogo.php">Chaquetas y abrigos</a></li>
+                                                <li><a href="catalogo.php">Sudaderas</a></li>
                                             </ul>
                                         </div>
                                         <div class="col-3">
                                             <h5>ZAPATOS</h5>
                                             <ul>
-                                                <li><a href="#">Zapatillas</a></li>
-                                                <li><a href="#">Deportivas</a></li>
-                                                <li><a href="#">Formales</a></li>
+                                                <li><a href="catalogo.php">Zapatillas</a></li>
+                                                <li><a href="catalogo.php">Deportivas</a></li>
+                                                <li><a href="catalogo.php">Formales</a></li>
                                             </ul>
                                         </div>
                                         <div class="col-3">
                                             <h5>ACCESORIOS</h5>
                                             <ul>
-                                                <li><a href="#">Relojes</a></li>
-                                                <li><a href="#">Gorras</a></li>
-                                                <li><a href="#">Gafas</a></li>
+                                                <li><a href="catalogo.php">Relojes</a></li>
+                                                <li><a href="catalogo.php">Gorras</a></li>
+                                                <li><a href="catalogo.php">Gafas</a></li>
                                             </ul>
                                         </div>
                                     </div>
