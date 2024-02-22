@@ -147,6 +147,8 @@ require_once 'conecta_bd.php';
         }
 
 
+
+
         li:hover .mega-menu {
             opacity: 1;
             visibility: visible;
@@ -169,6 +171,47 @@ require_once 'conecta_bd.php';
         }
 
         .mega-menu li {
+            margin-bottom: .3rem;
+        }
+
+        .mega-menu-usuario {
+            position: absolute;
+            top: 98%;
+            right: 0;
+            width: 15%;
+            height: 20vh;
+
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease-in-out;
+        }
+
+
+        li:hover .mega-menu-usuario {
+            opacity: 1;
+            visibility: visible;
+            transition: all 0.1s ease-in-out;
+        }
+
+        .mega-menu-usuario a {
+            font-size: 1.4rem;
+
+        }
+
+        .mega-menu-usuario a:hover {
+            font-weight: 600;
+        }
+
+        .mega-menu-usuario h5 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: .5rem;
+        }
+
+        .mega-menu-usuario li {
             margin-bottom: .3rem;
         }
 
@@ -371,9 +414,29 @@ require_once 'conecta_bd.php';
                     </div>
                 </li>
                 <li class="nav-item">
-                    <button onclick="openModal()" class="btn btn-link text-decoration-none">
-                        <img src="./assets/perfil.svg" alt="Perfil" width="38" height="38">
-                    </button>
+                    <?php if (isset($_SESSION['email'])) { ?>
+                        <img class="m-3" src="./assets/perfil.svg" alt="Perfil" width="38" height="38">
+                        <div class="mega-menu-usuario">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-12">
+
+                                        <ul>
+                                            <li class="d-flex align-items-center"><a href="pedidos.php">Mis Pedidos <img style="margin-left: 12px;" class="mb-1" src="./assets/box.svg" alt=""></a></li>
+                                            <li class="d-flex align-items-center"><a href="favoritos.php">Mis Favoritos <img class="mb-1" src="./assets/fav.svg" alt=""></a></li>
+                                            <li class="d-flex align-items-center"><a href="logout.php">Cerrar Sesion <img class="mb-1" src="./assets/logout.svg" alt=""></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    <?php } else { ?>
+                        <button onclick="openModal()" class="btn btn-link text-decoration-none">
+                            <img src="./assets/perfil.svg" alt="Perfil" width="38" height="38">
+                        </button>
+
+                    <?php } ?>
                 </li>
                 <li class="nav-item" onclick="openCarrito()" style="cursor: pointer;">
 
@@ -383,6 +446,10 @@ require_once 'conecta_bd.php';
             </ul>
 
         </div>
+
+
+
+
         <div style="display: none;" id="myModal">
             <div class="modal d-flex justify-content-center align-items-center ">
                 <div class="modal-dialog">
@@ -435,8 +502,13 @@ require_once 'conecta_bd.php';
         });
 
         function openModal() {
-            let modal = document.getElementById("myModal");
-            modal.style.display = "block";
+            <?php if (isset($_SESSION['email'])) { ?>
+
+            <?php } else { ?>
+                let modal = document.getElementById("myModal");
+                modal.style.display = "block";
+            <?php } ?>
+
         }
 
         function closeModal() {
