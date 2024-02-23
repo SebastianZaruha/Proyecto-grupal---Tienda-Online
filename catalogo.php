@@ -42,7 +42,7 @@ $result = $conexion->query($sql);
                     }
                     ?>
                     <div class="col-md-3">
-                        <a href="pagina_producto.php">
+                        <a href="pagina_producto.php?id=<?php echo $row['id']; ?>">
                             <div class="card">
                                 <img src="data:image/webp;base64,<?php echo $foto_base64; ?>" class="card-img-top" alt="...">
                                 <div class="card-body">
@@ -54,7 +54,7 @@ $result = $conexion->query($sql);
                                     </p>
                                     <div class="d-flex justify-content-between">
                                         <h5>
-                                            <?php echo $row['precio_ud'] . "$"; ?>
+                                            <?php echo $row['precio_ud'] . " $"; ?>
                                         </h5>
                                         <div>
                                             <button class="btn" type="button">

@@ -1,13 +1,33 @@
 <?php
 require_once 'navbar.php';
+
+$id_producto = isset($_GET['id']) ? $_GET['id'] : '';
+
+$sql = "SELECT * FROM producto WHERE id = '$id_producto'";
+$result = $conexion->query($sql);
+
+if ($result->num_rows > 0) {
+    $row = $result->fetch_assoc();
+    $nombre = $row['nombre'];
+    $descripcion = $row['descripcion'];
+    $precio = $row['precio'];
+}
+
+$sql_fotos = "SELECT foto FROM fotos WHERE id_producto = '$id_producto'";
+$result_fotos = $conexion->query($sql_fotos);
+
+$fotos = [];
+if ($result_fotos->num_rows > 0) {
+    while ($row_foto = $result_fotos->fetch_assoc()) {
+        $fotos[] = "data:image/webp;base64," . base64_encode($row_foto['foto']);
+    }
+}
+
+$conexion->close();
 ?>
 
 <head>
     <style>
-        #cont_prod {
-            margin-top: 10%;
-        }
-
         .selected {
             background-color: rgba(0, 0, 0, 0.4);
             color: white;
@@ -24,65 +44,53 @@ require_once 'navbar.php';
 </head>
 
 <body>
-    <div class="container" id="cont_prod">
+    <div class="container" style="margin-top: 11vh;">
         <div class="row">
-            <div class="col-1">
-                <div class="row">
-                    <img class="im-cata" src="./assets/images/pagina_producto/foto1.jpg" alt="" height="100px"
-                        width="400px" onclick="seleccionarImagen(this)">
-                </div>
-                <br>
-                <div class="row">
-                    <img class="im-cata" src="./assets/images/pagina_producto/foto2.jpg" alt="" height="100px"
-                        width="400px" onclick="seleccionarImagen(this)">
-                </div>
-                <br>
-                <div class="row">
-                    <img class="im-cata" src="./assets/images/pagina_producto/foto3.jpg" alt="" height="100px"
-                        width="400px" onclick="seleccionarImagen(this)">
-                </div>
-                <br>
-                <div class="row">
-                    <img class="im-cata" src="./assets/images/pagina_producto/foto4.jpg" alt="" height="100px"
-                        width="400px" onclick="seleccionarImagen(this)">
-                </div>
-                <br>
-                <div class="row">
-                    <img class="im-cata" src="./assets/images/pagina_producto/foto5.jpg" alt="" height="100px"
-                        width="400px" onclick="seleccionarImagen(this)">
-                </div>
+            <div class="col-1 d-flex flex-column align-items-start">
+                <?php foreach ($fotos as $foto): ?>
+                    <div class="mb-2" style="height: 14vh;">
+                        <img class="im-cata img-fluid h-100" src="<?php echo $foto; ?>" onclick="seleccionarImagen(this)">
+                    </div>
+                <?php endforeach; ?>
+
             </div>
             <div class="col">
-                <img id="imagenSeleccionada" src="./assets/images/pagina_producto/foto1.jpg" alt="" height="600px"
-                    width="500px">
+                <img id="imagenSeleccionada" class="img-fluid" style="max-width: 80%;" src="<?php echo $fotos[1]; ?>">
             </div>
             <div class="col">
-                <h4>Sudadera con capucha</h4>
-                <h6>Descripción</h6>
+                <h3>
+                    <?php echo $nombre; ?>
+                </h3>
+                <h5>
+                    <?php echo $descripcion; ?>
+                </h5>
                 <br>
-                <h6>29,99$</h6>
-                <br>
-                <br>
-                <a href="#">Tallas</a>
-                <div class="d-grid gap-2 d-md-block">
-                    <button class="btn btn-outline-secondary" type="button" onclick="selectSize('S')">S</button>
-                    <button class="btn btn-outline-secondary" type="button" onclick="selectSize('M')">M</button>
-                    <button class="btn btn-outline-secondary" type="button" onclick="selectSize('L')">L</button>
-                    <button class="btn btn-outline-secondary" type="button" onclick="selectSize('XL')">XL</button>
-                </div>
+                <h4>
+                    <?php echo $precio; ?>
+                </h4>
                 <br>
                 <br>
-                <button type="button" class="btn btn-outline-secondary">Añadir a la cesta</button>
-                <br>
-                <br>
-                <div class="d-grid gap-2 d-md-block">
-                    <button class="btn" type="button">
-                        <img src="./assets/images/pagina_producto/corazon.png" alt="">
-                    </button>
-                    <button class="btn" type="button">
-                        <img src="./assets/images/pagina_producto/basura.png" alt="">
-                    </button>
-                </div>
+                <h5>Tallas<h5>
+                        <div class="d-grid gap-2 d-md-block">
+                            <button class="btn btn-outline-secondary" type="button" onclick="selectSize('S')">S</button>
+                            <button class="btn btn-outline-secondary" type="button" onclick="selectSize('M')">M</button>
+                            <button class="btn btn-outline-secondary" type="button" onclick="selectSize('L')">L</button>
+                            <button class="btn btn-outline-secondary" type="button"
+                                onclick="selectSize('XL')">XL</button>
+                        </div>
+                        <br>
+                        <br>
+                        <button type="button" class="btn btn-outline-secondary">Añadir a la cesta</button>
+                        <br>
+                        <br>
+                        <div class="d-grid gap-2 d-md-block">
+                            <button class="btn" type="button">
+                                <img src="./assets/images/pagina_producto/corazon.png" alt="">
+                            </button>
+                            <button class="btn" type="button">
+                                <img src="./assets/images/pagina_producto/basura.png" alt="">
+                            </button>
+                        </div>
             </div>
         </div>
     </div>
