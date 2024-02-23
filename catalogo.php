@@ -4,7 +4,10 @@ require_once 'navbar.php';
 $categoria = isset($_GET['categoria']) ? $_GET['categoria'] : '';
 $subcategoria = isset($_GET['subcategoria']) ? $_GET['subcategoria'] : '';
 
-$sql = "SELECT * FROM producto WHERE categoria = '$categoria' AND subcategoria = '$subcategoria'";
+$sql = "SELECT producto.*, 
+        (SELECT fotos.foto FROM fotos WHERE fotos.id_producto = producto.id LIMIT 1) AS foto_blob 
+        FROM producto 
+        WHERE producto.categoria = '$categoria' AND producto.subcategoria = '$subcategoria'";
 
 $result = $conexion->query($sql);
 ?>
@@ -27,12 +30,13 @@ $result = $conexion->query($sql);
 </head>
 
 <body>
-    <div class="container-fluid">
+    <div class="container-fluid" style="margin-top: 12vh">
         <div class="mt-5">
             <?php
             $contador = 0;
             if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
+                    $foto_base64 = base64_encode($row['foto_blob']);
                     if ($contador % 4 == 0) {
                         echo '<div class="row m-3 mx-5">';
                     }
@@ -40,7 +44,7 @@ $result = $conexion->query($sql);
                     <div class="col-md-3">
                         <a href="pagina_producto.php">
                             <div class="card">
-                                <img src="./assets/images/catalogo/camiseta.png" class="card-img-top" alt="...">
+                                <img src="data:image/webp;base64,<?php echo $foto_base64; ?>" class="card-img-top" alt="...">
                                 <div class="card-body">
                                     <h5 class="card-title">
                                         <?php echo $row['nombre']; ?>
