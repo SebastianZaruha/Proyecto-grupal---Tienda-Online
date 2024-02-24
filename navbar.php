@@ -294,33 +294,52 @@ require_once 'carrito.php';
                 <div class="offcanvas-body">
                     <ul class="navbar-nav  flex-grow-1" id="offCbody1">
                         <li class="nav-item me-5">
-                            <a class="nav-link mx-lg-2" href="#">HOMBRE</a>
+                            <a class="nav-link mx-lg-2" href="catalogo.php?categoria=hombre">HOMBRE</a>
                             <div class="mega-menu">
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-3">
                                             <h5>ROPA</h5>
                                             <ul>
-                                                <li><a href="catalogo.php">Camisas y camisetas</a></li>
-                                                <li><a href="catalogo.php">Pantalones</a></li>
-                                                <li><a href="catalogo.php">Chaquetas y abrigos</a></li>
-                                                <li><a href="catalogo.php">Sudaderas</a></li>
+                                                <li><a
+                                                        href="catalogo.php?categoria=hombre&subcategoria=camisas_y_camisetas">Camisas
+                                                        y camisetas</a></li>
+                                                <li><a
+                                                        href="catalogo.php?categoria=hombre&subcategoria=pantalones">Pantalones</a>
+                                                </li>
+                                                <li><a
+                                                        href="catalogo.php?categoria=hombre&subcategoria=chaquetas_y_abrigos">Chaquetas
+                                                        y abrigos</a></li>
+                                                <li><a
+                                                        href="catalogo.php?categoria=hombre&subcategoria=sudaderas">Sudaderas</a>
+                                                </li>
                                             </ul>
                                         </div>
                                         <div class="col-3">
                                             <h5>ZAPATOS</h5>
                                             <ul>
-                                                <li><a href="catalogo.php">Zapatillas</a></li>
-                                                <li><a href="catalogo.php">Deportivas</a></li>
-                                                <li><a href="catalogo.php">Formales</a></li>
+                                                <li><a
+                                                        href="catalogo.php?categoria=hombre&subcategoria=zapatillas">Zapatillas</a>
+                                                </li>
+                                                <li><a
+                                                        href="catalogo.php?categoria=hombre&subcategoria=deportivas">Deportivas</a>
+                                                </li>
+                                                <li><a
+                                                        href="catalogo.php?categoria=hombre&subcategoria=formales">Formales</a>
+                                                </li>
                                             </ul>
                                         </div>
                                         <div class="col-3">
                                             <h5>ACCESORIOS</h5>
                                             <ul>
-                                                <li><a href="catalogo.php">Relojes</a></li>
-                                                <li><a href="catalogo.php">Gorras</a></li>
-                                                <li><a href="catalogo.php">Gafas</a></li>
+                                                <li><a
+                                                        href="catalogo.php?categoria=hombre&subcategoria=relojes">Relojes</a>
+                                                </li>
+                                                <li><a
+                                                        href="catalogo.php?categoria=hombre&subcategoria=gorras">Gorras</a>
+                                                </li>
+                                                <li><a href="catalogo.php?categoria=hombre&subcategoria=gafas">Gafas</a>
+                                                </li>
                                             </ul>
                                         </div>
                                     </div>
@@ -328,37 +347,62 @@ require_once 'carrito.php';
                             </div>
                         </li>
                         <li class="nav-item me-5">
-                            <a class="nav-link mx-lg-2" href="#">MUJER</a>
+                            <a class="nav-link mx-lg-2" href="catalogo.php?categoria=mujer">MUJER</a>
                             <div class="mega-menu">
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-3">
                                             <h5>ROPA</h5>
                                             <ul>
-                                                <li><a href="catalogo.php">Camisas y blusas</a></li>
-                                                <li><a href="catalogo.php">Pantalones</a></li>
-                                                <li><a href="catalogo.php">Faldas</a></li>
-                                                <li><a href="catalogo.php">Chaquetas y abrigos</a></li>
-                                                <li><a href="catalogo.php">Vestidos y monos</a></li>
+                                                <li><a
+                                                        href="catalogo.php?categoria=mujer&subcategoria=camisas_y_blusas">Camisas
+                                                        y blusas</a></li>
+                                                <li><a
+                                                        href="catalogo.php?categoria=mujer&subcategoria=pantalones">Pantalones</a>
+                                                </li>
+                                                <li><a
+                                                        href="catalogo.php?categoria=mujer&subcategoria=faldas">Faldas</a>
+                                                </li>
+                                                <li><a
+                                                        href="catalogo.php?categoria=mujer&subcategoria=chaquetas_y_abrigos">Chaquetas
+                                                        y abrigos</a></li>
+                                                <li><a
+                                                        href="catalogo.php?categoria=mujer&subcategoria=vestidos_y_monos">Vestidos
+                                                        y monos</a></li>
                                             </ul>
                                         </div>
                                         <div class="col-3">
                                             <h5>ZAPATOS</h5>
                                             <ul>
-                                                <li><a href="catalogo.php">Zapatillas</a></li>
-                                                <li><a href="catalogo.php">Botas</a></li>
-                                                <li><a href="catalogo.php">Zapatos planos</a></li>
-                                                <li><a href="catalogo.php">Zapatos de tacón</a></li>
+                                                <li><a
+                                                        href="catalogo.php?categoria=mujer&subcategoria=zapatillas">Zapatillas</a>
+                                                </li>
+                                                <li><a href="catalogo.php?categoria=mujer&subcategoria=botas">Botas</a>
+                                                </li>
+                                                <li><a href="catalogo.php?categoria=mujer&subcategoria=zapatos_planos">Zapatos
+                                                        planos</a></li>
+                                                <li><a
+                                                        href="catalogo.php?categoria=mujer&subcategoria=zapatos_de_tacon">Zapatos
+                                                        de tacón</a></li>
                                             </ul>
                                         </div>
                                         <div class="col-3">
                                             <h5>ACCESORIOS</h5>
                                             <ul>
-                                                <li><a href="catalogo.php">Bolsos</a></li>
-                                                <li><a href="catalogo.php">Bisutería</a></li>
-                                                <li><a href="catalogo.php">Sombreros</a></li>
-                                                <li><a href="catalogo.php">Gafas</a></li>
-                                                <li><a href="catalogo.php">Accesorios de pelo</a></li>
+                                                <li><a
+                                                        href="catalogo.php?categoria=mujer&subcategoria=bolsos">Bolsos</a>
+                                                </li>
+                                                <li><a
+                                                        href="catalogo.php?categoria=mujer&subcategoria=bisuteria">Bisutería</a>
+                                                </li>
+                                                <li><a
+                                                        href="catalogo.php?categoria=mujer&subcategoria=sombreros">Sombreros</a>
+                                                </li>
+                                                <li><a href="catalogo.php?categoria=mujer&subcategoria=gafas">Gafas</a>
+                                                </li>
+                                                <li><a
+                                                        href="catalogo.php?categoria=mujer&subcategoria=acessorios_de_pelo">Accesorios
+                                                        de pelo</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -366,35 +410,42 @@ require_once 'carrito.php';
                             </div>
                         </li>
                         <li class="nav-item me-5">
-                            <a class="nav-link mx-lg-2" href="#">JOVEN</a>
+                            <a class="nav-link mx-lg-2" href="catalogo.php?categoria=joven">JOVEN</a>
                             <div class="mega-menu">
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-3">
                                             <h5>ROPA</h5>
                                             <ul>
-                                                <li><a href="catalogo.php">Camisas y camisetas</a></li>
-                                                <li><a href="catalogo.php">Pantalones</a></li>
-                                                <li><a href="catalogo.php">Shorts</a></li>
-                                                <li><a href="catalogo.php">Chaquetas y abrigos</a></li>
-                                                <li><a href="catalogo.php">Sudaderas</a></li>
+                                                <li><a
+                                                        href="catalogo.php?categoria=joven&subcategoria=camisas_y_camisetas">Camisas
+                                                        y camisetas</a></li>
+                                                <li><a
+                                                        href="catalogo.php?categoria=joven&subcategoria=pantalones">Pantalones</a>
+                                                </li>
+                                                <li><a
+                                                        href="catalogo.php?categoria=joven&subcategoria=chaquetas_y_abrigos">Chaquetas
+                                                        y abrigos</a></li>
+                                                <li><a
+                                                        href="catalogo.php?categoria=joven&subcategoria=sudaderas">Sudaderas</a>
+                                                </li>
                                             </ul>
                                         </div>
                                         <div class="col-3">
                                             <h5>ZAPATOS</h5>
                                             <ul>
-                                                <li><a href="catalogo.php">Zapatillas</a></li>
-                                                <li><a href="catalogo.php">Deportivas</a></li>
-                                                <li><a href="catalogo.php">Formales</a></li>
+                                                <li><a
+                                                        href="catalogo.php?categoria=joven&subcategoria=zapatillas">Zapatillas</a>
+                                                </li>
+                                                <li><a
+                                                        href="catalogo.php?categoria=joven&subcategoria=deportivas">Deportivas</a>
+                                                </li>
+                                                <li><a
+                                                        href="catalogo.php?categoria=joven&subcategoria=formales">Formales</a>
+                                                </li>
                                             </ul>
                                         </div>
                                         <div class="col-3">
-                                            <h5>ACCESORIOS</h5>
-                                            <ul>
-                                                <li><a href="catalogo.php">Relojes</a></li>
-                                                <li><a href="catalogo.php">Gorras</a></li>
-                                                <li><a href="catalogo.php">Gafas</a></li>
-                                            </ul>
                                         </div>
                                     </div>
                                 </div>
