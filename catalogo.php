@@ -29,25 +29,35 @@ $result = $conexion->query($sql);
         .card:hover {
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
+
+        .img-container {
+            height: 600px;
+            overflow: hidden;
+        }
+
+        .img-container img {
+            min-height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
     </style>
 </head>
 
 <body>
     <div class="container-fluid" style="margin-top: 12vh">
-        <div class="mt-5">
+        <div class="row m-3 mx-5">
             <?php
-            $contador = 0;
             if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
                     $foto_base64 = base64_encode($row['foto_blob']);
-                    if ($contador % 4 == 0) {
-                        echo '<div class="row m-3 mx-5">';
-                    }
                     ?>
-                    <div class="col-md-3">
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
                         <a href="pagina_producto.php?id=<?php echo $row['id']; ?>">
                             <div class="card">
-                                <img src="data:image/webp;base64,<?php echo $foto_base64; ?>" class="card-img-top" alt="...">
+                                <div class="img-container">
+                                    <img src="data:image/webp;base64,<?php echo $foto_base64; ?>" class="card-img-top img-fluid"
+                                        alt="...">
+                                </div>
                                 <div class="card-body">
                                     <h5 class="card-title">
                                         <?php echo $row['nombre']; ?>
@@ -73,18 +83,12 @@ $result = $conexion->query($sql);
                         </a>
                     </div>
                     <?php
-                    if ($contador % 4 == 3 || $contador == $result->num_rows - 1) {
-                        echo '</div>';
-                    }
-                    $contador++;
                 }
             } else {
                 echo "0 resultados";
             }
-            $conexion->close();
             ?>
         </div>
-    </div>
 </body>
 <?php
 require_once 'footer.php';

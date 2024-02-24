@@ -44,45 +44,38 @@ $conexion->close();
 </head>
 
 <body>
-    <div class="container" style="margin-top: 11vh;">
-        <div class="row">
-            <div class="col-1 d-flex flex-column align-items-start">
+    <div class="container" style="margin-top: 15vh;">
+        <div class="row flex-column-reverse flex-md-row">
+            <div
+                class="col-12 col-md-1 d-flex flex-row flex-md-column align-items-start justify-content-center mb-3 mb-md-0">
                 <?php foreach ($fotos as $foto): ?>
-                    <div class="mb-2" style="height: 14vh;">
+                    <div class="mx-2 mx-md-0 mb-md-2" style="height: 14vh;">
                         <img class="im-cata img-fluid h-100" src="<?php echo $foto; ?>" onclick="seleccionarImagen(this)">
                     </div>
                 <?php endforeach; ?>
-
             </div>
-            <div class="col">
+            <div class="col-12 col-md">
                 <img id="imagenSeleccionada" class="img-fluid" style="max-width: 80%;" src="<?php echo $fotos[1]; ?>">
             </div>
-            <div class="col">
-                <h3>
+            <div class="col-12 col-md">
+                <h3 class="mb-3">
                     <?php echo $nombre; ?>
                 </h3>
-                <h5>
+                <h5 class="mb-4">
                     <?php echo $descripcion; ?>
                 </h5>
-                <br>
-                <h4>
+                <h4 class="mb-5">
                     <?php echo $precio . " €"; ?>
                 </h4>
-                <br>
-                <br>
-                <h5>Tallas<h5>
-                        <div class="d-grid gap-2 d-md-block">
+                <h5 class="mb-3">Tallas<h5>
+                        <div class="d-grid gap-2 d-md-block mb-3">
                             <button class="btn btn-outline-secondary" type="button" onclick="selectSize('S')">S</button>
                             <button class="btn btn-outline-secondary" type="button" onclick="selectSize('M')">M</button>
                             <button class="btn btn-outline-secondary" type="button" onclick="selectSize('L')">L</button>
                             <button class="btn btn-outline-secondary" type="button"
                                 onclick="selectSize('XL')">XL</button>
                         </div>
-                        <br>
-                        <br>
-                        <button type="button" class="btn btn-outline-secondary">Añadir a la cesta</button>
-                        <br>
-                        <br>
+                        <button type="button" class="btn btn-outline-secondary mb-3">Añadir a la cesta</button>
                         <div class="d-grid gap-2 d-md-block">
                             <button class="btn" type="button">
                                 <img src="./assets/images/pagina_producto/corazon.png" alt="">
@@ -104,7 +97,7 @@ $conexion->close();
     <script>
         function selectSize(size) {
 
-            var buttons = document.querySelectorAll('.btn');
+            let buttons = document.querySelectorAll('.btn');
 
             buttons.forEach(function (button) {
                 button.classList.remove('selected');
@@ -113,7 +106,7 @@ $conexion->close();
             event.target.classList.add('selected');
         }
 
-        //Visto para sentencia
+
         function seleccionarImagen(imagen) {
             let imagenClonada = imagen.cloneNode(true);
             document.getElementById('imagenSeleccionada').src = imagenClonada.src;
