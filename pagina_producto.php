@@ -1,19 +1,19 @@
 <?php
 require_once 'navbar.php';
 
-$id_producto = isset($_GET['id']) ? $_GET['id'] : '';
+$id = isset($_GET['id']) ? filter_var($_GET['id'], FILTER_SANITIZE_NUMBER_INT) : die('');
 
-$sql = "SELECT * FROM producto WHERE id = '$id_producto'";
+$sql = "SELECT * FROM producto WHERE id = '$id'";
 $result = $conexion->query($sql);
 
 if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
     $nombre = $row['nombre'];
     $descripcion = $row['descripcion'];
-    $precio = $row['precio'];
+    $precio = $row['precio_ud'];
 }
 
-$sql_fotos = "SELECT foto FROM fotos WHERE id_producto = '$id_producto'";
+$sql_fotos = "SELECT foto FROM fotos WHERE id_producto = '$id'";
 $result_fotos = $conexion->query($sql_fotos);
 
 $fotos = [];
@@ -66,7 +66,7 @@ $conexion->close();
                 </h5>
                 <br>
                 <h4>
-                    <?php echo $precio; ?>
+                    <?php echo $precio . " €"; ?>
                 </h4>
                 <br>
                 <br>

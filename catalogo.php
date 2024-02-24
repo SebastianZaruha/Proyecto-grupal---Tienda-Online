@@ -1,14 +1,17 @@
 <?php
 require_once 'navbar.php';
 
-$categoria = isset($_GET['categoria']) ? $_GET['categoria'] : '';
-$subcategoria = isset($_GET['subcategoria']) ? $_GET['subcategoria'] : '';
+$categoria = isset($_GET['categoria']) ? filter_var($_GET['categoria'], FILTER_SANITIZE_STRING) : '';
+$subcategoria = isset($_GET['subcategoria']) ? filter_var($_GET['subcategoria'], FILTER_SANITIZE_STRING) : '';
 
 $sql = "SELECT producto.*, 
         (SELECT fotos.foto FROM fotos WHERE fotos.id_producto = producto.id LIMIT 1) AS foto_blob 
         FROM producto 
-        WHERE producto.categoria = '$categoria' AND producto.subcategoria = '$subcategoria'";
+        WHERE producto.categoria = '$categoria'";
 
+if ($subcategoria != '') {
+    $sql .= " AND producto.subcategoria = '$subcategoria'";
+}
 $result = $conexion->query($sql);
 ?>
 
@@ -54,7 +57,7 @@ $result = $conexion->query($sql);
                                     </p>
                                     <div class="d-flex justify-content-between">
                                         <h5>
-                                            <?php echo $row['precio_ud'] . " $"; ?>
+                                            <?php echo $row['precio_ud'] . " €"; ?>
                                         </h5>
                                         <div>
                                             <button class="btn" type="button">

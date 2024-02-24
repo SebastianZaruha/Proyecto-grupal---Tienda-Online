@@ -259,7 +259,7 @@ require_once 'carrito.php';
                 <div class="offcanvas-body">
                     <ul class="navbar-nav  flex-grow-1" id="offCbody1">
                         <li class="nav-item me-5">
-                            <a class="nav-link mx-lg-2" href="#">HOMBRE</a>
+                            <a class="nav-link mx-lg-2" href="catalogo.php?categoria=hombre">HOMBRE</a>
                             <div class="mega-menu">
                                 <div class="container">
                                     <div class="row">
@@ -312,7 +312,7 @@ require_once 'carrito.php';
                             </div>
                         </li>
                         <li class="nav-item me-5">
-                            <a class="nav-link mx-lg-2" href="#">MUJER</a>
+                            <a class="nav-link mx-lg-2" href="catalogo.php?categoria=mujer">MUJER</a>
                             <div class="mega-menu">
                                 <div class="container">
                                     <div class="row">
@@ -375,7 +375,7 @@ require_once 'carrito.php';
                             </div>
                         </li>
                         <li class="nav-item me-5">
-                            <a class="nav-link mx-lg-2" href="#">JOVEN</a>
+                            <a class="nav-link mx-lg-2" href="catalogo.php?categoria=joven">JOVEN</a>
                             <div class="mega-menu">
                                 <div class="container">
                                     <div class="row">
