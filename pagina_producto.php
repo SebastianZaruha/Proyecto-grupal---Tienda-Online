@@ -1,7 +1,25 @@
 <?php
 require_once 'navbar.php';
 
+if (!isset($_SESSION['email'])) {
+    header('Location: index.php');
+}
+
 $id = isset($_GET['id']) ? filter_var($_GET['id'], FILTER_SANITIZE_NUMBER_INT) : die('');
+
+if (isset($_POST['favorito'])) {
+
+    $id = $_SESSION['id'];
+
+    $id_producto = isset($_POST['id_producto']) ? filter_var($_POST['id_producto'], FILTER_SANITIZE_NUMBER_INT) : die('Error id_producto');
+
+    $consulta = "CALL guardar_favorito(?,?)";
+
+    $query_consulta = $conexion->prepare($consulta);
+
+    $query_consulta->bind_param("ii", $id, $id_producto);
+    $query_consulta->execute();
+}
 
 $sql = "SELECT * FROM producto WHERE id = '$id'";
 $result = $conexion->query($sql);
@@ -46,9 +64,8 @@ $conexion->close();
 <body>
     <div class="container" style="margin-top: 15vh;">
         <div class="row flex-column-reverse flex-md-row">
-            <div
-                class="col-12 col-md-1 d-flex flex-row flex-md-column align-items-start justify-content-center mb-3 mb-md-0">
-                <?php foreach ($fotos as $foto): ?>
+            <div class="col-12 col-md-1 d-flex flex-row flex-md-column align-items-start justify-content-center mb-3 mb-md-0">
+                <?php foreach ($fotos as $foto) : ?>
                     <div class="mx-2 mx-md-0 mb-md-2" style="height: 14vh;">
                         <img class="im-cata img-fluid h-100" src="<?php echo $foto; ?>" onclick="seleccionarImagen(this)">
                     </div>
@@ -72,14 +89,16 @@ $conexion->close();
                             <button class="btn btn-outline-secondary" type="button" onclick="selectSize('S')">S</button>
                             <button class="btn btn-outline-secondary" type="button" onclick="selectSize('M')">M</button>
                             <button class="btn btn-outline-secondary" type="button" onclick="selectSize('L')">L</button>
-                            <button class="btn btn-outline-secondary" type="button"
-                                onclick="selectSize('XL')">XL</button>
+                            <button class="btn btn-outline-secondary" type="button" onclick="selectSize('XL')">XL</button>
                         </div>
                         <button type="button" class="btn btn-outline-secondary mb-3">Añadir a la cesta</button>
                         <div class="d-grid gap-2 d-md-block">
-                            <button class="btn" type="button">
-                                <img src="./assets/images/pagina_producto/corazon.png" alt="">
-                            </button>
+                            <form action="" method="post">
+                                <input type="text" name="favorito" value="0">
+                                <button class="btn" type="button" submmit>
+                                    <img src="./assets/images/pagina_producto/corazon.png" alt="">
+                                </button>
+                            </form>
                             <button class="btn" type="button">
                                 <img src="./assets/images/pagina_producto/basura.png" alt="">
                             </button>
@@ -99,7 +118,7 @@ $conexion->close();
 
             let buttons = document.querySelectorAll('.btn');
 
-            buttons.forEach(function (button) {
+            buttons.forEach(function(button) {
                 button.classList.remove('selected');
             });
 
@@ -111,11 +130,10 @@ $conexion->close();
             let imagenClonada = imagen.cloneNode(true);
             document.getElementById('imagenSeleccionada').src = imagenClonada.src;
         }
-
     </script>
 
     <?php
     require_once 'footer.php'
-        ?>
+    ?>
 
 </body>
