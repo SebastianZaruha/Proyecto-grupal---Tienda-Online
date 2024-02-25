@@ -80,9 +80,10 @@ $conexion->close();
                             <button class="btn btn-outline-secondary" type="button"
                                 onclick="selectSize('XL')">XL</button>
                         </div>
-                        <form action="agrega_carrito.php" method="post">
+                        <form action="agrega_carrito.php" method="post" onsubmit="return validarForm()">
                             <input type="hidden" name="id_producto" value="<?php echo $id_producto; ?>">
                             <input type="hidden" name="id_usuario" value="<?php echo $id_usuario; ?>">
+                            <input type="hidden" name="talla" id="talla" value="">
                             <button type="submit" class="btn btn-outline-secondary mb-3">Añadir a la cesta</button>
                         </form>
                         <div class="d-grid gap-2 d-md-block">
@@ -105,6 +106,16 @@ $conexion->close();
     <?php require_once 'novedades.php'; ?>
 
     <script>
+
+        function validarForm() {
+            var talla = document.getElementById('talla').value;
+            if (talla == '') {
+                alert('Por favor, selecciona una talla');
+                return false;
+            }
+            return true;
+        }
+
         function selectSize(size) {
 
             let buttons = document.querySelectorAll('.btn');
@@ -114,6 +125,7 @@ $conexion->close();
             });
 
             event.target.classList.add('selected');
+            document.getElementById('talla').value = size;
         }
 
 

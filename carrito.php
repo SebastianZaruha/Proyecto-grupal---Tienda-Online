@@ -1,11 +1,15 @@
 <?php
-$id_usuario = $_SESSION['id'];
-$query_carrito = "SELECT carrito.id_producto, producto.nombre, producto.categoria, producto.precio_ud, fotos.foto, carrito.cantidad, stock.talla 
+if (isset($_SESSION['id'])) {
+    $id_usuario = $_SESSION['id'];
+} else {
+    header('Location: index.php');
+}
+$query_carrito = "SELECT carrito.*, producto.*, fotos.foto 
 FROM carrito 
 INNER JOIN producto ON carrito.id_producto = producto.id 
 INNER JOIN fotos ON producto.id = fotos.id_producto 
-INNER JOIN stock ON producto.id_stock = stock.id 
-WHERE carrito.id_usuario = $id_usuario";
+WHERE carrito.id_usuario = $id_usuario 
+GROUP BY producto.id";
 
 $result = mysqli_query($conexion, $query_carrito);
 

@@ -3,10 +3,11 @@ require_once 'conecta_bd.php';
 
 $id_producto = $_POST['id_producto'];
 $id_usuario = $_POST['id_usuario'];
+$talla = $_POST['talla'];
 
 //HACER ESA INSERCION EN UN PROCEDIMIENTO
-$consulta = $conexion->prepare("INSERT INTO carrito (id_producto, id_usuario,cantidad) VALUES (?, ?, 1)");
-$consulta->bind_param("ii", $id_producto, $id_usuario);
+$consulta = $conexion->prepare("INSERT INTO carrito (id_producto, id_usuario,talla,cantidad) VALUES (?, ?, ?, 1)");
+$consulta->bind_param("iis", $id_producto, $id_usuario, $talla);
 
 $consulta->execute();
 $consulta->close();
