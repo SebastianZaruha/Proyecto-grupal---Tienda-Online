@@ -4,24 +4,11 @@ require_once 'navbar.php';
 if (!isset($_SESSION['email'])) {
     header('Location: index.php');
 }
+session_start();
+$id_usuario = $_SESSION['id'];
+$id_producto = isset($_GET['id']) ? filter_var($_GET['id'], FILTER_SANITIZE_NUMBER_INT) : die('');
 
-$id = isset($_GET['id']) ? filter_var($_GET['id'], FILTER_SANITIZE_NUMBER_INT) : die('');
-
-if (isset($_POST['favorito'])) {
-
-    $id = $_SESSION['id'];
-
-    $id_producto = isset($_POST['id_producto']) ? filter_var($_POST['id_producto'], FILTER_SANITIZE_NUMBER_INT) : die('Error id_producto');
-
-    $consulta = "CALL guardar_favorito(?,?)";
-
-    $query_consulta = $conexion->prepare($consulta);
-
-    $query_consulta->bind_param("ii", $id, $id_producto);
-    $query_consulta->execute();
-}
-
-$sql = "SELECT * FROM producto WHERE id = '$id'";
+$sql = "SELECT * FROM producto WHERE id = '$id_producto'";
 $result = $conexion->query($sql);
 
 if ($result->num_rows > 0) {
@@ -31,7 +18,7 @@ if ($result->num_rows > 0) {
     $precio = $row['precio_ud'];
 }
 
-$sql_fotos = "SELECT foto FROM fotos WHERE id_producto = '$id'";
+$sql_fotos = "SELECT foto FROM fotos WHERE id_producto = '$id_producto'";
 $result_fotos = $conexion->query($sql_fotos);
 
 $fotos = [];
@@ -64,8 +51,9 @@ $conexion->close();
 <body>
     <div class="container" style="margin-top: 15vh;">
         <div class="row flex-column-reverse flex-md-row">
-            <div class="col-12 col-md-1 d-flex flex-row flex-md-column align-items-start justify-content-center mb-3 mb-md-0">
-                <?php foreach ($fotos as $foto) : ?>
+            <div
+                class="col-12 col-md-1 d-flex flex-row flex-md-column align-items-start justify-content-center mb-3 mb-md-0">
+                <?php foreach ($fotos as $foto): ?>
                     <div class="mx-2 mx-md-0 mb-md-2" style="height: 14vh;">
                         <img class="im-cata img-fluid h-100" src="<?php echo $foto; ?>" onclick="seleccionarImagen(this)">
                     </div>
@@ -89,19 +77,23 @@ $conexion->close();
                             <button class="btn btn-outline-secondary" type="button" onclick="selectSize('S')">S</button>
                             <button class="btn btn-outline-secondary" type="button" onclick="selectSize('M')">M</button>
                             <button class="btn btn-outline-secondary" type="button" onclick="selectSize('L')">L</button>
-                            <button class="btn btn-outline-secondary" type="button" onclick="selectSize('XL')">XL</button>
+                            <button class="btn btn-outline-secondary" type="button"
+                                onclick="selectSize('XL')">XL</button>
                         </div>
-                        <button type="button" class="btn btn-outline-secondary mb-3">Añadir a la cesta</button>
+                        <form action="agrega_carrito.php" method="post" onsubmit="return validarForm()">
+                            <input type="hidden" name="id_producto" value="<?php echo $id_producto; ?>">
+                            <input type="hidden" name="id_usuario" value="<?php echo $id_usuario; ?>">
+                            <input type="hidden" name="talla" id="talla" value="">
+                            <button type="submit" class="btn btn-outline-secondary mb-3">Añadir a la cesta</button>
+                        </form>
                         <div class="d-grid gap-2 d-md-block">
-                            <form action="" method="post">
-                                <input type="text" name="favorito" value="0">
-                                <button class="btn" type="button" submmit>
+                            <form action="agrega_favoritos.php" method="post">
+                                <input type="hidden" name="id_producto" value="<?php echo $id_producto; ?>">
+                                <input type="hidden" name="id_usuario" value="<?php echo $id_usuario; ?>">
+                                <button class="btn" type="submit">
                                     <img src="./assets/images/pagina_producto/corazon.png" alt="">
                                 </button>
                             </form>
-                            <button class="btn" type="button">
-                                <img src="./assets/images/pagina_producto/basura.png" alt="">
-                            </button>
                         </div>
             </div>
         </div>
@@ -114,15 +106,26 @@ $conexion->close();
     <?php require_once 'novedades.php'; ?>
 
     <script>
+
+        function validarForm() {
+            var talla = document.getElementById('talla').value;
+            if (talla == '') {
+                alert('Por favor, selecciona una talla');
+                return false;
+            }
+            return true;
+        }
+
         function selectSize(size) {
 
             let buttons = document.querySelectorAll('.btn');
 
-            buttons.forEach(function(button) {
+            buttons.forEach(function (button) {
                 button.classList.remove('selected');
             });
 
             event.target.classList.add('selected');
+            document.getElementById('talla').value = size;
         }
 
 
@@ -134,6 +137,6 @@ $conexion->close();
 
     <?php
     require_once 'footer.php'
-    ?>
+        ?>
 
 </body>
