@@ -72,9 +72,6 @@ $result = $conexion->query($query_fav);
                                         </h5>
                                         <div>
                                             <button class="btn" type="button">
-                                                <img src="./assets/images/catalogo/carrito.png" alt="">
-                                            </button>
-                                            <button class="btn" type="button">
                                                 <img src="./assets/images/pagina_producto/corazon.png" alt="">
                                             </button>
                                         </div>

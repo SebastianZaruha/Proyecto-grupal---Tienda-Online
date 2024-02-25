@@ -1,6 +1,7 @@
 <?php
 require_once 'navbar.php';
 
+
 $categoria = isset($_GET['categoria']) ? filter_var($_GET['categoria'], FILTER_SANITIZE_STRING) : '';
 $subcategoria = isset($_GET['subcategoria']) ? filter_var($_GET['subcategoria'], FILTER_SANITIZE_STRING) : '';
 
@@ -70,12 +71,13 @@ $result = $conexion->query($sql);
                                             <?php echo $row['precio_ud'] . " €"; ?>
                                         </h5>
                                         <div>
-                                            <button class="btn" type="button">
-                                                <img src="./assets/images/catalogo/carrito.png" alt="">
-                                            </button>
-                                            <button class="btn" type="button">
-                                                <img src="./assets/images/pagina_producto/corazon.png" alt="">
-                                            </button>
+                                            <form action="agrega_favoritos.php" method="post">
+                                                <input type="hidden" name="id_producto" value="<?php echo $row['id']; ?>">
+                                                <input type="hidden" name="id_usuario" value="<?php echo $id_usuario; ?>">
+                                                <button class="btn" type="submit">
+                                                    <img src="./assets/images/pagina_producto/corazon.png" alt="">
+                                                </button>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
