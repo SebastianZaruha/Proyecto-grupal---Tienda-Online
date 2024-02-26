@@ -15,4 +15,4 @@ $query_consulta->bind_param("i", $id);
 
 $query_consulta->execute();
 
-header('Location: index.php');
+header("Location: " . $_SERVER['HTTP_REFERER']);

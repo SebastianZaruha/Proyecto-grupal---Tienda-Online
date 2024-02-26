@@ -1,13 +1,23 @@
 <?php
 require_once 'navbar.php';
+
+if (!isset($_SESSION['email'])) {
+    header('Location: index.php');
+}
+
+$query_usuario = "SELECT * FROM usuario WHERE id = " . $_SESSION['id'];
+
+$result_usuario = $conexion->query($query_usuario);
+
+$row_usuario = $result_usuario->fetch_assoc();
+
+
+
+
 ?>
 
 <head>
     <style>
-        .container {
-            margin-top: 20vh;
-        }
-
         input[type="text"],
         input[type="password"],
         input[type="email"] {
@@ -35,52 +45,52 @@ require_once 'navbar.php';
 
         @media screen and (max-width: 690px) {
             .container {
-               
+
                 margin: 9% auto;
                 margin-top: 20vh;
             }
 
-            .col-6{
+            .col-6 {
                 width: 100%;
             }
         }
 
         @media screen and (max-width: 520px) {
             .container {
-                
+
                 margin: 9% auto;
                 margin-top: 20vh;
             }
 
-            .col-6{
+            .col-6 {
                 width: 100%;
             }
         }
     </style>
 </head>
 
-<body>
+<body style="background-image: url('./assets/images/ima1.jpg');">
     <div class="container">
-        <div class="row">
+        <div class="row" style="margin-top: 15%;">
             <div class="col-6">
                 <div class="rounded bg-white p-5" style="border: 1px solid grey;">
                     <h1 style="font-size: 30px;">Datos personales</h1>
-                    <form>
+                    <form method="POST" action="miperfil2.php">
                         <br>
                         <div class="row">
                             <div class="col">
-                                <input type="text" placeholder="Nombre">
+                                <input type="text" name="nombre" placeholder="Nombre" value="<?php echo $row_usuario['nombre'] ?>">
                             </div>
                             <div class="col">
-                                <input type="email" placeholder="Apellidos">
+                                <input type="text" name="apellidos" placeholder="Apellidos" value="<?php echo $row_usuario['apellido1'] . " " . $row_usuario['apellido2'] ?>">
                             </div>
                         </div>
                         <div class="row">
                             <div class="col">
-                                <input type="password" placeholder="Fecha nacimiento">
+                                <input type="text" name="dni" placeholder="DNI" value="<?php echo $row_usuario['dni'] ?>">
                             </div>
                             <div class="col">
-                                <input type="text" placeholder="Telefono">
+                                <input type="text" name="tlf" placeholder="Telefono" value="<?php echo $row_usuario['tlf'] ?>">
                             </div>
                         </div>
                         <br>
@@ -88,18 +98,18 @@ require_once 'navbar.php';
                         <br>
                         <div class="row">
                             <div class="col">
-                                <input type="text" placeholder="Pais">
+                                <input type="text" name="pais" placeholder="Pais" value="<?php echo $row_usuario['pais'] ?>">
                             </div>
                             <div class="col">
-                                <input type="text" placeholder="Ciudad">
+                                <input type="text" name="ciudad" placeholder="Ciudad" value="<?php echo $row_usuario['ciudad'] ?>">
                             </div>
                         </div>
                         <div class="row">
                             <div class="col">
-                                <input type="text" placeholder="Dirección">
+                                <input type="text" name="dir" placeholder="Dirección" value="<?php echo $row_usuario['direccion'] ?>">
                             </div>
                             <div class="col">
-                                <input type="text" placeholder="Codigo postal">
+                                <input type="text" name="cp" placeholder="Codigo postal" value="<?php echo $row_usuario['cp'] ?>">
                             </div>
                         </div>
                         <br>
@@ -111,7 +121,7 @@ require_once 'navbar.php';
                     </form>
                 </div>
             </div>
-            
+
         </div>
     </div>
 
