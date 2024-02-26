@@ -418,7 +418,7 @@ require_once 'carrito.php';
                             </div>
                         </li>
                         <li class="nav-item me-5">
-                            <a class="nav-link mx-lg-2" href="catalogo.php?categoria=joven">JOVEN</a>
+                            <a class="nav-link mx-lg-2" href="catalogo.php?categoria=ninos">NIÑOS</a>
                             <div class="mega-menu">
                                 <div class="container">
                                     <div class="row">
@@ -426,16 +426,16 @@ require_once 'carrito.php';
                                             <h5>ROPA</h5>
                                             <ul>
                                                 <li><a
-                                                        href="catalogo.php?categoria=joven&subcategoria=camisas_y_camisetas">Camisas
+                                                        href="catalogo.php?categoria=ninos&subcategoria=camisas_y_camisetas">Camisas
                                                         y camisetas</a></li>
                                                 <li><a
-                                                        href="catalogo.php?categoria=joven&subcategoria=pantalones">Pantalones</a>
+                                                        href="catalogo.php?categoria=ninos&subcategoria=pantalones">Pantalones</a>
                                                 </li>
                                                 <li><a
-                                                        href="catalogo.php?categoria=joven&subcategoria=chaquetas_y_abrigos">Chaquetas
+                                                        href="catalogo.php?categoria=ninos&subcategoria=chaquetas_y_abrigos">Chaquetas
                                                         y abrigos</a></li>
                                                 <li><a
-                                                        href="catalogo.php?categoria=joven&subcategoria=sudaderas">Sudaderas</a>
+                                                        href="catalogo.php?categoria=ninos&subcategoria=sudaderas">Sudaderas</a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -443,13 +443,13 @@ require_once 'carrito.php';
                                             <h5>ZAPATOS</h5>
                                             <ul>
                                                 <li><a
-                                                        href="catalogo.php?categoria=joven&subcategoria=zapatillas">Zapatillas</a>
+                                                        href="catalogo.php?categoria=ninos&subcategoria=zapatillas">Zapatillas</a>
                                                 </li>
                                                 <li><a
-                                                        href="catalogo.php?categoria=joven&subcategoria=deportivas">Deportivas</a>
+                                                        href="catalogo.php?categoria=ninos&subcategoria=deportivas">Deportivas</a>
                                                 </li>
                                                 <li><a
-                                                        href="catalogo.php?categoria=joven&subcategoria=formales">Formales</a>
+                                                        href="catalogo.php?categoria=ninos&subcategoria=botas">Botas</a>
                                                 </li>
                                             </ul>
                                         </div>
