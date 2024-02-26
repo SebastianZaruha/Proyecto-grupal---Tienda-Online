@@ -265,3 +265,268 @@ INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\ht
 INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niñas\vestidos-y-monos\7\7(4).webp'));
 INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niñas\vestidos-y-monos\7\7(5).webp'));
 INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niñas\vestidos-y-monos\7\7(6).webp'));
+
+
+
+INSERT INTO PRODUCTO (nombre, categoria,subcategoria,precio_ud,descripcion) values('CAZADORA CAPUCHA SOFT SHELL WATER REPELLENT','ninos','abrigos','27.95','Cazadora con capucha y manga larga acabada en goma.');
+SET @producto_id = LAST_INSERT_ID();
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\abrigos\1\1.webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\abrigos\1\1(2).webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\abrigos\1\1(3).webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\abrigos\1\1(4).webp'));
+
+INSERT INTO PRODUCTO (nombre, categoria,subcategoria,precio_ud,descripcion) values('CAZADORA ULTRALIGERA','ninos','abrigos','22.95','Cazadora con capucha y manga larga.');
+SET @producto_id = LAST_INSERT_ID();
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\abrigos\2\2.webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\abrigos\2\2(2).webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\abrigos\2\2(3).webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\abrigos\2\2(4).webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\abrigos\2\2(5).webp'));
+
+INSERT INTO PRODUCTO (nombre, categoria,subcategoria,precio_ud,descripcion) values('BOMBER DENIM BORDADOS','ninos','abrigos','35.95','Bomber tejido denim con cuello subido y manga larga.');
+SET @producto_id = LAST_INSERT_ID();
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\abrigos\3\3.webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\abrigos\3\3(2).webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\abrigos\3\3(3).webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\abrigos\3\3(4).webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\abrigos\3\3(5).webp'));
+
+INSERT INTO PRODUCTO (nombre, categoria,subcategoria,precio_ud,descripcion) values('CAZADORA DENIM','ninos','abrigos','25.95','Cazadora con cuello camisero y manga larga. Cierre con botonadura frontal.');
+SET @producto_id = LAST_INSERT_ID();
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\abrigos\4\4.webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\abrigos\4\4(2).webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\abrigos\4\4(3).webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\abrigos\4\4(4).webp'));
+
+INSERT INTO PRODUCTO (nombre, categoria,subcategoria,precio_ud,descripcion) values('CAZADORA ENGOMADA TEXTO','ninos','abrigos','25.95','Cazadora engomada con cuello camisero y manga larga acabada en goma.');
+SET @producto_id = LAST_INSERT_ID();
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\abrigos\5\5.webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\abrigos\5\5(2).webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\abrigos\5\5(3).webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\abrigos\5\5(4).webp'));
+
+INSERT INTO PRODUCTO (nombre, categoria,subcategoria,precio_ud,descripcion) values('GABARDINA TÉCNICA WATER REPELLENT TRUE NEUTRALS','ninos','abrigos','49.95','Confeccionada en un tejido técnico repelente al agua. Con cuello tipo camisero y la manga larga con puño ajustable por botón tipo presión.');
+SET @producto_id = LAST_INSERT_ID();
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\abrigos\6\6.webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\abrigos\6\6(2).webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\abrigos\6\6(3).webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\abrigos\6\6(4).webp'));
+
+INSERT INTO PRODUCTO (nombre, categoria,subcategoria,precio_ud,descripcion) values('TRENCH LARGO ALGODÓN','ninos','abrigos','35.95','Trench en tejido 100% algodón.');
+SET @producto_id = LAST_INSERT_ID();
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\abrigos\7\7.webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\abrigos\7\7(2).webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\abrigos\7\7(3).webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\abrigos\7\7(4).webp'));
+
+INSERT INTO PRODUCTO (nombre, categoria,subcategoria,precio_ud,descripcion) values('CAMISA RAYAS CON LINO','ninos','camisa y sobrecamisa','17.95','Camisa con un tejido del 28% de lino y un 72% de algodón.');
+SET @producto_id = LAST_INSERT_ID();
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\camisa-y-sobrecamisa\1\1.webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\camisa-y-sobrecamisa\1\1(2).webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\camisa-y-sobrecamisa\1\1(3).webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\camisa-y-sobrecamisa\1\1(4).webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\camisa-y-sobrecamisa\1\1(5).webp'));
+
+INSERT INTO PRODUCTO (nombre, categoria,subcategoria,precio_ud,descripcion) values('CAMISA CUADROS','ninos','camisa y sobrecamisa','17.95','Camisa con cuello camisero y manga larga. Cierre botonadura frontal.');
+SET @producto_id = LAST_INSERT_ID();
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\camisa-y-sobrecamisa\2\2.webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\camisa-y-sobrecamisa\2\2(2).webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\camisa-y-sobrecamisa\2\2(3).webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\camisa-y-sobrecamisa\2\2(4).webp'));
+
+INSERT INTO PRODUCTO (nombre, categoria,subcategoria,precio_ud,descripcion) values('SOBRECAMISA POPELÍN TAPETA','ninos','camisa y sobrecamisa','27.95','Sobrecamisa con cuello camisero y manga larga.');
+SET @producto_id = LAST_INSERT_ID();
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\camisa-y-sobrecamisa\3\3.webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\camisa-y-sobrecamisa\3\3(2).webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\camisa-y-sobrecamisa\3\3(3).webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\camisa-y-sobrecamisa\3\3(4).webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\camisa-y-sobrecamisa\3\3(5).webp'));
+
+INSERT INTO PRODUCTO (nombre, categoria,subcategoria,precio_ud,descripcion) values('CAMISA STRETCH','ninos','camisa y sobrecamisa','19.95','Camisa con cuello solapas y manga larga. Cierre botonadura frontal.');
+SET @producto_id = LAST_INSERT_ID();
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\camisa-y-sobrecamisa\4\4.webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\camisa-y-sobrecamisa\4\4(2).webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\camisa-y-sobrecamisa\4\4(3).webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\camisa-y-sobrecamisa\4\4(4).webp'));
+
+INSERT INTO PRODUCTO (nombre, categoria,subcategoria,precio_ud,descripcion) values('SOBRECAMISA LIGERA','ninos','camisa y sobrecamisa','19.95','Sobrecamisa con cuello solapas y manga larga.');
+SET @producto_id = LAST_INSERT_ID();
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\camisa-y-sobrecamisa\5\5.webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\camisa-y-sobrecamisa\5\5(2).webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\camisa-y-sobrecamisa\5\5(3).webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\camisa-y-sobrecamisa\5\5(4).webp'));
+
+INSERT INTO PRODUCTO (nombre, categoria,subcategoria,precio_ud,descripcion) values('CAMISA PREMIUM','ninos','camisa y sobrecamisa','19.95','Camisa con cuello camisero manga larga. Cierre con botonadura frontal.');
+SET @producto_id = LAST_INSERT_ID();
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\camisa-y-sobrecamisa\6\6.webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\camisa-y-sobrecamisa\6\6(2).webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\camisa-y-sobrecamisa\6\6(3).webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\camisa-y-sobrecamisa\6\6(4).webp'));
+
+INSERT INTO PRODUCTO (nombre, categoria,subcategoria,precio_ud,descripcion) values('CAMISA POPELÍN BOLSILLO TRUE NEUTRALS','ninos','camisa y sobrecamisa','27.95','Sobrecamisa con cuello camisero y manga larga.');
+SET @producto_id = LAST_INSERT_ID();
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\camisa-y-sobrecamisa\7\7.webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\camisa-y-sobrecamisa\7\7(2).webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\camisa-y-sobrecamisa\7\7(3).webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\camisa-y-sobrecamisa\7\7(4).webp'));
+
+INSERT INTO PRODUCTO (nombre, categoria,subcategoria,precio_ud,descripcion) values('CAMISETA RAYAS','ninos','camiseta','9.95','Camiseta con cuello redondo y manga corta.');
+SET @producto_id = LAST_INSERT_ID();
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\camiseta\1\1.webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\camiseta\1\1(2).webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\camiseta\1\1(3).webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\camiseta\1\1(4).webp'));
+
+INSERT INTO PRODUCTO (nombre, categoria,subcategoria,precio_ud,descripcion) values('CAMISETA BOLSILLO ETIQUETA','ninos','camiseta','8.95','Camiseta con cuello redondo y manga corta.');
+SET @producto_id = LAST_INSERT_ID();
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\camiseta\2\2.webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\camiseta\2\2(2).webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\camiseta\2\2(3).webp'));
+
+INSERT INTO PRODUCTO (nombre, categoria,subcategoria,precio_ud,descripcion) values('CAMISETA TEXTO ESTAMPADO','ninos','camiseta','9.95','Camiseta con cuello redondo y manga corta. Estampado texto en delantero y espalda.');
+SET @producto_id = LAST_INSERT_ID();
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\camiseta\3\3.webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\camiseta\3\3(2).webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\camiseta\3\3(3).webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\camiseta\3\3(4).webp'));
+
+INSERT INTO PRODUCTO (nombre, categoria,subcategoria,precio_ud,descripcion) values('CAMISETA ESTAMPADA ETIQUETA','ninos','camiseta','9.95','Camiseta con cuello redondo y manga corta. Estampado en delantero y espalda.');
+SET @producto_id = LAST_INSERT_ID();
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\camiseta\4\4.webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\camiseta\4\4(2).webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\camiseta\4\4(3).webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\camiseta\4\4(4).webp'));
+
+INSERT INTO PRODUCTO (nombre, categoria,subcategoria,precio_ud,descripcion) values('CAMISETA SNOOPY PEANUTS™','ninos','camiseta','12.95','Camiseta con cuello redondo y manga corta. Estampado SNOOPY PEANUTS™ con detalle relieve en pechera y espalda');
+SET @producto_id = LAST_INSERT_ID();
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\camiseta\5\5.webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\camiseta\5\5(2).webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\camiseta\5\5(3).webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\camiseta\5\5(4).webp'));
+
+INSERT INTO PRODUCTO (nombre, categoria,subcategoria,precio_ud,descripcion) values('CAMISETA ESTAMPADO OSO','ninos','camiseta','8.95','Camiseta con cuello redondo y manga corta. Estampado en delantero y espalda.');
+SET @producto_id = LAST_INSERT_ID();
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\camiseta\6\6.webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\camiseta\6\6(2).webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\camiseta\6\6(3).webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\camiseta\6\6(4).webp'));
+
+INSERT INTO PRODUCTO (nombre, categoria,subcategoria,precio_ud,descripcion) values('CAMISETA BORDADO CORAZON','ninos','camiseta','8.95','Camiseta con cuello redondo y manga corta. Bordado corazón en pechera.');
+SET @producto_id = LAST_INSERT_ID();
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\camiseta\7\7.webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\camiseta\7\7(2).webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\camiseta\7\7(3).webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\camiseta\7\7(4).webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\camiseta\7\7(5).webp'));
+
+INSERT INTO PRODUCTO (nombre, categoria,subcategoria,precio_ud,descripcion) values('PANTALÓN CARGO SUPERELASTICO','ninos','pantalones','22.95','Pantalón tipo jogger con cinturilla elástica y cordones ajustables frontal.');
+SET @producto_id = LAST_INSERT_ID();
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\pantalones\1\1.webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\pantalones\1\1(2).webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\pantalones\1\1(3).webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\pantalones\1\1(4).webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\pantalones\1\1(5).webp'));
+
+INSERT INTO PRODUCTO (nombre, categoria,subcategoria,precio_ud,descripcion) values('PANTALÓN FELPA COMBINADO BOLSILLOS','ninos','pantalones','17.95','Pantalón con cinturilla elástica y cordones ajustables.');
+SET @producto_id = LAST_INSERT_ID();
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\pantalones\2\2.webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\pantalones\2\2(2).webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\pantalones\2\2(3).webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\pantalones\2\2(4).webp'));
+
+INSERT INTO PRODUCTO (nombre, categoria,subcategoria,precio_ud,descripcion) values('PANTALÓN FELPA COMBINADO BOLSILLOS','ninos','pantalones','15.95','Pantalón con cinturilla elástica y cordones ajustables');
+SET @producto_id = LAST_INSERT_ID();
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\pantalones\3\3.webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\pantalones\3\3(2).webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\pantalones\3\3(3).webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\pantalones\3\3(4).webp'));
+
+INSERT INTO PRODUCTO (nombre, categoria,subcategoria,precio_ud,descripcion) values('PANTALÓN POPELÍN BOLSILLOS','ninos','pantalones','25.95','Pantalón con cinturilla elástica y cordones ajustables.');
+SET @producto_id = LAST_INSERT_ID();
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\pantalones\4\4.webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\pantalones\4\4(2).webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\pantalones\4\4(3).webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\pantalones\4\4(4).webp'));
+
+INSERT INTO PRODUCTO (nombre, categoria,subcategoria,precio_ud,descripcion) values('JEANS REGULAR FIT','ninos','pantalones','15.95','Jeans regular fit con cinturilla interior elástica y cierre con botón fronta');
+SET @producto_id = LAST_INSERT_ID();
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\pantalones\5\5.webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\pantalones\5\5(2).webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\pantalones\5\5(3).webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\pantalones\5\5(4).webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\pantalones\5\5(5).webp'));
+
+INSERT INTO PRODUCTO (nombre, categoria,subcategoria,precio_ud,descripcion) values('PANTALÓN DENIM BAGGY','ninos','pantalones','22.95','Pantalón con cinturilla elástica en espalda y cierre botón frontal');
+SET @producto_id = LAST_INSERT_ID();
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\pantalones\6\6.webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\pantalones\6\6(2).webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\pantalones\6\6(3).webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\pantalones\6\6(4).webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\pantalones\6\6(5).webp'));
+
+INSERT INTO PRODUCTO (nombre, categoria,subcategoria,precio_ud,descripcion) values('PANTALÓN SARGA RELAXEDY','ninos','pantalones','19.95','Pantalón con cinturilla interior ajustable y cierre botón frontal.');
+SET @producto_id = LAST_INSERT_ID();
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\pantalones\7\7.webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\pantalones\7\7(2).webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\pantalones\7\7(3).webp'));
+
+INSERT INTO PRODUCTO (nombre, categoria,subcategoria,precio_ud,descripcion) values('SUDADERA SNOOPY PEANUTS™','ninos','sudadera','19.95','Sudadera con cuello redondo y manga larga. Acabados en rib.');
+SET @producto_id = LAST_INSERT_ID();
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\sudadera\1\1.webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\sudadera\1\1(2).webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\sudadera\1\1(3).webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\sudadera\1\1(4).webp'));
+
+INSERT INTO PRODUCTO (nombre, categoria,subcategoria,precio_ud,descripcion) values('SUDADERA POLO TEXTO RELIEVE','ninos','sudadera','17.95','Sudadera con cuello polo y manga larga. Acabados en rib.');
+SET @producto_id = LAST_INSERT_ID();
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\sudadera\2\2.webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\sudadera\2\2(2).webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\sudadera\2\2(3).webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\sudadera\2\2(4).webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\sudadera\2\2(5).webp'));
+
+INSERT INTO PRODUCTO (nombre, categoria,subcategoria,precio_ud,descripcion) values('SUDADERA JOGGING','ninos','sudadera','12.95','Sudadera con capucha y manga larga. Acabados en rib.');
+SET @producto_id = LAST_INSERT_ID();
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\sudadera\3\3.webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\sudadera\3\3(2).webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\sudadera\3\3(3).webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\sudadera\3\3(4).webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\sudadera\3\3(5).webp'));
+
+INSERT INTO PRODUCTO (nombre, categoria,subcategoria,precio_ud,descripcion) values('SUDADERA CAPUCHA BORDADO','ninos','sudadera','15.95','Sudadera con capucha y manga larga. Motivo bordado en pechera.');
+SET @producto_id = LAST_INSERT_ID();
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\sudadera\4\4.webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\sudadera\4\4(2).webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\sudadera\4\4(3).webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\sudadera\4\4(4).webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\sudadera\4\4(5).webp'));
+
+INSERT INTO PRODUCTO (nombre, categoria,subcategoria,precio_ud,descripcion) values('SUDADERA ETIQUETA','ninos','sudadera','17.95','Sudadera con cuello redondo y manga larga. Aplique etiqueta y estampado en delantero.');
+SET @producto_id = LAST_INSERT_ID();
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\sudadera\5\5.webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\sudadera\5\5(2).webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\sudadera\5\5(3).webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\sudadera\5\5(4).webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\sudadera\5\5(5).webp'));
+
+INSERT INTO PRODUCTO (nombre, categoria,subcategoria,precio_ud,descripcion) values('SUDADERA PARCHE PERRO','ninos','sudadera','17.95','Sudadera con cuello redondo y manga larga. Estampado y bordado en pechera y espalda.');
+SET @producto_id = LAST_INSERT_ID();
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\sudadera\6\6.webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\sudadera\6\6(2).webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\sudadera\6\6(3).webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\sudadera\6\6(4).webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\sudadera\6\6(5).webp'));
+
+INSERT INTO PRODUCTO (nombre, categoria,subcategoria,precio_ud,descripcion) values('SUDADERA CONEJO BORDADO','ninos','sudadera','17.95','Sudadera con cuello redondo y manga larga. Motivo bordado en pechera y espalda.');
+SET @producto_id = LAST_INSERT_ID();
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\sudadera\7\7.webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\sudadera\7\7(2).webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\sudadera\7\7(3).webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\sudadera\7\7(4).webp'));
+INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:\xampp\htdocs\Proyecto-grupal---Tienda-Online\assets\images\jovenes\niños\sudadera\7\7(5).webp'));
+
+
+
+
+
+
