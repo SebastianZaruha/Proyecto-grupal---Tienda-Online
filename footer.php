@@ -27,7 +27,7 @@
                 <div class="col-lg-3 col-md-6 mb-4 mb-md-0 footer-col">
                     <h5 class="text-uppercase">Velour</h5>
                     <p>
-                        Viste tu estilo, define tu elegancia: Velour.
+                        Viste tu estilo con confianza, elige tu camino con determinación, define tu elegancia con Velour.
                     </p>
                 </div>
 
@@ -46,7 +46,7 @@
                     <ul class="list-unstyled mb-0">
                         <li><a href="#!">velour@gmail.com</a></li>
                         <li><a href="#!">+34 630548914</a></li>
-                        <li><a href="#!">Dirección</a></li>
+                        <li><a href="#!">C/ Rosa de los Vientos 70</a></li>
                     </ul>
                 </div>
 
