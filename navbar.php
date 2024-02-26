@@ -24,7 +24,7 @@ require_once 'carrito.php';
         crossorigin="anonymous"></script>
     <style>
         body {
-            font-family: 'Metrophobic', sans-serif;
+            font-family: 'Roboto', sans-serif;
         }
 
         a {

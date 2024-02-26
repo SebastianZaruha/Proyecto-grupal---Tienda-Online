@@ -5,8 +5,8 @@ $id_producto = $_POST['id_producto'];
 $id_usuario = $_POST['id_usuario'];
 $talla = $_POST['talla'];
 
-//HACER ESA INSERCION EN UN PROCEDIMIENTO
-$consulta = $conexion->prepare("INSERT INTO carrito (id_producto, id_usuario,talla,cantidad) VALUES (?, ?, ?, 1)");
+//HACER INSERCION DE LA CANTIDAD
+$consulta = $conexion->prepare("CALL INSERTA_CARRITO(?, ?, 1, ?)");
 $consulta->bind_param("iis", $id_producto, $id_usuario, $talla);
 
 $consulta->execute();
