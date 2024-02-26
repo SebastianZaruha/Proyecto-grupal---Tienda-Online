@@ -1,7 +1,4 @@
 <?php
-
-
-
 if (!isset($_SESSION['email'])) {
 } else {
 
@@ -15,14 +12,15 @@ GROUP BY producto.id";
 
     $result = mysqli_query($conexion, $query_carrito);
 
-?>
+    ?>
 
     <div class="modal justify-content-end" id="miAcordeon" style="display: none; ">
         <div class="modal-dialog" style="margin-right: 2%; margin-top: 6.7%; ">
             <div class="modal-content">
                 <div class="modal-header">
                     <h2 class="modal-title">Carrito</h2>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="openCarrito()"></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                        onclick="openCarrito()"></button>
                 </div>
                 <div class="modal-body">
                     <div>
@@ -31,12 +29,12 @@ GROUP BY producto.id";
                             echo "<h3 class='text-center'>No hay productos en el carrito</h3>";
                         } else {
                             $total = 0;
-                            while ($row = mysqli_fetch_assoc($result)) :
+                            while ($row = mysqli_fetch_assoc($result)):
                                 $foto = $row['foto'];
                                 $foto = base64_encode($foto);
 
                                 $total += $row['precio_ud'] * $row['cantidad'];
-                        ?>
+                                ?>
                                 <div class="row">
                                     <div class="col-6">
                                         <img src="data:image/jpeg;base64,<?php echo $foto ?>" class="img-fluid">
@@ -74,7 +72,9 @@ GROUP BY producto.id";
                                 </p>
                             </div>
                             <div class="d-flex justify-content-center mt-3">
-                                <div class="btn d-flex fs-4 justify-content-center aling-items-center" style="background-color: #847C7C; width: 30% "><a class="text-white" href="comprar.php">COMPRAR</a></div>
+                                <div class="btn d-flex fs-4 justify-content-center aling-items-center"
+                                    style="background-color: #847C7C; width: 30% "><a class="text-white"
+                                        href="comprar.php">COMPRAR</a></div>
                             </div>
                         <?php } ?>
                     </div>
