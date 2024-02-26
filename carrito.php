@@ -10,7 +10,7 @@ if (!isset($_SESSION['email'])) {
 FROM carrito 
 INNER JOIN producto ON carrito.id_producto = producto.id 
 INNER JOIN fotos ON producto.id = fotos.id_producto 
-WHERE carrito.id_usuario = $id_usuario 
+WHERE carrito.id_usuario = $id_usuario AND carrito.en_carrito = 1
 GROUP BY producto.id";
 
     $result = mysqli_query($conexion, $query_carrito);
