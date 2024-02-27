@@ -387,14 +387,12 @@ require_once 'carrito.php';
                                                 </li>
                                                 <li><a href="catalogo.php?categoria=mujer&subcategoria=botas">Botas</a>
                                                 </li>
-                                                <li><a href="catalogo.php?categoria=mujer&subcategoria=zapatos_planos">Zapatos
-                                                        planos</a></li>
                                                 <li><a
                                                         href="catalogo.php?categoria=mujer&subcategoria=zapatos_de_tacon">Zapatos
                                                         de tacón</a></li>
                                             </ul>
                                         </div>
-                                        <div class="col-3">
+                                        <!-- <div class="col-3">
                                             <h5>ACCESORIOS</h5>
                                             <ul>
                                                 <li><a
@@ -412,7 +410,7 @@ require_once 'carrito.php';
                                                         href="catalogo.php?categoria=mujer&subcategoria=acessorios_de_pelo">Accesorios
                                                         de pelo</a></li>
                                             </ul>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
                             </div>
