@@ -3,9 +3,10 @@ require_once 'navbar.php';
 
 if (!isset($_SESSION['email'])) {
     header('Location: index.php');
+} else {
+    $id_usuario = $_SESSION['id'];
 }
-session_start();
-$id_usuario = $_SESSION['id'];
+
 $id_producto = isset($_GET['id']) ? filter_var($_GET['id'], FILTER_SANITIZE_NUMBER_INT) : die('');
 
 $sql = "SELECT * FROM producto WHERE id = '$id_producto'";
@@ -80,7 +81,7 @@ $conexion->close();
                             <button class="btn btn-outline-secondary" type="button"
                                 onclick="selectSize('XL')">XL</button>
                         </div>
-                        <form action="agrega_carrito.php" method="post" onsubmit="return validarForm()">
+                        <form action="agrega_carrito.php" method="post" onsubmit="return onSubmit()">
                             <input type="hidden" name="id_producto" value="<?php echo $id_producto; ?>">
                             <input type="hidden" name="id_usuario" value="<?php echo $id_usuario; ?>">
                             <input type="hidden" name="talla" id="talla" value="">
@@ -107,13 +108,26 @@ $conexion->close();
 
     <script>
 
+        function validarSesion() {
+            if (<?php echo isset($_SESSION['email']) ? 'true' : 'false'; ?>) {
+                return true;
+            } else {
+                alert('Debes iniciar sesión para añadir productos a la cesta');
+                return false;
+            }
+        }
+
         function validarForm() {
-            var talla = document.getElementById('talla').value;
+            let talla = document.getElementById('talla').value;
             if (talla == '') {
                 alert('Por favor, selecciona una talla');
                 return false;
             }
             return true;
+        }
+
+        function onSubmit() {
+            return validarForm() && validarSesion();
         }
 
         function selectSize(size) {

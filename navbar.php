@@ -526,7 +526,7 @@ require_once 'carrito.php';
                             <form action="login2.php" method="POST">
                                 <div class="mb-3">
                                     <label for="exampleInputEmail1" class="form-label">Correo electrónico</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail1"
+                                    <input type="email" class="form-control mb-3" id="exampleInputEmail1"
                                         aria-describedby="emailHelp" name="email">
 
                                     <label for=" exampleInputPassword1" class="form-label">Contraseña</label>
