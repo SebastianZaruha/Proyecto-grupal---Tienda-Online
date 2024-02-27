@@ -1,6 +1,3 @@
-<div class="row m-5">
-    <h2>IMPRESCINDIBLES</h2>
-</div>
 <div class="row justify-content-center" style="height: 70vh;">
     <div class="col-12 col-sm-12 col-md-8 col-lg-5" style="background-image: url(./assets/images/pava.avif);">
         <br><br>

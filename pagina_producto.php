@@ -3,9 +3,10 @@ require_once 'navbar.php';
 
 if (!isset($_SESSION['email'])) {
     header('Location: index.php');
+} else {
+    $id_usuario = $_SESSION['id'];
 }
-session_start();
-$id_usuario = $_SESSION['id'];
+
 $id_producto = isset($_GET['id']) ? filter_var($_GET['id'], FILTER_SANITIZE_NUMBER_INT) : die('');
 
 $sql = "SELECT * FROM producto WHERE id = '$id_producto'";
@@ -27,6 +28,10 @@ if ($result_fotos->num_rows > 0) {
         $fotos[] = "data:image/webp;base64," . base64_encode($row_foto['foto']);
     }
 }
+
+$sql_favorito = "SELECT * FROM favoritos WHERE id_producto = '$id_producto' AND id_usuario = '$id_usuario'";
+$result_favorito = $conexion->query($sql_favorito);
+$esFavorito = $result_favorito->num_rows > 0;
 
 $conexion->close();
 ?>
@@ -80,20 +85,31 @@ $conexion->close();
                             <button class="btn btn-outline-secondary" type="button"
                                 onclick="selectSize('XL')">XL</button>
                         </div>
-                        <form action="agrega_carrito.php" method="post" onsubmit="return validarForm()">
+                        <form action="agrega_carrito.php" method="post" onsubmit="return onSubmit()">
                             <input type="hidden" name="id_producto" value="<?php echo $id_producto; ?>">
                             <input type="hidden" name="id_usuario" value="<?php echo $id_usuario; ?>">
                             <input type="hidden" name="talla" id="talla" value="">
-                            <button type="submit" class="btn btn-outline-secondary mb-3">Añadir a la cesta</button>
+                            <button type="submit" class="btn btn-outline-secondary mb-3">Añadir al carrito</button>
                         </form>
                         <div class="d-grid gap-2 d-md-block">
-                            <form action="agrega_favoritos.php" method="post">
-                                <input type="hidden" name="id_producto" value="<?php echo $id_producto; ?>">
-                                <input type="hidden" name="id_usuario" value="<?php echo $id_usuario; ?>">
-                                <button class="btn" type="submit">
-                                    <img src="./assets/images/pagina_producto/corazon.png" alt="">
-                                </button>
-                            </form>
+                            <?php if ($esFavorito): ?>
+                                <form action="borrar_favoritos.php" method="post">
+                                    <input type="hidden" name="id_producto" value="<?php echo $id_producto; ?>">
+                                    <input type="hidden" name="id_usuario" value="<?php echo $id_usuario; ?>">
+                                    <button class="btn" type="submit">
+                                        <img id="favorito" src="./assets/images/pagina_producto/corazon-negro.svg"
+                                            style="width: 150%; height: 150%;">
+                                    </button>
+                                </form>
+                            <?php else: ?>
+                                <form action="agrega_favoritos.php" method="post">
+                                    <input type="hidden" name="id_producto" value="<?php echo $id_producto; ?>">
+                                    <input type="hidden" name="id_usuario" value="<?php echo $id_usuario; ?>">
+                                    <button class="btn" type="submit">
+                                        <img id="favorito" src="./assets/images/pagina_producto/corazon.png">
+                                    </button>
+                                </form>
+                            <?php endif; ?>
                         </div>
             </div>
         </div>
@@ -107,13 +123,26 @@ $conexion->close();
 
     <script>
 
+        function validarSesion() {
+            if (<?php echo isset($_SESSION['email']) ? 'true' : 'false'; ?>) {
+                return true;
+            } else {
+                alert('Debes iniciar sesión para añadir productos a la cesta');
+                return false;
+            }
+        }
+
         function validarForm() {
-            var talla = document.getElementById('talla').value;
+            let talla = document.getElementById('talla').value;
             if (talla == '') {
                 alert('Por favor, selecciona una talla');
                 return false;
             }
             return true;
+        }
+
+        function onSubmit() {
+            return validarForm() && validarSesion();
         }
 
         function selectSize(size) {

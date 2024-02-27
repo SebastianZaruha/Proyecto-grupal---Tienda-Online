@@ -10,18 +10,27 @@ require_once 'carrito.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- BOOTSTRAP  -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
+    <!-- FUENTES -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Metrophobic&display=swap" rel="stylesheet">
 
+    <!-- JQUERY? -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
+
+    <!-- BIBLIOTECA SLICK PARA LOS SLIDERS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+
     <style>
         body {
             font-family: 'Roboto', sans-serif;
@@ -181,8 +190,8 @@ require_once 'carrito.php';
             position: absolute;
             top: 98%;
             right: 0;
-            width: 15%;
-            height: 20vh;
+            width: auto;
+            height: auto;
 
             padding: 20px;
             background-color: #fff;
@@ -220,24 +229,6 @@ require_once 'carrito.php';
 
         .carousel-item {
             transition: transform 2s ease-in-out;
-        }
-
-        .carousel-control-prev,
-        .carousel-control-next {
-            width: 2%;
-            height: 10%;
-            background-color: black;
-            top: -13%;
-            border: 1px solid black;
-            border-radius: 10px;
-        }
-
-        .carousel-control-next {
-            right: 2%;
-        }
-
-        .carousel-control-prev {
-            left: 93%;
         }
 
         .col-lg-5 {
@@ -337,19 +328,6 @@ require_once 'carrito.php';
                                                 </li>
                                             </ul>
                                         </div>
-                                        <div class="col-3">
-                                            <h5>ACCESORIOS</h5>
-                                            <ul>
-                                                <li><a
-                                                        href="catalogo.php?categoria=hombre&subcategoria=relojes">Relojes</a>
-                                                </li>
-                                                <li><a
-                                                        href="catalogo.php?categoria=hombre&subcategoria=gorras">Gorras</a>
-                                                </li>
-                                                <li><a href="catalogo.php?categoria=hombre&subcategoria=gafas">Gafas</a>
-                                                </li>
-                                            </ul>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -394,25 +372,6 @@ require_once 'carrito.php';
                                                         de tacón</a></li>
                                             </ul>
                                         </div>
-                                        <div class="col-3">
-                                            <h5>ACCESORIOS</h5>
-                                            <ul>
-                                                <li><a
-                                                        href="catalogo.php?categoria=mujer&subcategoria=bolsos">Bolsos</a>
-                                                </li>
-                                                <li><a
-                                                        href="catalogo.php?categoria=mujer&subcategoria=bisuteria">Bisutería</a>
-                                                </li>
-                                                <li><a
-                                                        href="catalogo.php?categoria=mujer&subcategoria=sombreros">Sombreros</a>
-                                                </li>
-                                                <li><a href="catalogo.php?categoria=mujer&subcategoria=gafas">Gafas</a>
-                                                </li>
-                                                <li><a
-                                                        href="catalogo.php?categoria=mujer&subcategoria=acessorios_de_pelo">Accesorios
-                                                        de pelo</a></li>
-                                            </ul>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -448,8 +407,7 @@ require_once 'carrito.php';
                                                 <li><a
                                                         href="catalogo.php?categoria=ninos&subcategoria=deportivas">Deportivas</a>
                                                 </li>
-                                                <li><a
-                                                        href="catalogo.php?categoria=ninos&subcategoria=botas">Botas</a>
+                                                <li><a href="catalogo.php?categoria=ninos&subcategoria=botas">Botas</a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -478,17 +436,17 @@ require_once 'carrito.php';
                         <div class="mega-menu-usuario">
                             <div class="container">
                                 <div class="row">
-                                    <div class="col-12">
-                                        <ul>
-                                            <li class="d-flex align-items-center"><a href="miperfil.php">Mi Perfil <img
+                                    <div class="col-12 col-md-12">
+                                        <ul class="list-unstyled">
+                                            <li class="align-items-center"><a href="miperfil.php">Mi Perfil <img
                                                         style="margin-left: 53px;" class="mb-1" src="./assets/perfil.svg"
                                                         alt=""></a></li>
-                                            <li class="d-flex align-items-center"><a href="pedidos.php">Mis Pedidos <img
+                                            <li class="align-items-center"><a href="pedidos.php">Mis Pedidos <img
                                                         style="margin-left: 12px;" class="mb-1" src="./assets/box.svg"
                                                         alt=""></a></li>
-                                            <li class="d-flex align-items-center"><a href="favoritos.php">Mis Favoritos <img
+                                            <li class="align-items-center"><a href="favoritos.php">Mis Favoritos <img
                                                         class="mb-1" src="./assets/fav.svg" alt=""></a></li>
-                                            <li class="d-flex align-items-center"><a href="logout.php">Cerrar Sesion <img
+                                            <li class="align-items-center"><a href="logout.php">Cerrar Sesion <img
                                                         class="mb-1" src="./assets/logout.svg" alt=""></a></li>
                                         </ul>
                                     </div>
@@ -527,7 +485,7 @@ require_once 'carrito.php';
                             <form action="login2.php" method="POST">
                                 <div class="mb-3">
                                     <label for="exampleInputEmail1" class="form-label">Correo electrónico</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail1"
+                                    <input type="email" class="form-control mb-3" id="exampleInputEmail1"
                                         aria-describedby="emailHelp" name="email">
 
                                     <label for=" exampleInputPassword1" class="form-label">Contraseña</label>
