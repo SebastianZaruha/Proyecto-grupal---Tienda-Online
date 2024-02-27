@@ -61,17 +61,26 @@ $result_pedidos = mysqli_query($conexion, $query_pedidos);
                                                                                             $formatted_date = date_format($date, "d M Y");
                                                                                             echo $formatted_date; ?></p>
                                                 <p class="m-0">Dirección de envío: <?php echo $row_2['direccion']; ?></p>
-                                                <p class="m-0">Factura: <a class="text-primary" href="factura.php?id_factura=<?php echo $row_2['id_factura']; ?> "  target="_blank" >Ver factura</a></p>
+                                                
                                                 
                                             </div>
 
                                         </div>
                                     <?php endwhile; ?>
+                                    <div class="p-3">
+                                <!-- <p class="m-0">Factura: <a class="text-primary" href="factura.php?id_factura=<?php // echo $row_2['id_factura']; ?> "  target="_blank" >Ver factura</a></p> -->
+                                <p class="m-0">Factura: <a class="text-primary" href="factura.php?id_factura=26 "  target="_blank" >Ver factura</a></p>
+                                
                                 </div>
+                                </div>
+                               
                             </div>
+                            
                         <?php $counter++;
                         endwhile; ?>
                     </div>
+                    
+
                 </div>
             </div>
         </div>
