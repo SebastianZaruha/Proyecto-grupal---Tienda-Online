@@ -10,18 +10,24 @@ require_once 'carrito.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- BOOTSTRAP  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
+    <!-- FUENTES -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Metrophobic&display=swap" rel="stylesheet">
 
+    <!-- JQUERY? -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <!-- BIBLIOTECA SLICK PARA LOS SLIDERS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+
     <style>
         body {
             font-family: 'Roboto', sans-serif;
@@ -141,12 +147,15 @@ require_once 'carrito.php';
             top: 98%;
             left: 0;
             width: 100%;
+            height: auto;
+
             padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            background-color: white;
+
             opacity: 0;
             visibility: hidden;
             transition: all 0.3s ease-in-out;
+
         }
 
 
@@ -181,12 +190,15 @@ require_once 'carrito.php';
             position: absolute;
             top: 98%;
             right: 0;
-            width: 15%;
-            height: 20vh;
+            width: auto;
+            height: auto;
 
             padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            background-color: rgb(198 198 198 / 12%);
+            /* 50% de opacidad, color gris */
+            backdrop-filter: blur(10px);
+            /* Efecto de desenfoque */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
             opacity: 0;
             visibility: hidden;
             transition: all 0.3s ease-in-out;
@@ -222,24 +234,6 @@ require_once 'carrito.php';
             transition: transform 2s ease-in-out;
         }
 
-        .carousel-control-prev,
-        .carousel-control-next {
-            width: 2%;
-            height: 10%;
-            background-color: black;
-            top: -13%;
-            border: 1px solid black;
-            border-radius: 10px;
-        }
-
-        .carousel-control-next {
-            right: 2%;
-        }
-
-        .carousel-control-prev {
-            left: 93%;
-        }
-
         .col-lg-5 {
             margin-top: 2%;
             height: 100%;
@@ -265,14 +259,7 @@ require_once 'carrito.php';
                     </a>
                     <div class="d-flex align-items-center justify-content-center w-50" id="nav-respo">
                         <ul class=" navbar-nav flex-row ">
-                            <li class="nav-item" style="width: 40%">
-                                <div class="input-group rounded mt-2">
-                                    <img src="./assets/busqueda.svg" alt="Icono de búsqueda" width="26" height="26"
-                                        style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); z-index: 2;">
-                                    <input type="search" class="form-control rounded-5" placeholder=""
-                                        aria-label="Buscar" />
-                                </div>
-                            </li>
+
                             <li class="nav-item">
                                 <button onclick="openModal()" class="btn btn-link text-decoration-none">
                                     <img src="./assets/perfil.svg" alt="Perfil" width="38" height="38">
@@ -284,16 +271,13 @@ require_once 'carrito.php';
 
                             </li>
                         </ul>
-                        <button class="navbar-toggler fs-3" type="button" data-bs-toggle="offcanvas"
-                            data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar"
-                            aria-label="Toggle navigation">
+                        <button class="navbar-toggler fs-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
                     </div>
                 </div>
             </div>
-            <div class="offcanvas offcanvas-end w-50" tabindex="-1" id="offcanvasNavbar"
-                aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas offcanvas-end w-50" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
                 <div class="offcanvas-header">
                     <h5 class="offcanvas-title" id="offcanvasNavbarLabel">MENÚ</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -309,44 +293,24 @@ require_once 'carrito.php';
                                         <div class="col-3">
                                             <h5>ROPA</h5>
                                             <ul>
-                                                <li><a
-                                                        href="catalogo.php?categoria=hombre&subcategoria=camisas_y_camisetas">Camisas
+                                                <li><a href="catalogo.php?categoria=hombre&subcategoria=camisas_y_camisetas">Camisas
                                                         y camisetas</a></li>
-                                                <li><a
-                                                        href="catalogo.php?categoria=hombre&subcategoria=pantalones">Pantalones</a>
+                                                <li><a href="catalogo.php?categoria=hombre&subcategoria=pantalones">Pantalones</a>
                                                 </li>
-                                                <li><a
-                                                        href="catalogo.php?categoria=hombre&subcategoria=chaquetas_y_abrigos">Chaquetas
+                                                <li><a href="catalogo.php?categoria=hombre&subcategoria=chaquetas_y_abrigos">Chaquetas
                                                         y abrigos</a></li>
-                                                <li><a
-                                                        href="catalogo.php?categoria=hombre&subcategoria=sudaderas">Sudaderas</a>
+                                                <li><a href="catalogo.php?categoria=hombre&subcategoria=sudaderas">Sudaderas</a>
                                                 </li>
                                             </ul>
                                         </div>
                                         <div class="col-3">
                                             <h5>ZAPATOS</h5>
                                             <ul>
-                                                <li><a
-                                                        href="catalogo.php?categoria=hombre&subcategoria=zapatillas">Zapatillas</a>
+                                                <li><a href="catalogo.php?categoria=hombre&subcategoria=zapatillas">Zapatillas</a>
                                                 </li>
-                                                <li><a
-                                                        href="catalogo.php?categoria=hombre&subcategoria=deportivas">Deportivas</a>
+                                                <li><a href="catalogo.php?categoria=hombre&subcategoria=deportivas">Deportivas</a>
                                                 </li>
-                                                <li><a
-                                                        href="catalogo.php?categoria=hombre&subcategoria=formales">Formales</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-3">
-                                            <h5>ACCESORIOS</h5>
-                                            <ul>
-                                                <li><a
-                                                        href="catalogo.php?categoria=hombre&subcategoria=relojes">Relojes</a>
-                                                </li>
-                                                <li><a
-                                                        href="catalogo.php?categoria=hombre&subcategoria=gorras">Gorras</a>
-                                                </li>
-                                                <li><a href="catalogo.php?categoria=hombre&subcategoria=gafas">Gafas</a>
+                                                <li><a href="catalogo.php?categoria=hombre&subcategoria=formales">Formales</a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -362,34 +326,27 @@ require_once 'carrito.php';
                                         <div class="col-3">
                                             <h5>ROPA</h5>
                                             <ul>
-                                                <li><a
-                                                        href="catalogo.php?categoria=mujer&subcategoria=camisas_y_blusas">Camisas
+                                                <li><a href="catalogo.php?categoria=mujer&subcategoria=camisas_y_blusas">Camisas
                                                         y blusas</a></li>
-                                                <li><a
-                                                        href="catalogo.php?categoria=mujer&subcategoria=pantalones">Pantalones</a>
+                                                <li><a href="catalogo.php?categoria=mujer&subcategoria=pantalones">Pantalones</a>
                                                 </li>
-                                                <li><a
-                                                        href="catalogo.php?categoria=mujer&subcategoria=faldas">Faldas</a>
+                                                <li><a href="catalogo.php?categoria=mujer&subcategoria=faldas">Faldas</a>
                                                 </li>
-                                                <li><a
-                                                        href="catalogo.php?categoria=mujer&subcategoria=chaquetas_y_abrigos">Chaquetas
+                                                <li><a href="catalogo.php?categoria=mujer&subcategoria=chaquetas_y_abrigos">Chaquetas
                                                         y abrigos</a></li>
-                                                <li><a
-                                                        href="catalogo.php?categoria=mujer&subcategoria=vestidos_y_monos">Vestidos
+                                                <li><a href="catalogo.php?categoria=mujer&subcategoria=vestidos_y_monos">Vestidos
                                                         y monos</a></li>
                                             </ul>
                                         </div>
                                         <div class="col-3">
                                             <h5>ZAPATOS</h5>
                                             <ul>
-                                                <li><a
-                                                        href="catalogo.php?categoria=mujer&subcategoria=zapatillas">Zapatillas</a>
+                                                <li><a href="catalogo.php?categoria=mujer&subcategoria=zapatillas">Zapatillas</a>
                                                 </li>
                                                 <li><a href="catalogo.php?categoria=mujer&subcategoria=botas">Botas</a>
                                                 </li>
                                                 <li><a
-                                                        href="catalogo.php?categoria=mujer&subcategoria=zapatos_de_tacon">Zapatos
-                                                        de tacón</a></li>
+                                                        href="catalogo.php?categoria=mujer&subcategoria=zapatos_de_tacon">Zapatos de tacón</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -404,28 +361,22 @@ require_once 'carrito.php';
                                         <div class="col-3">
                                             <h5>ROPA</h5>
                                             <ul>
-                                                <li><a
-                                                        href="catalogo.php?categoria=ninos&subcategoria=camisas_y_camisetas">Camisas
+                                                <li><a href="catalogo.php?categoria=ninos&subcategoria=camisas_y_camisetas">Camisas
                                                         y camisetas</a></li>
-                                                <li><a
-                                                        href="catalogo.php?categoria=ninos&subcategoria=pantalones">Pantalones</a>
+                                                <li><a href="catalogo.php?categoria=ninos&subcategoria=pantalones">Pantalones</a>
                                                 </li>
-                                                <li><a
-                                                        href="catalogo.php?categoria=ninos&subcategoria=chaquetas_y_abrigos">Chaquetas
+                                                <li><a href="catalogo.php?categoria=ninos&subcategoria=chaquetas_y_abrigos">Chaquetas
                                                         y abrigos</a></li>
-                                                <li><a
-                                                        href="catalogo.php?categoria=ninos&subcategoria=sudaderas">Sudaderas</a>
+                                                <li><a href="catalogo.php?categoria=ninos&subcategoria=sudaderas">Sudaderas</a>
                                                 </li>
                                             </ul>
                                         </div>
                                         <div class="col-3">
                                             <h5>ZAPATOS</h5>
                                             <ul>
-                                                <li><a
-                                                        href="catalogo.php?categoria=ninos&subcategoria=zapatillas">Zapatillas</a>
+                                                <li><a href="catalogo.php?categoria=ninos&subcategoria=zapatillas">Zapatillas</a>
                                                 </li>
-                                                <li><a
-                                                        href="catalogo.php?categoria=ninos&subcategoria=deportivas">Deportivas</a>
+                                                <li><a href="catalogo.php?categoria=ninos&subcategoria=deportivas">Deportivas</a>
                                                 </li>
                                                 <li><a href="catalogo.php?categoria=ninos&subcategoria=botas">Botas</a>
                                                 </li>
@@ -443,31 +394,19 @@ require_once 'carrito.php';
 
             <ul class="search navbar-nav align-items-center justify-content-end me-4">
 
-                <li class="nav-item" style="width: 40%">
-                    <div class="input-group rounded">
-                        <img src="./assets/busqueda.svg" alt="Icono de búsqueda" width="26" height="26"
-                            style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); z-index: 2;">
-                        <input type="search" class="form-control rounded-5" placeholder="" aria-label="Buscar" />
-                    </div>
-                </li>
-                <li class="nav-item">
+
+                <li class="nav-item ">
                     <?php if (isset($_SESSION['email'])) { ?>
                         <img class="m-3" src="./assets/perfil.svg" alt="Perfil" width="38" height="38">
-                        <div class="mega-menu-usuario">
+                        <div class="mega-menu-usuario rounded mx-2 ">
                             <div class="container">
                                 <div class="row">
-                                    <div class="col-12">
-                                        <ul>
-                                            <li class="d-flex align-items-center"><a href="miperfil.php">Mi Perfil <img
-                                                        style="margin-left: 53px;" class="mb-1" src="./assets/perfil.svg"
-                                                        alt=""></a></li>
-                                            <li class="d-flex align-items-center"><a href="pedidos.php">Mis Pedidos <img
-                                                        style="margin-left: 12px;" class="mb-1" src="./assets/box.svg"
-                                                        alt=""></a></li>
-                                            <li class="d-flex align-items-center"><a href="favoritos.php">Mis Favoritos <img
-                                                        class="mb-1" src="./assets/fav.svg" alt=""></a></li>
-                                            <li class="d-flex align-items-center"><a href="logout.php">Cerrar Sesion <img
-                                                        class="mb-1" src="./assets/logout.svg" alt=""></a></li>
+                                    <div class="col-12 col-md-12">
+                                        <ul class="list-unstyled">
+                                            <li class="align-items-center"><a href="miperfil.php">Mi Perfil <img style="margin-left: 53px;" class="mb-1" src="./assets/perfil.svg" alt=""></a></li>
+                                            <li class="align-items-center"><a href="pedidos.php">Mis Pedidos <img style="margin-left: 12px;" class="mb-1" src="./assets/box.svg" alt=""></a></li>
+                                            <li class="align-items-center"><a href="favoritos.php">Mis Favoritos <img class="mb-1" src="./assets/fav.svg" alt=""></a></li>
+                                            <li class="align-items-center"><a href="logout.php">Cerrar Sesion <img class="mb-1" src="./assets/logout.svg" alt=""></a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -505,21 +444,17 @@ require_once 'carrito.php';
                             <form action="login2.php" method="POST">
                                 <div class="mb-3">
                                     <label for="exampleInputEmail1" class="form-label">Correo electrónico</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail1"
-                                        aria-describedby="emailHelp" name="email">
+                                    <input type="email" class="form-control mb-3" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
 
                                     <label for=" exampleInputPassword1" class="form-label">Contraseña</label>
                                     <input type="password" class="form-control" id="exampleInputPassword1" name="pass1">
                                     <div class=" d-flex justify-content-center mt-3">
-                                        <button class="acceder btn mt-2 fs-5 text-white"
-                                            style="background-color: #847C7C; width:30vw; height: 5vh;"
-                                            type="submit">ACCEDER</button>
+                                        <button class="acceder btn mt-2 fs-5 text-white" style="background-color: #847C7C; width:30vw; height: 5vh;" type="submit">ACCEDER</button>
                                     </div>
                                 </div>
                             </form>
                             <hr class=" w-100" style="margin-top: 10%;">
-                            <div class=""><a href="registrarse.php" class="registrarse btn fs-5 text-white"
-                                    style="background-color: #847C7C; width:100%; height: 5vh;">REGISTRARSE </a>
+                            <div class=""><a href="registrarse.php" class="registrarse btn fs-5 text-white" style="background-color: #847C7C; width:100%; height: 5vh;">REGISTRARSE </a>
                             </div>
                         </div>
                     </div>
@@ -531,16 +466,14 @@ require_once 'carrito.php';
     </nav>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
 
     <script>
         let lastScrollTop = 0;
         const navbar = document.querySelector('.navbar');
 
-        window.addEventListener('scroll', function () {
+        window.addEventListener('scroll', function() {
             let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
             if (scrollTop > lastScrollTop) {
                 navbar.classList.add('navbar-hide');
@@ -570,7 +503,7 @@ require_once 'carrito.php';
             <?php
             if (isset($_SESSION['email'])) {
 
-                ?>
+            ?>
                 if (acordeon.style.display === 'none') {
                     acordeon.style.display = 'flex';
                     document.body.style.overflow = 'hidden'; // Añade esta línea
@@ -578,10 +511,10 @@ require_once 'carrito.php';
                     acordeon.style.display = 'none';
                     document.body.style.overflow = 'auto'; // Añade esta línea
                 }
-                <?php
+            <?php
             } else { ?>
                 openModal();
-                <?php
+            <?php
             } ?>
         }
     </script>

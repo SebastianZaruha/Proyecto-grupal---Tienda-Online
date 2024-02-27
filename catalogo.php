@@ -51,6 +51,12 @@ $result = $conexion->query($sql);
             if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
                     $foto_base64 = base64_encode($row['foto_blob']);
+
+                    if (isset($_SESSION['email'])) {
+                        $sql_favorito = "SELECT * FROM favoritos WHERE id_producto = {$row['id']} AND id_usuario = '$id_usuario'";
+                        $result_favorito = $conexion->query($sql_favorito);
+                        $esFavorito = $result_favorito->num_rows > 0;
+                    }
                     ?>
                     <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
                         <a href="pagina_producto.php?id=<?php echo $row['id']; ?>">
@@ -71,13 +77,27 @@ $result = $conexion->query($sql);
                                             <?php echo $row['precio_ud'] . " €"; ?>
                                         </h5>
                                         <div>
-                                            <form action="agrega_favoritos.php" method="post">
-                                                <input type="hidden" name="id_producto" value="<?php echo $row['id']; ?>">
-                                                <input type="hidden" name="id_usuario" value="<?php echo $id_usuario; ?>">
-                                                <button class="btn" type="submit">
-                                                    <img src="./assets/images/pagina_producto/corazon.png" alt="">
-                                                </button>
-                                            </form>
+                                            <?php
+                                            if (isset($_SESSION['email'])) {
+                                                if ($esFavorito): ?>
+                                                    <form action="borrar_favoritos.php" method="post">
+                                                        <input type="hidden" name="id_producto" value="<?php echo $row['id']; ?>">
+                                                        <input type="hidden" name="id_usuario" value="<?php echo $id_usuario; ?>">
+                                                        <button class="btn" type="submit">
+                                                            <img id="favorito" src="./assets/images/pagina_producto/corazon-negro.svg"
+                                                                style="width: 150%; height: 150%;">
+                                                        </button>
+                                                    </form>
+                                                <?php else: ?>
+                                                    <form action="agrega_favoritos.php" method="post">
+                                                        <input type="hidden" name="id_producto" value="<?php echo $row['id']; ?>">
+                                                        <input type="hidden" name="id_usuario" value="<?php echo $id_usuario; ?>">
+                                                        <button class="btn" type="submit">
+                                                            <img id="favorito" src="./assets/images/pagina_producto/corazon.png">
+                                                        </button>
+                                                    </form>
+                                                <?php endif;
+                                            } ?>
                                         </div>
                                     </div>
                                 </div>
