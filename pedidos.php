@@ -61,8 +61,8 @@ $result_pedidos = mysqli_query($conexion, $query_pedidos);
                                                                                             $formatted_date = date_format($date, "d M Y");
                                                                                             echo $formatted_date; ?></p>
                                                 <p class="m-0">Dirección de envío: <?php echo $row_2['direccion']; ?></p>
-                                                <p class="m-0">Factura: <a class="text-primary" href="factura.php?id_factura=<?php echo $row_2['id_factura']; ?> ">Ver factura</a></p>
-                                                <p class="m-0">Factura: <a class="text-primary" onclick=" descarga_factura(<?php echo $row_2['id_factura']; ?>)">Descargar factura</a></p>
+                                                <p class="m-0">Factura: <a class="text-primary" href="factura.php?id_factura=<?php echo $row_2['id_factura']; ?> "  target="_blank" >Ver factura</a></p>
+                                                
                                             </div>
 
                                         </div>
@@ -76,17 +76,7 @@ $result_pedidos = mysqli_query($conexion, $query_pedidos);
             </div>
         </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.debug.js"></script>
-<script>
-    function descarga_factura() {
-        // Crea una instancia de jsPDF
-        let doc = new jsPDF();
 
-        // Agrega texto estático al PDF
-        doc.text("VELOIR", 10, 10);
-        doc.save("factura.pdf");
-    };
-</script>
 </body>
 <?php
 // require_once 'footer.php';
