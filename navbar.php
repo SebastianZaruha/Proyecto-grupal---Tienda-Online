@@ -222,24 +222,6 @@ require_once 'carrito.php';
             transition: transform 2s ease-in-out;
         }
 
-        .carousel-control-prev,
-        .carousel-control-next {
-            width: 2%;
-            height: 10%;
-            background-color: black;
-            top: -13%;
-            border: 1px solid black;
-            border-radius: 10px;
-        }
-
-        .carousel-control-next {
-            right: 2%;
-        }
-
-        .carousel-control-prev {
-            left: 93%;
-        }
-
         .col-lg-5 {
             margin-top: 2%;
             height: 100%;
@@ -337,19 +319,6 @@ require_once 'carrito.php';
                                                 </li>
                                             </ul>
                                         </div>
-                                        <div class="col-3">
-                                            <h5>ACCESORIOS</h5>
-                                            <ul>
-                                                <li><a
-                                                        href="catalogo.php?categoria=hombre&subcategoria=relojes">Relojes</a>
-                                                </li>
-                                                <li><a
-                                                        href="catalogo.php?categoria=hombre&subcategoria=gorras">Gorras</a>
-                                                </li>
-                                                <li><a href="catalogo.php?categoria=hombre&subcategoria=gafas">Gafas</a>
-                                                </li>
-                                            </ul>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -392,25 +361,6 @@ require_once 'carrito.php';
                                                 <li><a
                                                         href="catalogo.php?categoria=mujer&subcategoria=zapatos_de_tacon">Zapatos
                                                         de tacón</a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-3">
-                                            <h5>ACCESORIOS</h5>
-                                            <ul>
-                                                <li><a
-                                                        href="catalogo.php?categoria=mujer&subcategoria=bolsos">Bolsos</a>
-                                                </li>
-                                                <li><a
-                                                        href="catalogo.php?categoria=mujer&subcategoria=bisuteria">Bisutería</a>
-                                                </li>
-                                                <li><a
-                                                        href="catalogo.php?categoria=mujer&subcategoria=sombreros">Sombreros</a>
-                                                </li>
-                                                <li><a href="catalogo.php?categoria=mujer&subcategoria=gafas">Gafas</a>
-                                                </li>
-                                                <li><a
-                                                        href="catalogo.php?categoria=mujer&subcategoria=acessorios_de_pelo">Accesorios
-                                                        de pelo</a></li>
                                             </ul>
                                         </div>
                                     </div>
