@@ -5,6 +5,9 @@ if (!isset($_SESSION['email'])) {
     header('Location: index.php');
 } else {
     $id_usuario = $_SESSION['id'];
+    $sql_favorito = "SELECT * FROM favoritos WHERE id_producto = '$id_producto' AND id_usuario = '$id_usuario'";
+    $result_favorito = $conexion->query($sql_favorito);
+    $esFavorito = $result_favorito->num_rows > 0;
 }
 
 $id_producto = isset($_GET['id']) ? filter_var($_GET['id'], FILTER_SANITIZE_NUMBER_INT) : die('');
@@ -28,10 +31,6 @@ if ($result_fotos->num_rows > 0) {
         $fotos[] = "data:image/webp;base64," . base64_encode($row_foto['foto']);
     }
 }
-
-$sql_favorito = "SELECT * FROM favoritos WHERE id_producto = '$id_producto' AND id_usuario = '$id_usuario'";
-$result_favorito = $conexion->query($sql_favorito);
-$esFavorito = $result_favorito->num_rows > 0;
 
 $conexion->close();
 ?>
@@ -92,24 +91,27 @@ $conexion->close();
                             <button type="submit" class="btn btn-outline-secondary mb-3">Añadir al carrito</button>
                         </form>
                         <div class="d-grid gap-2 d-md-block">
-                            <?php if ($esFavorito): ?>
-                                <form action="borrar_favoritos.php" method="post">
-                                    <input type="hidden" name="id_producto" value="<?php echo $id_producto; ?>">
-                                    <input type="hidden" name="id_usuario" value="<?php echo $id_usuario; ?>">
-                                    <button class="btn" type="submit">
-                                        <img id="favorito" src="./assets/images/pagina_producto/corazon-negro.svg"
-                                            style="width: 150%; height: 150%;">
-                                    </button>
-                                </form>
-                            <?php else: ?>
-                                <form action="agrega_favoritos.php" method="post">
-                                    <input type="hidden" name="id_producto" value="<?php echo $id_producto; ?>">
-                                    <input type="hidden" name="id_usuario" value="<?php echo $id_usuario; ?>">
-                                    <button class="btn" type="submit">
-                                        <img id="favorito" src="./assets/images/pagina_producto/corazon.png">
-                                    </button>
-                                </form>
-                            <?php endif; ?>
+                            <?php
+                            if (isset($_SESSION['email'])) {
+                                if ($esFavorito): ?>
+                                    <form action="borrar_favoritos.php" method="post">
+                                        <input type="hidden" name="id_producto" value="<?php echo $id_producto; ?>">
+                                        <input type="hidden" name="id_usuario" value="<?php echo $id_usuario; ?>">
+                                        <button class="btn" type="submit">
+                                            <img id="favorito" src="./assets/images/pagina_producto/corazon-negro.svg"
+                                                style="width: 150%; height: 150%;">
+                                        </button>
+                                    </form>
+                                <?php else: ?>
+                                    <form action="agrega_favoritos.php" method="post">
+                                        <input type="hidden" name="id_producto" value="<?php echo $id_producto; ?>">
+                                        <input type="hidden" name="id_usuario" value="<?php echo $id_usuario; ?>">
+                                        <button class="btn" type="submit">
+                                            <img id="favorito" src="./assets/images/pagina_producto/corazon.png">
+                                        </button>
+                                    </form>
+                                <?php endif;
+                            } ?>
                         </div>
             </div>
         </div>
