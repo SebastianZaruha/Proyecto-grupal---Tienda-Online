@@ -26,7 +26,7 @@ GROUP BY producto.id";
                     <div>
                         <?php
                         if (mysqli_num_rows($result) == 0) {
-                            echo "<h3 class='text-center'>No hay productos en el carrito</h3>";
+                            echo "<h5 class='text-center' style='font-weight: normal'>No hay productos en el carrito</h5>";
                         } else {
                             $total = 0;
                             while ($row = mysqli_fetch_assoc($result)):
