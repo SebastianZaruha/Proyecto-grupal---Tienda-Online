@@ -51,13 +51,12 @@ $result = $conexion->query($query_fav);
             if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
                     $foto_base64 = base64_encode($row['foto']);
-                    ?>
+            ?>
                     <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
                         <a href="pagina_producto.php?id=<?php echo $row['id']; ?>">
                             <div class="card">
                                 <div class="img-container">
-                                    <img src="data:image/webp;base64,<?php echo $foto_base64; ?>" class="card-img-top img-fluid"
-                                        alt="...">
+                                    <img src="data:image/webp;base64,<?php echo $foto_base64; ?>" class="card-img-top img-fluid" alt="...">
                                 </div>
                                 <div class="card-body">
                                     <h5 class="card-title">
@@ -75,8 +74,7 @@ $result = $conexion->query($query_fav);
                                                 <input type="hidden" name="id_producto" value="<?php echo $row['id']; ?>">
                                                 <input type="hidden" name="id_usuario" value="<?php echo $_SESSION['id']; ?>">
                                                 <button class="btn" type="submit">
-                                                    <img id="favorito" src="./assets/images/pagina_producto/corazon-negro.svg"
-                                                        style="width: 150%; height: 150%;">
+                                                    <img id="favorito" src="./assets/images/pagina_producto/corazon-negro.svg" style="width: 150%; height: 150%;">
                                                 </button>
                                             </form>
                                         </div>
@@ -85,12 +83,14 @@ $result = $conexion->query($query_fav);
                             </div>
                         </a>
                     </div>
-                    <?php
+                <?php
                 }
-            } else {
-                echo "0 resultados";
-            }
-            ?>
+            } else { ?>
+                <div class="d-flex justify-content-center align-items-center mb-5" style="height: 70vh;">
+                    <p class="text-center fs-4">No hay ningun producto en favoritos. </p>
+                </div>
+            <?php } ?>
+
         </div>
 </body>
 <?php
