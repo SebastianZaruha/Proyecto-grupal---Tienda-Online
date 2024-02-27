@@ -392,25 +392,6 @@ require_once 'carrito.php';
                                                         de tacón</a></li>
                                             </ul>
                                         </div>
-                                        <!-- <div class="col-3">
-                                            <h5>ACCESORIOS</h5>
-                                            <ul>
-                                                <li><a
-                                                        href="catalogo.php?categoria=mujer&subcategoria=bolsos">Bolsos</a>
-                                                </li>
-                                                <li><a
-                                                        href="catalogo.php?categoria=mujer&subcategoria=bisuteria">Bisutería</a>
-                                                </li>
-                                                <li><a
-                                                        href="catalogo.php?categoria=mujer&subcategoria=sombreros">Sombreros</a>
-                                                </li>
-                                                <li><a href="catalogo.php?categoria=mujer&subcategoria=gafas">Gafas</a>
-                                                </li>
-                                                <li><a
-                                                        href="catalogo.php?categoria=mujer&subcategoria=acessorios_de_pelo">Accesorios
-                                                        de pelo</a></li>
-                                            </ul>
-                                        </div> -->
                                     </div>
                                 </div>
                             </div>
@@ -446,8 +427,7 @@ require_once 'carrito.php';
                                                 <li><a
                                                         href="catalogo.php?categoria=ninos&subcategoria=deportivas">Deportivas</a>
                                                 </li>
-                                                <li><a
-                                                        href="catalogo.php?categoria=ninos&subcategoria=botas">Botas</a>
+                                                <li><a href="catalogo.php?categoria=ninos&subcategoria=botas">Botas</a>
                                                 </li>
                                             </ul>
                                         </div>
