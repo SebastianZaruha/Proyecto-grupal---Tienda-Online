@@ -181,8 +181,8 @@ require_once 'carrito.php';
             position: absolute;
             top: 98%;
             right: 0;
-            width: 15%;
-            height: 20vh;
+            width: auto;
+            height: auto;
 
             padding: 20px;
             background-color: #fff;
@@ -448,8 +448,7 @@ require_once 'carrito.php';
                                                 <li><a
                                                         href="catalogo.php?categoria=ninos&subcategoria=deportivas">Deportivas</a>
                                                 </li>
-                                                <li><a
-                                                        href="catalogo.php?categoria=ninos&subcategoria=botas">Botas</a>
+                                                <li><a href="catalogo.php?categoria=ninos&subcategoria=botas">Botas</a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -478,17 +477,17 @@ require_once 'carrito.php';
                         <div class="mega-menu-usuario">
                             <div class="container">
                                 <div class="row">
-                                    <div class="col-12">
-                                        <ul>
-                                            <li class="d-flex align-items-center"><a href="miperfil.php">Mi Perfil <img
+                                    <div class="col-12 col-md-12">
+                                        <ul class="list-unstyled">
+                                            <li class="align-items-center"><a href="miperfil.php">Mi Perfil <img
                                                         style="margin-left: 53px;" class="mb-1" src="./assets/perfil.svg"
                                                         alt=""></a></li>
-                                            <li class="d-flex align-items-center"><a href="pedidos.php">Mis Pedidos <img
+                                            <li class="align-items-center"><a href="pedidos.php">Mis Pedidos <img
                                                         style="margin-left: 12px;" class="mb-1" src="./assets/box.svg"
                                                         alt=""></a></li>
-                                            <li class="d-flex align-items-center"><a href="favoritos.php">Mis Favoritos <img
+                                            <li class="align-items-center"><a href="favoritos.php">Mis Favoritos <img
                                                         class="mb-1" src="./assets/fav.svg" alt=""></a></li>
-                                            <li class="d-flex align-items-center"><a href="logout.php">Cerrar Sesion <img
+                                            <li class="align-items-center"><a href="logout.php">Cerrar Sesion <img
                                                         class="mb-1" src="./assets/logout.svg" alt=""></a></li>
                                         </ul>
                                     </div>
