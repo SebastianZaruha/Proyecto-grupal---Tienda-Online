@@ -75,7 +75,8 @@ $result = $conexion->query($query_fav);
                                                 <input type="hidden" name="id_producto" value="<?php echo $row['id']; ?>">
                                                 <input type="hidden" name="id_usuario" value="<?php echo $_SESSION['id']; ?>">
                                                 <button class="btn" type="submit">
-                                                    <img src="./assets/images/pagina_producto/corazon-negro.svg" alt="">
+                                                    <img id="favorito" src="./assets/images/pagina_producto/corazon-negro.svg"
+                                                        style="width: 150%; height: 150%;">
                                                 </button>
                                             </form>
                                         </div>

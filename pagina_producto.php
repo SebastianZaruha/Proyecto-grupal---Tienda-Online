@@ -97,7 +97,8 @@ $conexion->close();
                                     <input type="hidden" name="id_producto" value="<?php echo $id_producto; ?>">
                                     <input type="hidden" name="id_usuario" value="<?php echo $id_usuario; ?>">
                                     <button class="btn" type="submit">
-                                        <img id="favorito" src="./assets/images/pagina_producto/corazon-negro.svg">
+                                        <img id="favorito" src="./assets/images/pagina_producto/corazon-negro.svg"
+                                            style="width: 150%; height: 150%;">
                                     </button>
                                 </form>
                             <?php else: ?>
