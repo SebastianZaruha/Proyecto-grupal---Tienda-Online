@@ -23,13 +23,13 @@ $result = mysqli_query($conexion, $query_carrito);
             <h2 class="">Cesta</h2>
             <?php
             $total = 0;
-            while ($row = mysqli_fetch_assoc($result)):
+            while ($row = mysqli_fetch_assoc($result)) :
                 $foto = $row['foto'];
                 $foto = base64_encode($foto);
 
                 $total += $row['precio_ud'] * $row['cantidad'];
 
-                ?>
+            ?>
                 <div class="row">
                     <div class="col-6">
                         <img src="data:image/jpeg;base64,<?php echo $foto ?>" class="img-fluid">
@@ -76,9 +76,7 @@ $result = mysqli_query($conexion, $query_carrito);
                     </p>
                 </div>
                 <div class="d-flex justify-content-center mt-3">
-                    <div class=" btn d-flex fs-4 justify-content-center aling-items-center"
-                        style="background-color: #847C7C; width: 40% "><a class="text-white"
-                            href="comprar.php">COMPRAR</a>
+                    <div class=" btn d-flex fs-4 justify-content-center aling-items-center" style="background-color: #847C7C; width: 40% "><a class="text-white" href="comprar.php">COMPRAR</a>
                     </div>
                 </div>
             </div>

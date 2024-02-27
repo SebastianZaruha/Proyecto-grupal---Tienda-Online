@@ -73,6 +73,11 @@ $row_usuario = $result_usuario->fetch_assoc();
     <div class="container">
         <div class="row" style="margin-top: 15%;">
             <div class="col-6">
+                <?php if ($row_usuario['nombre'] == null || $row_usuario['apellido1'] == null || $row_usuario['apellido2'] == null  || $row_usuario['dni'] == null  || $row_usuario['tlf'] == null  || $row_usuario['pais'] == null  || $row_usuario['ciudad'] == null  || $row_usuario['direccion'] == null  || $row_usuario['cp'] == null) { ?>
+                    <div class="fs-5 alert alert-danger" role="alert">
+                        Rellena todos los datos para poder hacer un pedido.
+                    </div>
+                <?php } ?>
                 <div class="rounded bg-white p-5" style="border: 1px solid grey;">
                     <h1 style="font-size: 30px;">Datos personales</h1>
                     <form method="POST" action="miperfil2.php">
