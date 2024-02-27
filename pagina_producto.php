@@ -1,6 +1,8 @@
 <?php
 require_once 'navbar.php';
 
+$id_producto = isset($_GET['id']) ? filter_var($_GET['id'], FILTER_SANITIZE_NUMBER_INT) : die('');
+
 if (!isset($_SESSION['email'])) {
     header('Location: index.php');
 } else {
@@ -9,8 +11,6 @@ if (!isset($_SESSION['email'])) {
     $result_favorito = $conexion->query($sql_favorito);
     $esFavorito = $result_favorito->num_rows > 0;
 }
-
-$id_producto = isset($_GET['id']) ? filter_var($_GET['id'], FILTER_SANITIZE_NUMBER_INT) : die('');
 
 $sql = "SELECT * FROM producto WHERE id = '$id_producto'";
 $result = $conexion->query($sql);
