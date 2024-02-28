@@ -1,6 +1,7 @@
 <?php
 
 require_once 'navbar.php';
+
 if (!isset($_SESSION['email'])) {
 } else {
 
@@ -50,7 +51,10 @@ if (!isset($_SESSION['email'])) {
 
     <body>
 
-        <div class="container">
+
+
+
+        <div class="container" id="factura">
 
             <h2>Factura: <?php echo $registro['id'];  ?> </h2>
             <br>
@@ -111,26 +115,70 @@ if (!isset($_SESSION['email'])) {
             <p>Fecha de emisión: <?php echo $registro['fecha'];  ?> </p>
             <p>Gracias por su compra.</p>
 
-            <button onclick="generarPDF()">Descargar PDF</button>
+            <button class="btn text-white" style="background-color: #847C7C" onclick="generarPDF()">Descargar PDF</button>
+
 
         </div>
+
+        <div class="d-none" id="fac">
+            <div class="container">
+                <h2>Factura: <?php echo $registro['id'];  ?> </h2>
+                <br>
+                <h4>Emisor <?php echo $registro['emisor'];  ?></h4>
+
+                <h4>Receptor <?php echo $registro['receptor'];  ?></h4>
+                <br>
+                <div>
+                    <p>Producto <?php echo $registro['nombre'];  ?> </p>
+                    <p>Cantidad <?php echo $registro['cantidad'];  ?> </p>
+                    <p>Precio Unitario <?php echo $registro['precio_ud'];  ?> </p>
+                    <p>Total <?php echo $registro['precio_ud'] * $registro['cantidad']; ?> </p>
+                </div>
+                <br>
+                <?php while ($registro2 = mysqli_fetch_assoc($result_factura)) { ?>
+                    <div>
+                        <p>Producto <?php echo $registro2['nombre'];  ?> </p>
+                        <p>Cantidad <?php echo $registro2['cantidad'];  ?> </p>
+                        <p>Precio Unitario <?php echo $registro2['precio_ud'];  ?> </p>
+                        <p>Total <?php echo $registro2['precio_ud'] * $registro2['cantidad']; ?> </p>
+                    </div>
+                <?php } ?>
+
+                <br>
+                <div>
+                    <p>Base Imponible: <?php echo round($registro['importe'], 2);  ?> </p>
+                    <p>Iva (21%): <?php echo round(($registro['importe'] * 0.21), 2);  ?> </p>
+                    <p>Total: <?php echo round(($registro['importe'] * 1.21), 2);  ?> </p>
+                </div>
+                <br>
+                <p>Gracias por su compra.</p>
+
+                <p>Fecha de emisión: <?php echo $registro['fecha'];  ?>
+            </div>
+        </div>
+
+
+
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.debug.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
         <script>
-            // Función para generar el PDF
             function generarPDF() {
-                // Crea una instancia de jsPDF
-                let doc = new jsPDF();
+                let pdf = new jsPDF();
+                let elementHTML = $('#factura').html();
+                let specialElementHandlers = {
+                    '#elementH': function(element, renderer) {
+                        return true;
+                    }
+                };
+                pdf.fromHTML(elementHTML, 15, 10, {
+                    'width': 180,
 
-                // Captura el contenedor de la factura y lo convierte a texto
-                let contenido = document.querySelector('body').innerText;
+                });
 
-                // Agrega el contenido al PDF
-                doc.text(contenido, 10, 10);
-
-                // Guarda el PDF con el nombre "factura.pdf"
-                doc.save('factura.pdf');
+                // Guarda el PDF
+                pdf.save('factura.pdf');
             }
         </script>
-
     </body>
 <?php } ?>
