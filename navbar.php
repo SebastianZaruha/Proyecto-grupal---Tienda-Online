@@ -37,6 +37,7 @@ require_once 'carrito.php';
     <link rel="preload" href="./assets/fav.svg" as="image">
     <link rel="preload" href="./assets/logout.svg" as="image">
     <link rel="preload" href="./assets/carrito.svg" as="image">
+    <title>VELOUR</title>
 
 
     <style>

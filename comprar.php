@@ -15,12 +15,37 @@ GROUP BY producto.id";
 $result = mysqli_query($conexion, $query_carrito);
 
 ?>
-?>
+<style>
+    @media screen and (max-width: 600px) {
+        .cesta {
+            margin-top: 20% !important;
+        }
+
+        .desc {
+            margin-top: 0% !important;
+            margin-bottom: 10% !important;
+        }
+
+        .desc2 {
+            margin-top: 4% !important;
+
+
+        }
+
+        .resumen {
+            margin-top: 15% !important;
+        }
+
+        .comprar {
+            width: 100% !important;
+        }
+    }
+</style>
 <div class="container-fluid">
     <div class="row mx-5" style="margin-top: 7%;">
 
-        <div class=" col-5">
-            <h2 class="">Cesta</h2>
+        <div class=" col-md-5 col-sm-12">
+            <h2 class="cesta">Cesta</h2>
             <?php
             $total = 0;
             while ($row = mysqli_fetch_assoc($result)) :
@@ -30,11 +55,11 @@ $result = mysqli_query($conexion, $query_carrito);
                 $total += $row['precio_ud'] * $row['cantidad'];
 
             ?>
-                <div class="row">
-                    <div class="col-6">
+                <div class=" row ">
+                    <div class="col-md-6 col-sm-12">
                         <img src="data:image/jpeg;base64,<?php echo $foto ?>" class="img-fluid">
                     </div>
-                    <div class="col-6">
+                    <div class="col-md-6 col-sm-12 desc2 ">
                         <h3>
                             <?php echo $row['nombre'] ?>
                         </h3>
@@ -45,7 +70,7 @@ $result = mysqli_query($conexion, $query_carrito);
                             <?php echo $row['cantidad'] ?>
                         </p>
 
-                        <div class="d-flex align-items-center justify-content-between" style="margin-top: 45%">
+                        <div class="d-flex align-items-center desc justify-content-between" style="margin-top: 45%">
                             <form action="carrito2.php" method="POST">
                                 <input value="<?php echo $row['id'] ?>" name="producto_carrito" hidden>
                                 <button class="btn " type="submmit" style="padding: 0px !important; ">
@@ -62,9 +87,9 @@ $result = mysqli_query($conexion, $query_carrito);
             <?php endwhile; ?>
 
         </div>
-        <div class="col-4"></div>
-        <div class="col-3">
-            <div class="rounded text-white p-3" style="background-color: #9eaab2;">
+        <div class="col-md-4 col-sm-1"></div>
+        <div class="col-md-3 col-sm-12">
+            <div class="rounded text-white p-3 resumen" style="background-color: #9eaab2;">
                 <h2>Resumen</h2>
                 <p></p>
 
@@ -76,7 +101,7 @@ $result = mysqli_query($conexion, $query_carrito);
                     </p>
                 </div>
                 <div class="d-flex justify-content-center mt-3">
-                    <div class=" btn d-flex fs-4 justify-content-center aling-items-center" style="background-color: #847C7C; width: 40% "><a class="text-white" href="comprar.php">COMPRAR</a>
+                    <div class=" btn d-flex fs-4 justify-content-center aling-items-center comprar" style="background-color: #847C7C; width: 40% "><a class="text-white" href="comprar.php">COMPRAR</a>
                     </div>
                 </div>
             </div>

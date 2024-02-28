@@ -1,3 +1,23 @@
+<style>
+    .carrito {
+        justify-content: end !important;
+    }
+
+    @media screen and (max-width: 600px) {
+        .carrito {
+            justify-content: center !important;
+        }
+
+        .modal-content {
+            height: auto !important;
+        }
+
+        .comprar {
+            width: 100% !important;
+        }
+    }
+</style>
+
 <?php
 if (!isset($_SESSION['email'])) {
 } else {
@@ -14,7 +34,7 @@ GROUP BY producto.id";
 
 ?>
 
-    <div class="modal justify-content-end" id="miAcordeon" style="display: none; ">
+    <div class="modal  carrito" id="miAcordeon" style="display: none; ">
         <div class="modal-dialog" style="margin-right: 2%; margin-top: 6.7%; ">
             <div class="modal-content">
                 <div class="modal-header">
@@ -70,8 +90,8 @@ GROUP BY producto.id";
                                     <?php echo $total ?> €
                                 </p>
                             </div>
-                            <div class="d-flex justify-content-center mt-3">
-                                <div class="btn d-flex fs-4 justify-content-center aling-items-center" style="background-color: #847C7C; width: 30% "><a class="text-white" href="comprar.php">COMPRAR</a></div>
+                            <div class="d-flex justify-content-center mt-3 ">
+                                <div class="btn d-flex fs-4 justify-content-center comprar aling-items-center" style="background-color: #847C7C; width: 30% "><a class="text-white" href="comprar.php">COMPRAR</a></div>
                             </div>
                         <?php } ?>
                     </div>
