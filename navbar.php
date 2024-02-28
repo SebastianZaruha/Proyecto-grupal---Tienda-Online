@@ -28,6 +28,14 @@ require_once 'carrito.php';
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
 
+    <!-- Carga los iconos nada más entrar -->
+    <link rel="preload" href="./assets/perfil.svg" as="image">
+    <link rel="preload" href="./assets/box.svg" as="image">
+    <link rel="preload" href="./assets/fav.svg" as="image">
+    <link rel="preload" href="./assets/logout.svg" as="image">
+    <link rel="preload" href="./assets/carrito.svg" as="image">
+
+
     <style>
         body {
             font-family: 'Metrophobic', sans-serif;
@@ -358,8 +366,6 @@ require_once 'carrito.php';
                                                 </li>
                                                 <li><a href="catalogo.php?categoria=mujer&subcategoria=botas">Botas</a>
                                                 </li>
-                                                <li><a href="catalogo.php?categoria=mujer&subcategoria=zapatos_planos">Zapatos
-                                                        planos</a></li>
                                                 <li><a href="catalogo.php?categoria=mujer&subcategoria=zapatos_de_tacon">Zapatos
                                                         de tacón</a></li>
                                             </ul>
@@ -408,8 +414,6 @@ require_once 'carrito.php';
             </div>
 
             <ul class="search navbar-nav align-items-center justify-content-end me-4">
-
-
                 <li class="nav-item ">
                     <?php if (isset($_SESSION['email'])) { ?>
                         <img class="m-3" src="./assets/perfil.svg" alt="Perfil" width="38" height="38">
@@ -436,16 +440,10 @@ require_once 'carrito.php';
                     <?php } ?>
                 </li>
                 <li class="nav-item" onclick="openCarrito()" style="cursor: pointer;">
-
                     <img src="./assets/carrito.svg" alt="Carrito" width="35" height="35">
-
                 </li>
             </ul>
-
         </div>
-
-
-
 
         <div style="display: none;" id="myModal">
             <div class="modal d-flex justify-content-center align-items-center ">

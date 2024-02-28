@@ -11,6 +11,24 @@ require_once 'navbar.php';
             object-fit: cover;
             object-position: center -15vh;
         }
+
+        .product-image-container {
+            position: relative;
+            height: 75vh;
+        }
+
+        .product-image-container img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            object-position: top;
+        }
+
+        .product-image-container .btn {
+            position: absolute;
+            bottom: 30px;
+            left: 7px;
+        }
     </style>
 </head>
 
@@ -45,17 +63,38 @@ require_once 'navbar.php';
     </div>
 
 
-    <div class="row" style="margin-top: 13vh; margin-left: 2vw">
-        <h2>NOVEDADES</h2>
+    <div class="row" style="margin-top: 7vh; margin-left: 1vw">
+        <h3>Novedades esta semana</h3>
     </div>
 
     <?php require_once 'novedades.php'; ?>
+    <?php require_once 'imprescindibles.php'; ?>
 
-    <div class="row" style="margin-top: 13vh; margin-left: 2vw">
-        <h2>IMPRESCINDIBLES</h2>
+    <div class="row" style="margin-top: 10vh; margin-left: 1vw">
+        <h3>Descubre nuestros productos</h3>
     </div>
 
-    <?php require_once 'imprescindibles.php'; ?>
+    <div class="row mt-3 mx-4">
+        <div class="col-lg-4 col-md-6 col-sm-12 px-1 mb-2">
+            <div class="product-image-container">
+                <img src="./assets/images/Hombre/chaquetas_y_abrigos/3/1.webp" alt="Hombre" class="img-fluid">
+                <a href="url_categoria_hombre" class="btn btn-light btn-lg ms-4"><strong>Hombre</strong></a>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12 px-1 mb-2">
+            <div class="product-image-container">
+                <img src="./assets/images/Mujer/Chaquetas y Abrigos/5/1.jpg" alt="Mujer" class="img-fluid">
+                <a href="url_categoria_mujer" class="btn btn-light btn-lg ms-4"><strong>Mujer</strong></a>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12 px-1 mb-2">
+            <div class="product-image-container">
+                <img src="./assets/images/jovenes/ninos/abrigos/1/1.webp" alt="Niños" class="img-fluid">
+                <a href="url_categoria_niños" class="btn btn-light btn-lg ms-4"><strong>Niño</strong></a>
+            </div>
+        </div>
+    </div>
+
 
     <?php
     require_once 'footer.php';

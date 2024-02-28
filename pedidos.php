@@ -34,7 +34,8 @@ $result_pedidos = mysqli_query($conexion, $query_pedidos);
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="heading<?php echo $counter; ?>">
                                         <button style="background-color: white !important;" class="accordion-button <?php echo $counter > 1 ? 'collapsed' : ''; ?>" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo $counter; ?>" aria-expanded="<?php echo $counter == 1 ? 'true' : 'false'; ?>" aria-controls="collapse<?php echo $counter; ?>">
-                                            <div class=" d-flex justify-content-between">
+                                        <a href="resumenpedido.php?id=<?php echo $row['id_envio']; ?>">
+                                        <div class=" d-flex justify-content-between">
                                                 <p>Pedido #<?php echo $counter; ?></p>
                                                 &nbsp;
                                                 <p class="" style="<?php if ($row['estado'] == 'Pendiente') {
