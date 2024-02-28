@@ -186,7 +186,6 @@ INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:/xampp/ht
 INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:/xampp/htdocs/Proyecto-grupal---Tienda-Online/assets/images/jovenes/ninas/sudadera/4/2.webp'));
 INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:/xampp/htdocs/Proyecto-grupal---Tienda-Online/assets/images/jovenes/ninas/sudadera/4/3.webp'));
 INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:/xampp/htdocs/Proyecto-grupal---Tienda-Online/assets/images/jovenes/ninas/sudadera/4/4.webp'));
-INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:/xampp/htdocs/Proyecto-grupal---Tienda-Online/assets/images/jovenes/ninas/sudadera/4/5.webp'));
 
 INSERT INTO PRODUCTO (nombre, categoria,subcategoria,precio_ud,descripcion) values('SUDADERA LAVADA DIP DYE','ninos','sudaderas',17.95,'Sudadera con cuello redondo y manga larga. Acabados en rib. Detalle texto bordado en delantero.');
 SET @producto_id = LAST_INSERT_ID();
@@ -355,7 +354,6 @@ SET @producto_id = LAST_INSERT_ID();
 INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:/xampp/htdocs/Proyecto-grupal---Tienda-Online/assets/images/jovenes/ninos/camiseta/6/1.webp'));
 INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:/xampp/htdocs/Proyecto-grupal---Tienda-Online/assets/images/jovenes/ninos/camiseta/6/2.webp'));
 INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:/xampp/htdocs/Proyecto-grupal---Tienda-Online/assets/images/jovenes/ninos/camiseta/6/3.webp'));
-INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:/xampp/htdocs/Proyecto-grupal---Tienda-Online/assets/images/jovenes/ninos/camiseta/6/4.webp'));
 
 INSERT INTO PRODUCTO (nombre, categoria,subcategoria,precio_ud,descripcion) values('CAMISETA BORDADO CORAZON','ninos','camisas_y_camisetas',8.95,'Camiseta con cuello redondo y manga corta. Bordado corazón en pechera.');
 SET @producto_id = LAST_INSERT_ID();
@@ -461,7 +459,6 @@ INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:/xampp/ht
 INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:/xampp/htdocs/Proyecto-grupal---Tienda-Online/assets/images/jovenes/ninos/sudadera/6/2.webp'));
 INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:/xampp/htdocs/Proyecto-grupal---Tienda-Online/assets/images/jovenes/ninos/sudadera/6/3.webp'));
 INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:/xampp/htdocs/Proyecto-grupal---Tienda-Online/assets/images/jovenes/ninos/sudadera/6/4.webp'));
-INSERT INTO FOTOS (id_producto,foto) values (@producto_id,LOAD_FILE('C:/xampp/htdocs/Proyecto-grupal---Tienda-Online/assets/images/jovenes/ninos/sudadera/6/5.webp'));
 
 INSERT INTO PRODUCTO (nombre, categoria,subcategoria,precio_ud,descripcion) values('SUDADERA CONEJO BORDADO','ninos','sudaderas',17.95,'Sudadera con cuello redondo y manga larga. Motivo bordado en pechera y espalda.');
 SET @producto_id = LAST_INSERT_ID();
