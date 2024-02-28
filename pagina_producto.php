@@ -72,46 +72,47 @@ $conexion->close();
                 <h4 class="mb-5">
                     <?php echo $precio . " €"; ?>
                 </h4>
-                <h5 class="mb-3">Tallas<h5>
-                        <div class="d-grid gap-2 d-md-block mb-3">
-                            <button class="btn btn-outline-secondary" type="button" onclick="selectSize('S')">S</button>
-                            <button class="btn btn-outline-secondary" type="button" onclick="selectSize('M')">M</button>
-                            <button class="btn btn-outline-secondary" type="button" onclick="selectSize('L')">L</button>
-                            <button class="btn btn-outline-secondary" type="button"
-                                onclick="selectSize('XL')">XL</button>
-                        </div>
-                        <form action="agrega_carrito.php" method="post" onsubmit="return onSubmit()">
-                            <input type="hidden" name="id_producto" value="<?php echo $id_producto; ?>">
-                            <input type="hidden" name="id_usuario" value="<?php echo $id_usuario; ?>">
-                            <input type="hidden" name="talla" id="talla" value="">
-                            <button type="submit" class="btn btn-outline-secondary mb-3">Añadir al carrito</button>
-                        </form>
-                        <div class="d-grid gap-2 d-md-block">
-                            <?php
-                            if (isset($_SESSION['email'])) {
-                                if ($esFavorito): ?>
-                                    <form action="borrar_favoritos.php" method="post">
-                                        <input type="hidden" name="id_producto" value="<?php echo $id_producto; ?>">
-                                        <input type="hidden" name="id_usuario" value="<?php echo $id_usuario; ?>">
-                                        <button class="btn" type="submit">
-                                            <img id="favorito" src="./assets/images/pagina_producto/corazon-negro.svg"
-                                                style="width: 150%; height: 150%;">
-                                        </button>
-                                    </form>
-                                <?php else: ?>
-                                    <form action="agrega_favoritos.php" method="post">
-                                        <input type="hidden" name="id_producto" value="<?php echo $id_producto; ?>">
-                                        <input type="hidden" name="id_usuario" value="<?php echo $id_usuario; ?>">
-                                        <button class="btn" type="submit">
-                                            <img id="favorito" src="./assets/images/pagina_producto/corazon.png">
-                                        </button>
-                                    </form>
-                                <?php endif;
-                            } ?>
-                        </div>
+                <h5 class="mb-3">Tallas</h5>
+                <div class="d-grid gap-2 d-md-block mb-3">
+                    <button class="btn btn-outline-secondary" type="button" onclick="selectSize('S')">S</button>
+                    <button class="btn btn-outline-secondary" type="button" onclick="selectSize('M')">M</button>
+                    <button class="btn btn-outline-secondary" type="button" onclick="selectSize('L')">L</button>
+                    <button class="btn btn-outline-secondary" type="button" onclick="selectSize('XL')">XL</button>
+                </div>
+                <form action="agrega_carrito.php" method="post" onsubmit="return onSubmit()">
+                    <input type="hidden" name="id_producto" value="<?php echo $id_producto; ?>">
+                    <input type="hidden" name="id_usuario" value="<?php echo $id_usuario; ?>">
+                    <input type="hidden" name="talla" id="talla" value="">
+                    <button type="submit" class="btn btn-outline-secondary mb-3">Añadir al carrito</button>
+                </form>
+                <div class="d-grid gap-2 d-md-block">
+                    <?php
+                    if (isset($_SESSION['email'])) {
+                        if ($esFavorito): ?>
+                            <form action="borrar_favoritos.php" method="post">
+                                <input type="hidden" name="id_producto" value="<?php echo $id_producto; ?>">
+                                <input type="hidden" name="id_usuario" value="<?php echo $id_usuario; ?>">
+                                <button class="btn" type="submit">
+                                    <img id="favorito" src="./assets/images/pagina_producto/corazon-negro.svg"
+                                        style="width: 150%; height: 150%;">
+                                </button>
+                            </form>
+                        <?php else: ?>
+                            <form action="agrega_favoritos.php" method="post">
+                                <input type="hidden" name="id_producto" value="<?php echo $id_producto; ?>">
+                                <input type="hidden" name="id_usuario" value="<?php echo $id_usuario; ?>">
+                                <button class="btn" type="submit">
+                                    <img id="favorito" src="./assets/images/pagina_producto/corazon.png">
+                                </button>
+                            </form>
+                        <?php endif;
+                    } ?>
+                </div>
             </div>
         </div>
     </div>
+
+
     <br><br><br><br>
     <div class="row m-5">
         <h2>TAMBIÉN TE PODRÍA INTERESAR</h2>
@@ -120,7 +121,6 @@ $conexion->close();
     <?php require_once 'novedades.php'; ?>
 
     <script>
-
         function validarSesion() {
             if (<?php echo isset($_SESSION['email']) ? 'true' : 'false'; ?>) {
                 return true;
@@ -144,17 +144,13 @@ $conexion->close();
         }
 
         function selectSize(size) {
-
             let buttons = document.querySelectorAll('.btn');
-
             buttons.forEach(function (button) {
                 button.classList.remove('selected');
             });
-
             event.target.classList.add('selected');
             document.getElementById('talla').value = size;
         }
-
 
         function seleccionarImagen(imagen) {
             let imagenClonada = imagen.cloneNode(true);
@@ -163,7 +159,6 @@ $conexion->close();
     </script>
 
     <?php
-    require_once 'footer.php'
-        ?>
-
+    require_once 'footer.php';
+    ?>
 </body>

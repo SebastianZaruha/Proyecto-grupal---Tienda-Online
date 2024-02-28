@@ -38,14 +38,15 @@ require_once 'navbar.php';
     <div id="carouselExampleCaptions" class="carousel slide" style="margin-top: 7vh" data-bs-ride="carousel"
         data-bs-interval="5000">
         <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active position-relative">
-                <h1 style="position: absolute; font-size: 6em; z-index: 2; top: 100px; left: 50px; color: white;">VELOUR
-                </h1>
                 <img src="./assets/images/ima2.jpg" class="img-sliderIni d-block w-100">
             </div>
             <div class="carousel-item position-relative">
@@ -55,11 +56,13 @@ require_once 'navbar.php';
                 <img src="./assets/images/ima3.jpg" class="img-sliderIni d-block w-100">
             </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
         </button>
@@ -71,6 +74,7 @@ require_once 'navbar.php';
     </div>
 
     <?php require_once 'novedades.php'; ?>
+    <br><br><br>
     <?php require_once 'imprescindibles.php'; ?>
 
     <div class="row" style="margin-top: 10vh; margin-left: 1vw">
