@@ -30,7 +30,7 @@ require_once 'carrito.php';
 
     <style>
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Metrophobic', sans-serif;
         }
 
         a {
@@ -74,6 +74,10 @@ require_once 'carrito.php';
             font-size: 1.25rem;
         }
 
+        .imprescindibles {
+            height: 70vh;
+
+        }
 
 
         .navbar-toggler:focus,
@@ -106,13 +110,20 @@ require_once 'carrito.php';
 
         @media (max-width: 992px) {
 
+            .imprescindibles {
+                height: 50vh;
+                padding: 40px;
+                margin-bottom: 500px;
+            }
+
             .search {
                 display: none;
             }
 
             .search-responsive {
-                display: flex;
-                justify-content: flex-end !important;
+                display: block;
+
+
             }
 
             .navbar-nav {
@@ -248,35 +259,37 @@ require_once 'carrito.php';
 
 <body>
     <nav class="navbar navbar-expand-lg fixed-top py-0">
+
+        <div class="search-responsive " style="width: 100%;">
+            <div class=" d-flex justify-content-between">
+                <a class="navbar-brand mx-4" href="#">
+                    <img src="./assets/logo-Velour.png" alt="Logo" width="170" height="75">
+                </a>
+                <div class="d-flex align-items-center justify-content-end  p-3" id="nav-respo">
+                    <ul class=" navbar-nav flex-row ">
+
+                        <li class="nav-item">
+                            <button onclick="openModal()" class="btn btn-link text-decoration-none">
+                                <img src="./assets/perfil.svg" alt="Perfil" width="38" height="38">
+                            </button>
+                        </li>
+                        <li class="nav-item" onclick="openCarrito()" style="margin-top: 8px;">
+
+                            <img src="./assets/carrito.svg" alt="Carrito" width="35" height="35">
+
+                        </li>
+                    </ul>
+                    <button class="navbar-toggler fs-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
         <div class="container-fluid">
             <a class="search navbar-brand mx-4" href="index.php">
                 <img src="./assets/Logo-Velour.png" alt="Logo" width="170" height="75">
             </a>
-            <div class="search-responsive">
-                <div class="d-flex justify-content-between">
-                    <a class="navbar-brand mx-4" href="#">
-                        <img src="./assets/logo-Velour.png" alt="Logo" width="170" height="75">
-                    </a>
-                    <div class="d-flex align-items-center justify-content-center w-50" id="nav-respo">
-                        <ul class=" navbar-nav flex-row ">
 
-                            <li class="nav-item">
-                                <button onclick="openModal()" class="btn btn-link text-decoration-none">
-                                    <img src="./assets/perfil.svg" alt="Perfil" width="38" height="38">
-                                </button>
-                            </li>
-                            <li class="nav-item" onclick="openCarrito()">
-
-                                <img src="./assets/carrito.svg" alt="Carrito" width="35" height="35">
-
-                            </li>
-                        </ul>
-                        <button class="navbar-toggler fs-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                    </div>
-                </div>
-            </div>
             <div class="offcanvas offcanvas-end w-50" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
                 <div class="offcanvas-header">
                     <h5 class="offcanvas-title" id="offcanvasNavbarLabel">MENÚ</h5>

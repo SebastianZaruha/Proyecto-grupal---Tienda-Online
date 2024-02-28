@@ -85,5 +85,5 @@ $result_pedidos = mysqli_query($conexion, $query_pedidos);
 
 </body>
 <?php
-// require_once 'footer.php';
+require_once 'footer.php';
 ?>
