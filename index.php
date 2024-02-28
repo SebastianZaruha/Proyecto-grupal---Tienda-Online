@@ -35,7 +35,8 @@ require_once 'navbar.php';
 <body>
 
     <!-- SLIDER INICIO -->
-    <div id="carouselExampleCaptions" class="carousel slide" style="margin-top: 7vh">
+    <div id="carouselExampleCaptions" class="carousel slide" style="margin-top: 7vh" data-bs-ride="carousel"
+        data-bs-interval="5000">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
                 aria-current="true" aria-label="Slide 1"></button>
@@ -45,13 +46,15 @@ require_once 'navbar.php';
                 aria-label="Slide 3"></button>
         </div>
         <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="./assets/images/ima2.jpg" class=" img-sliderIni d-block w-100">
+            <div class="carousel-item active position-relative">
+                <h1 style="position: absolute; font-size: 6em; z-index: 2; top: 100px; left: 50px; color: white;">VELOUR
+                </h1>
+                <img src="./assets/images/ima2.jpg" class="img-sliderIni d-block w-100">
             </div>
-            <div class="carousel-item">
+            <div class="carousel-item position-relative">
                 <img src="./assets/images/ima1.jpg" class=" img-sliderIni d-block w-100">
             </div>
-            <div class="carousel-item">
+            <div class="carousel-item position-relative">
                 <img src="./assets/images/ima3.jpg" class="img-sliderIni d-block w-100">
             </div>
         </div>
@@ -83,19 +86,19 @@ require_once 'navbar.php';
         <div class="col-lg-4 col-md-6 col-sm-12 px-1 mb-2">
             <div class="product-image-container">
                 <img src="./assets/images/Hombre/chaquetas_y_abrigos/3/1.webp" alt="Hombre" class="img-fluid">
-                <a href="url_categoria_hombre" class="btn btn-light btn-lg ms-4"><strong>Hombre</strong></a>
+                <a href="catalogo.php?categoria=hombre" class="btn btn-light btn-lg ms-4"><strong>Hombre</strong></a>
             </div>
         </div>
         <div class="col-lg-4 col-md-6 col-sm-12 px-1 mb-2">
             <div class="product-image-container">
                 <img src="./assets/images/Mujer/Chaquetas y Abrigos/5/1.jpg" alt="Mujer" class="img-fluid">
-                <a href="url_categoria_mujer" class="btn btn-light btn-lg ms-4"><strong>Mujer</strong></a>
+                <a href="catalogo.php?categoria=mujer" class="btn btn-light btn-lg ms-4"><strong>Mujer</strong></a>
             </div>
         </div>
         <div class="col-lg-4 col-md-6 col-sm-12 px-1 mb-2">
             <div class="product-image-container">
-                <img src="./assets/images/jovenes/ninos/abrigos/1/1.webp" alt="Niños" class="img-fluid">
-                <a href="url_categoria_niños" class="btn btn-light btn-lg ms-4"><strong>Niño</strong></a>
+                <img src="./assets/images/jovenes/ninos/abrigos/7/1.webp" alt="Niños" class="img-fluid">
+                <a href="catalogo.php?categoria=ninos" class="btn btn-light btn-lg ms-4"><strong>Niño</strong></a>
             </div>
         </div>
     </div>

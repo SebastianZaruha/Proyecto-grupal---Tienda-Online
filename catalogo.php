@@ -63,7 +63,7 @@ $result = $conexion->query($sql);
                             <div class="card">
                                 <div class="img-container">
                                     <img src="data:image/webp;base64,<?php echo $foto_base64; ?>" class="card-img-top img-fluid"
-                                        alt="...">
+                                        loading="lazy">
                                 </div>
                                 <div class="card-body">
                                     <h5 class="card-title">
