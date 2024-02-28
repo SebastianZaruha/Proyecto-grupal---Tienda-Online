@@ -36,8 +36,10 @@
 
 <div class="slider-container m-3">
     <div class="slider-controls">
-        <button type="button" class="slick-prev">&#10094;</button>
-        <button type="button" class="slick-next">&#10095;</button>
+        <button style="border: 0px; border-radius:10px; width: 30px; height:35px" type="button"
+            class="slick-prev">&#10094;</button>
+        <button style="border: 0px; border-radius:10px; width: 30px; height:35px" type="button"
+            class="slick-next">&#10095;</button>
     </div>
     <div class="slider">
         <a href="#"><img src="./assets/images/slider1-inicio/zapa1.avif"></a>
@@ -61,28 +63,27 @@
             nextArrow: $('.slick-next'),
             autoplay: true,
             autoplaySpeed: 5000,
-            responsive: [
-                {
-                    breakpoint: 1024,
-                    settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 1
-                    }
-                },
-                {
-                    breakpoint: 600,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 1
-                    }
-                },
-                {
-                    breakpoint: 480,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1
-                    }
+            responsive: [{
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1
                 }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
             ]
         });
     });
