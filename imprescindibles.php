@@ -1,10 +1,25 @@
-<div class="row justify-content-center" style="height: 70vh;">
-    <div class="col-12 col-sm-12 col-md-8 col-lg-5" style="background-image: url(./assets/images/pava.avif);">
-        <br><br>
+<style>
+    .image-container {
+        height: 70vh;
+        position: relative;
+    }
+
+    .image-container button {
+        position: absolute;
+        top: 30px;
+        left: 40px;
+    }
+</style>
+
+<div class="row justify-content-center">
+    <div class="col-sm-12 col-md-6 col-lg-5 px-sm-4 px-lg-1 px-md-1 image-container">
+        <img src="./assets/images/pava.avif" alt="Imagen 1"
+            style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
         <button type="button" class="btn btn-light"><strong>COMPRAR AHORA</strong></button>
     </div>
-    <div class="col-12 col-sm-12 col-md-8 col-lg-5" style="background-image: url(./assets/images/png2.avif);">
-        <br><br>
+    <div class="col-sm-12 col-md-6 col-lg-5 px-sm-4 px-lg-1 px-md-1 image-container">
+        <img src="./assets/images/png2.avif" alt="Imagen 2"
+            style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
         <button type="button" class="btn btn-light"><strong>COMPRAR AHORA</strong></button>
     </div>
 </div>
