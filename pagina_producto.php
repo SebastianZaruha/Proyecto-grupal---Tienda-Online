@@ -3,9 +3,7 @@ require_once 'navbar.php';
 
 $id_producto = isset($_GET['id']) ? filter_var($_GET['id'], FILTER_SANITIZE_NUMBER_INT) : die('');
 
-if (!isset($_SESSION['email'])) {
-    header('Location: index.php');
-} else {
+if (isset($_SESSION['email'])) {
     $id_usuario = $_SESSION['id'];
     $sql_favorito = "SELECT * FROM favoritos WHERE id_producto = '$id_producto' AND id_usuario = '$id_usuario'";
     $result_favorito = $conexion->query($sql_favorito);
@@ -35,22 +33,20 @@ if ($result_fotos->num_rows > 0) {
 $conexion->close();
 ?>
 
-<head>
-    <style>
-        .selected {
-            background-color: rgba(0, 0, 0, 0.4);
-            color: white;
-        }
+<style>
+    .selected {
+        background-color: rgba(0, 0, 0, 0.4);
+        color: white;
+    }
 
-        .im-cata {
-            cursor: pointer;
-        }
+    .im-cata {
+        cursor: pointer;
+    }
 
-        .im-cata:hover {
-            border: .5px solid black;
-        }
-    </style>
-</head>
+    .im-cata:hover {
+        border: .5px solid black;
+    }
+</style>
 
 <body>
     <div class="container" style="margin-top: 15vh;">
