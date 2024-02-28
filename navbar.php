@@ -345,10 +345,8 @@ require_once 'carrito.php';
                                                 </li>
                                                 <li><a href="catalogo.php?categoria=mujer&subcategoria=botas">Botas</a>
                                                 </li>
-                                                <li><a href="catalogo.php?categoria=mujer&subcategoria=zapatos_planos">Zapatos
-                                                        planos</a></li>
-                                                <li><a href="catalogo.php?categoria=mujer&subcategoria=zapatos_de_tacon">Zapatos
-                                                        de tacón</a></li>
+                                                <li><a
+                                                        href="catalogo.php?categoria=mujer&subcategoria=zapatos_de_tacon">Zapatos de tacón</a></li>
                                             </ul>
                                         </div>
                                     </div>
