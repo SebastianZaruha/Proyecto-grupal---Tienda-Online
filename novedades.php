@@ -13,6 +13,8 @@
 
     .slider a img {
         width: 98%;
+        max-height: 50vh;
+        object-fit: cover;
         display: block;
         margin: auto;
     }
@@ -42,14 +44,14 @@
             class="slick-next">&#10095;</button>
     </div>
     <div class="slider">
-        <a href="#"><img src="./assets/images/slider1-inicio/zapa1.avif"></a>
-        <a href="#"><img src="./assets/images/slider1-inicio/zapa2.avif"></a>
-        <a href="#"><img src="./assets/images/slider1-inicio/zapa3.avif"></a>
-        <a href="#"><img src="./assets/images/slider1-inicio/zapa4.avif"></a>
-        <a href="#"><img src="./assets/images/slider1-inicio/zapa5.avif"></a>
-        <a href="#"><img src="./assets/images/slider1-inicio/zapa6.avif"></a>
-        <a href="#"><img src="./assets/images/slider1-inicio/zapa7.avif"></a>
-        <a href="#"><img src="./assets/images/slider1-inicio/zapa8.avif"></a>
+        <a href="pagina_producto.php?id=6"><img src="./assets/images/Hombre/camisas_y_camisetas/6/2.webp"></a>
+        <a href="pagina_producto.php?id=5"><img src="./assets/images/Hombre/camisas_y_camisetas/5/2.webp"></a>
+        <a href="pagina_producto.php?id=2"><img src="./assets/images/Hombre/camisas_y_camisetas/2/2.webp"></a>
+        <a href="pagina_producto.php?id=1"><img src="./assets/images/Hombre/camisas_y_camisetas/1/2.webp"></a>
+        <a href="pagina_producto.php?id=3"><img src="./assets/images/Hombre/camisas_y_camisetas/3/2.webp"></a>
+        <a href="pagina_producto.php?id=8"><img src="./assets/images/Hombre/camisas_y_camisetas/8/2.webp"></a>
+        <a href="pagina_producto.php?id=7"><img src="./assets/images/Hombre/camisas_y_camisetas/7/2.webp"></a>
+        <a href="pagina_producto.php?id=4"><img src="./assets/images/Hombre/camisas_y_camisetas/4/2.webp"></a>
     </div>
 </div>
 
