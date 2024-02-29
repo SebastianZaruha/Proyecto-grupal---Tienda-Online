@@ -101,7 +101,7 @@ $result = mysqli_query($conexion, $query_carrito);
                     </p>
                 </div>
                 <div class="d-flex justify-content-center mt-3">
-                    <div class=" btn d-flex fs-4 justify-content-center aling-items-center comprar" style="background-color: #847C7C; width: 40% "><a class="text-white" href="comprar.php">COMPRAR</a>
+                    <div class=" btn d-flex fs-4 justify-content-center aling-items-center comprar" style="background-color: #847C7C; width: 40% "><a class="text-white" href="proceso_compra.php">COMPRAR</a>
                     </div>
                 </div>
             </div>

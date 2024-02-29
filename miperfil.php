@@ -1,10 +1,10 @@
 <?php
 require_once 'navbar.php';
-
+// Si no hay sesión iniciada, redirigimos al index, si no, mostramos el formulario
 if (!isset($_SESSION['email'])) {
     header('Location: index.php');
 }
-
+// Consulta para obtener los datos del usuario, con la variable de sesión
 $query_usuario = "SELECT * FROM usuario WHERE id = " . $_SESSION['id'];
 
 $result_usuario = $conexion->query($query_usuario);
@@ -73,6 +73,7 @@ $row_usuario = $result_usuario->fetch_assoc();
     <div class="container">
         <div class="row" style="margin-top: 15%;">
             <div class="col-6">
+                <!-- Mostramos los datos del usuario, si no están rellenos, mostramos un mensaje de alerta -->
                 <?php if ($row_usuario['nombre'] == null || $row_usuario['apellido1'] == null || $row_usuario['apellido2'] == null  || $row_usuario['dni'] == null  || $row_usuario['tlf'] == null  || $row_usuario['pais'] == null  || $row_usuario['ciudad'] == null  || $row_usuario['direccion'] == null  || $row_usuario['cp'] == null) { ?>
                     <div class="fs-5 alert alert-danger" role="alert">
                         Rellena todos los datos para poder hacer un pedido.

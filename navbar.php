@@ -1,5 +1,7 @@
 <?php
+// crea una sesion o reanuda la actual basada en un identificador de sesion comprobado en la base de datos
 session_start();
+// conectamos a la base de datos
 require_once 'conecta_bd.php';
 require_once 'carrito.php';
 ?>
@@ -119,7 +121,7 @@ require_once 'carrito.php';
             transform: translateY(-100%);
             transition: transform 0.2s ease-in-out;
         }
-
+        /* se ejecuta este css cuando el ancho es como máximo 992px */
         @media (max-width: 992px) {
 
             .imprescindibles {
@@ -267,7 +269,7 @@ require_once 'carrito.php';
 
 <body>
     <nav class="navbar navbar-expand-lg fixed-top py-0">
-
+    <!-- Aquí empieza el navbar pequeño -->
         <div class="search-responsive " style="width: 100%;">
             <div class=" d-flex justify-content-between">
                 <a class="navbar-brand mx-4" href="#">
@@ -295,6 +297,7 @@ require_once 'carrito.php';
                 </div>
             </div>
         </div>
+        <!-- Aquí empieza el navbar grande -->
         <div class="container-fluid">
             <a class="search navbar-brand mx-4" href="index.php">
                 <img src="./assets/Logo-Velour.png" alt="Logo" width="170" height="75">
@@ -306,9 +309,10 @@ require_once 'carrito.php';
                     <h5 class="offcanvas-title" id="offcanvasNavbarLabel">MENÚ</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
-
+                <!-- Aquí empieza el offcanvas -->
                 <div class="offcanvas-body">
                     <ul class="navbar-nav  flex-grow-1" id="offCbody1">
+                        <!-- Hombre -->
                         <li class="nav-item me-5">
                             <a class="nav-link mx-lg-2" href="catalogo.php?categoria=hombre">HOMBRE</a>
                             <div class="mega-menu">
@@ -349,6 +353,7 @@ require_once 'carrito.php';
                                 </div>
                             </div>
                         </li>
+                        <!-- Mujer -->
                         <li class="nav-item me-5">
                             <a class="nav-link mx-lg-2" href="catalogo.php?categoria=mujer">MUJER</a>
                             <div class="mega-menu">
@@ -391,6 +396,7 @@ require_once 'carrito.php';
                                 </div>
                             </div>
                         </li>
+                        <!-- Niños -->
                         <li class="nav-item me-5">
                             <a class="nav-link mx-lg-2" href="catalogo.php?categoria=ninos">NIÑOS</a>
                             <div class="mega-menu">
@@ -435,9 +441,10 @@ require_once 'carrito.php';
                     </ul>
                 </div>
             </div>
-
+            
             <ul class="search navbar-nav align-items-center justify-content-end me-4">
                 <li class="nav-item ">
+                    <!-- Si hay usuario registrado puede acceder al menú de usuario -->
                     <?php if (isset($_SESSION['email'])) { ?>
                         <img class="m-3" src="./assets/perfil.svg" alt="Perfil" width="38" height="38">
                         <div class="mega-menu-usuario rounded mx-2 ">
@@ -461,7 +468,7 @@ require_once 'carrito.php';
                             </div>
                         </div>
 
-                    <?php } else { ?>
+                    <?php } else { ?>                        
                         <button onclick="openModal()" class="btn btn-link text-decoration-none">
                             <img src="./assets/perfil.svg" alt="Perfil" width="38" height="38">
                         </button>
@@ -473,8 +480,8 @@ require_once 'carrito.php';
                 </li>
             </ul>
         </div>
-
-        <div style="display: none;" id="myModal">
+        <!-- Modal de inicio de sesión -->
+        <div style="display: none;" id="myModal">        
             <div class="modal d-flex justify-content-center align-items-center ">
                 <div class="modal-dialog">
                     <div class="modal-content" style="height: 48vh; width: 20vw; border: 1px solid black">
@@ -483,6 +490,7 @@ require_once 'carrito.php';
                             <button type="button" class="btn-close" onclick="closeModal()"></button>
                         </div>
                         <div class="modal-body m-3">
+                            <!-- Formulario de inicio de sesión -->
                             <form action="login2.php" method="POST">
                                 <div class="mb-3">
                                     <label for="exampleInputEmail1" class="form-label">Correo electrónico</label>
@@ -511,16 +519,16 @@ require_once 'carrito.php';
 
     </nav>
 
-
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
 
 
-    <script>
+    <script>        
         let lastScrollTop = 0;
         const navbar = document.querySelector('.navbar');
-
+        // Cuando el usuario hace scroll hacia abajo, se esconde el navbar
         window.addEventListener('scroll', function () {
             let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
             if (scrollTop > lastScrollTop) {
@@ -530,7 +538,7 @@ require_once 'carrito.php';
             }
             lastScrollTop = scrollTop;
         });
-
+        // Cuando el usuario hace click en el botón de perfil, se abre el modal
         function openModal() {
             <?php if (isset($_SESSION['email'])) { ?>
 
@@ -540,15 +548,16 @@ require_once 'carrito.php';
             <?php } ?>
 
         }
-
+        // Cuando el usuario hace click en el botón de cerrar, se cierra el modal
         function closeModal() {
             let modal = document.getElementById("myModal");
             modal.style.display = "none";
         }
-
+        // Cuando el usuario hace click en el botón del carrito, se abre el acordeón
         function openCarrito() {
             const acordeon = document.getElementById('miAcordeon');
             <?php
+            // Si el usuario está registrado, se abre el acordeón
             if (isset($_SESSION['email'])) {
 
                 ?>
