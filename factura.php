@@ -1,19 +1,19 @@
 <?php
-
+// Incluimos la conexión a la base de datos y al resto de archivos 
 require_once 'navbar.php';
-
+//variable de sesión
 if (!isset($_SESSION['email'])) {
 } else {
-
+    
     $id_usuario = $_SESSION['id'];
 
-
+    // Consulta para obtener los datos de la factura
     $query_factura = "SELECT facturas.id, emisor, receptor, fecha, importe, iva, producto.nombre, pedidos.cantidad, producto.precio_ud FROM facturas 
     inner join compran on compran.id_factura = facturas.id 
     inner join envios on envios.id_compra = compran.id
     inner join pedidos on pedidos.id_envio = envios.id
     inner join producto on producto.id = pedidos.id_producto where compran.id_usuario = $id_usuario AND facturas.id = " . $_GET['id_factura'];
-
+    // Ejecutamos la consulta
     $result_factura = mysqli_query($conexion, $query_factura);
     $registro = mysqli_fetch_assoc($result_factura);
 ?>
@@ -33,7 +33,7 @@ if (!isset($_SESSION['email'])) {
             }
 
             #impuestos {
-                width: 50%;
+                width: 48%;
                 border-collapse: collapse;
             }
 
@@ -55,10 +55,7 @@ if (!isset($_SESSION['email'])) {
     </head>
 
     <body>
-
-
-
-
+        <!-- Mostramos los datos de la factura -->
         <div class="container" id="factura">
 
             <h2>Factura: <?php echo $registro['id'];  ?> </h2>
@@ -86,12 +83,13 @@ if (!isset($_SESSION['email'])) {
                 <?php  ?>
                 <tbody>
                     <tr>
+                        <!-- Mostramos los datos del primer registro -->
                         <td><?php echo $registro['nombre']; ?></td>
                         <td><?php echo $registro['cantidad']; ?></td>
                         <td><?php echo $registro['precio_ud']; ?></td>
                         <td class="total"><?php echo $registro['precio_ud'] * $registro['cantidad']; ?></td>
                     </tr>
-
+                    <!-- Mientras haya registros, los mostramos -->
                     <?php while ($registro2 = mysqli_fetch_assoc($result_factura)) { ?>
                         <tr>
                             <td><?php echo $registro2['nombre']; ?></td>
@@ -117,7 +115,7 @@ if (!isset($_SESSION['email'])) {
                         <td class="total"> <?php echo round($registro['importe'], 2);  ?> </td>
                     </tr>
                     <tr>
-                        <td>Iva (21%):</td>
+                        <td><?php echo "Iva(" .($registro['iva']*100) . "%):" ?></td>
                         <td class="total"> <?php echo round(($registro['importe'] * 0.21), 2);  ?> </td>
                     </tr>
                     <tr>
@@ -129,14 +127,16 @@ if (!isset($_SESSION['email'])) {
 
             <p>Fecha de emisión: <?php echo $registro['fecha'];  ?> </p>
             <p>Gracias por su compra.</p>
+            <!-- Botón para descargar el PDF -->
             <button class="btn text-white" style="background-color: #847C7C" onclick="generarPDF()">Descargar PDF</button>
 
         </div>
 
-
+        <!-- Script para generar el PDF -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.debug.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
         <script>
+            // Función para generar el PDF
             function generarPDF() {
                 let pdf = new jsPDF();
                 let elementHTML = $('#factura').html();
@@ -145,6 +145,7 @@ if (!isset($_SESSION['email'])) {
                         return true;
                     }
                 };
+                // Convierte el HTML a imagen
                 pdf.fromHTML(elementHTML, 10, 5, {
                     'width': 150,
 
