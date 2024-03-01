@@ -55,12 +55,13 @@ require_once 'navbar.php';
             width: 100%;
             height: 2vh;
             background: none;
-            font-size: 2rem;
+            font-size: 1rem;
             padding: .6em .3em;
             border: none;
             outline: none;
             border-bottom: 1px solid;
             font-family: Montserrat;
+            margin-top: 5%;
         }
 
         .label {
@@ -96,22 +97,22 @@ require_once 'navbar.php';
 <body style="background-image: url('./assets/images/ima4.jpg'); background-size: 100vw 100vh; background-position: center;">
     <div class="container  d-flex justify-content-center align-items-center" style="height: 70vh;">
         <div class="formulario">
-            <form class="form">
+            <form action="registrarse2.php" method="POST" class="form">
                 <h2 class="form_title">Regristate</h2>
                 <div class="form_container">
                     <div class="form_group">
-                        <input style="z-index: 2;" class="input" type="email" id="Email" placeholder="" required>
+                        <input style="z-index: 2;" class="input" type="email" name="email" placeholder="" required>
                         <label style="z-index: 1;" class="label" id="email">Email</label>
                         <span class="form_line"></span>
                     </div>
 
                     <div class="form_group">
-                        <input class="input " type="password" id="pass1" placeholder=" " required>
+                        <input class="input " type="password" name="pass1" placeholder=" " required>
                         <label class="label">Contraseña</label>
                         <span class="form_line"></span>
                     </div>
                     <div class="form_group">
-                        <input class="input" type="password" id="pass2" placeholder=" " required>
+                        <input class="input" type="password" name="pass2" placeholder=" " required>
                         <label class="label">Repite contraseña</label>
                         <span class="form_line"></span>
                     </div>
