@@ -25,9 +25,9 @@ if (isset($_SESSION['id'])) {
     </style>
 </head>
 
-<body style="background-image: url('./assets/images/imag4.jpg'); background-repeat: no-repeat; background-size: cover;">
+<body style="background:  linear-gradient(to right, rgba(250,253,232,1) 0%, rgba(235,246,203,1) 42%, rgba(234,244,190,1) 51%, rgba(244,247,145,1) 100%);; background-repeat: no-repeat; background-size: cover;">
 
-    <div class="container-fluid" style="margin-top: 6%;">
+    <div class="container-fluid" style="margin-top: 6%; padding-right: 6%;">
         <div class="row">
             <div class="col-md-6">
                 <div class="card" style="box-shadow: 1px 1px 125px -35px rgba(0,0,0,0.75);">
