@@ -21,7 +21,7 @@
 </head>
 
 <body>
-    <footer class=" p-4 text-center" style="margin-top: 15%;">
+    <footer class=" p-4 text-center" style="margin-top: 25%;">
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-md-6 mb-4 mb-md-0 footer-col">
