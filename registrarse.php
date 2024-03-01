@@ -100,23 +100,23 @@ require_once 'navbar.php';
                 <h2 class="form_title">Regristate</h2>
                 <div class="form_container">
                     <div class="form_group">
-                        <input class="input" type="text" id="Email" placeholder=" " required>
-                        <label class="label">Email</label>
+                        <input style="z-index: 2;" class="input" type="email" id="Email" placeholder="" required>
+                        <label style="z-index: 1;" class="label" id="email">Email</label>
                         <span class="form_line"></span>
                     </div>
 
                     <div class="form_group">
-                        <input class="input" type="text" id="Contraseña" placeholder=" " required>
+                        <input class="input " type="password" id="pass1" placeholder=" " required>
                         <label class="label">Contraseña</label>
                         <span class="form_line"></span>
                     </div>
                     <div class="form_group">
-                        <input class="input" type="tel" id="Repite contraseña" placeholder=" " required>
+                        <input class="input" type="password" id="pass2" placeholder=" " required>
                         <label class="label">Repite contraseña</label>
                         <span class="form_line"></span>
                     </div>
                     <div class="mt-3 d-flex justify-content-center">
-                        <button class="acceder btn mt-2 fs-5 text-white" style="background-color:chocolate;  height: 40px; width: 150px;" type="submit">REGISTRARSE</button>
+                        <button class="acceder btn mt-2 fs-5 text-white" style="background-color:chocolate;  height: 40px; width: 60%;" type="submit">REGISTRARSE</button>
                     </div>
                 </div>
             </form>
