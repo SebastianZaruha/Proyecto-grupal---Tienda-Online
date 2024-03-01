@@ -4,7 +4,7 @@ require_once 'navbar.php';
 //variable de sesión
 if (!isset($_SESSION['email'])) {
 } else {
-    
+
     $id_usuario = $_SESSION['id'];
 
     // Consulta para obtener los datos de la factura
@@ -16,6 +16,7 @@ if (!isset($_SESSION['email'])) {
     // Ejecutamos la consulta
     $result_factura = mysqli_query($conexion, $query_factura);
     $registro = mysqli_fetch_assoc($result_factura);
+    $bi += $registro['precio_ud'] * $registro['cantidad'];
 ?>
 
     <head>
@@ -90,7 +91,9 @@ if (!isset($_SESSION['email'])) {
                         <td class="total"><?php echo $registro['precio_ud'] * $registro['cantidad']; ?></td>
                     </tr>
                     <!-- Mientras haya registros, los mostramos -->
-                    <?php while ($registro2 = mysqli_fetch_assoc($result_factura)) { ?>
+                    <?php while ($registro2 = mysqli_fetch_assoc($result_factura)) {
+                        $bi += $registro2['precio_ud'] * $registro2['cantidad'];
+                    ?>
                         <tr>
                             <td><?php echo $registro2['nombre']; ?></td>
                             <td><?php echo $registro2['cantidad']; ?></td>
@@ -112,15 +115,15 @@ if (!isset($_SESSION['email'])) {
                 <tbody>
                     <tr>
                         <td>Base Imponible:</td>
-                        <td class="total"> <?php echo round($registro['importe'], 2);  ?> </td>
+                        <td class="total"> <?php echo round($bi, 2);  ?> </td>
                     </tr>
                     <tr>
-                        <td><?php echo "Iva(" .($registro['iva']*100) . "%):" ?></td>
+                        <td><?php echo "Iva(" . ($registro['iva'] * 100) . "%):" ?></td>
                         <td class="total"> <?php echo round(($registro['importe'] * 0.21), 2);  ?> </td>
                     </tr>
                     <tr>
                         <td>Total:</td>
-                        <td class="total"> <?php echo round(($registro['importe'] * 1.21), 2);  ?> </td>
+                        <td class="total"> <?php echo round(($registro['importe']), 2);  ?> </td>
                     </tr>
                 </tbody>
             </table>
