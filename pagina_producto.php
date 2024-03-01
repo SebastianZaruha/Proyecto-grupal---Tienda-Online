@@ -18,7 +18,8 @@ if ($result->num_rows > 0) {
     $nombre = $row['nombre'];
     $descripcion = $row['descripcion'];
     $precio = $row['precio_ud'];
-    $categoria = $row['categoria'];
+
+    $categoria = $row['subcategoria'];
 }
 
 $sql_fotos = "SELECT foto FROM fotos WHERE id_producto = '$id_producto'";
@@ -72,7 +73,14 @@ $conexion->close();
                 <h4 class="mb-5">
                     <?php echo $precio . " €"; ?>
                 </h4>
-                <?php if ($categoria == 'Zapatos') { ?>
+
+                <?php if ($categoria == 'zapatillas') {
+                } elseif ($categoria == 'deportivas') {
+                } elseif ($categoria == 'formales') {
+                } elseif ($categoria == 'botas') {
+                } elseif ($categoria == 'zapatos_de_tacon') {
+                } else {
+                ?>
 
                     <h5 class="mb-3">Tallas</h5>
                     <div class="d-grid gap-2 d-md-block mb-3">

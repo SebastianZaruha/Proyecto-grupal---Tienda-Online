@@ -66,13 +66,19 @@ $result_pedidos = mysqli_query($conexion, $query_pedidos);
                                                     <p class="m-0 ">Fecha estimada de entrega: <?php $date = date_create($row_2['fecha_estimada']);
                                                                                                 $formatted_date = date_format($date, "d M Y");
                                                                                                 echo $formatted_date; ?></p>
-                                                    <p class="m-0">Dirección de envío: <?php echo $row_2['direccion']; ?></p>
-                                                    <p class="m-0">Factura: <a class="text-primary" href="factura.php?id_factura=<?php echo $row_2['id_factura']; ?> " target="_blank">Ver factura</a></p>
+                                                    <?php $dir = $row_2['direccion'];
+                                                    $fac = $row_2['id_factura'];
+                                                    ?>
+
+
 
                                                 </div>
 
                                             </div>
                                         <?php endwhile; ?>
+                                        <p class="px-1">Factura: <a class="text-primary" href="factura.php?id_factura=<?php echo $fac; ?> " target="_blank">Ver factura</a></p>
+                                        <p class="px-1">Direccion de envio: <?php echo $dir; ?></p>
+
                                     </div>
                                 </div>
                             <?php $counter++;
