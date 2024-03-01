@@ -7,84 +7,86 @@ if (isset($_SESSION['id'])) {
     $query_resumenpedido = " select envios.*,compran.*,facturas.* from envios
     inner join  compran on envios.id_compra=compran.id
     left join facturas  on facturas.id=compran.id_factura
-    where envios.id='$id_pedido'";
+	where envios.id='$id_pedido'";
 
     $result_resumenpedido = $conexion->query($query_resumenpedido);
     $row = $result_resumenpedido->fetch_assoc();
+
+
 ?>
 
-<head>
-    <style>
-        th {
-            padding: 20px;
-        }
+    <head>
 
-        td {
-            vertical-align: middle;
-        }
-    </style>
-</head>
+        <style>
+            @media (max-width: 992px) {
+                .rsp {
+                    margin-top: 30%;
+                }
+            }
+        </style>
 
-<body style="background:  linear-gradient(to right, rgba(250,253,232,1) 0%, rgba(235,246,203,1) 42%, rgba(234,244,190,1) 51%, rgba(244,247,145,1) 100%);; background-repeat: no-repeat; background-size: cover;">
 
-    <div class="container-fluid" style="margin-top: 6%; padding-right: 6%;">
-        <div class="row">
-            <div class="col-md-6">
-                <div class="card" style="box-shadow: 1px 1px 125px -35px rgba(0,0,0,0.75);">
-                    <div class="card-body">
-                        <h5 class="">Detalles de pedido</h5>
-                        <table class="table table-striped">
-                            <tr>
-                                <th>Pedido: #<?php echo $row['id_compra'] ?></th>
-                                <th>Estado: <?php echo $row['estado'] ?></th>
+    <body style="background:  linear-gradient(to right, rgba(250,253,232,1) 0%, rgba(235,246,203,1) 42%, rgba(234,244,190,1) 51%, rgba(244,247,145,1) 100%);; background-repeat: no-repeat; background-size: cover;">
+
+        <div class="container-fluid" style="margin-top: 6%">
+            <div class="row rsp">
+                <div class="col-md-6">
+                    <div class="card" style="box-shadow: 1px 1px 125px -35px rgba(0,0,0,0.75);">
+                        <div class="card-body">
+                            <h5 class="">Detalles de pedido</h5>
+                            <table class="table table-striped">
+                                <tr>
+                                    <th class="th_r""></th>
+                                <th>Producto</th>
+                                <th>Cantidad</th>
+                                <th>Precio de unidad</th>
+                                <th>Precio total</th>
                             </tr>
-                        </table>
-
+                        </thead>
                         <?php
+
                         $query_productos = "select *, pedidos.cantidad*producto.precio_ud as 'Precio_total' from pedidos 
-                            inner join producto on pedidos.id_producto=producto.id
-                            inner join fotos on fotos.id_producto= producto.id
-                            where id_envio=$id_pedido
-                            group by producto.id";
+                        inner join producto on pedidos.id_producto=producto.id
+                        inner join fotos on fotos.id_producto= producto.id
+                        where id_envio=$id_pedido
+                        group by producto.id";
 
                         $result_productos = $conexion->query($query_productos);
 
                         while ($row_productos = $result_productos->fetch_assoc()) :
                             $foto_base64 = base64_encode($row_productos['foto']);
                         ?>
-                            <table class="table table-striped">
-                                <tr> 
-                                    <td><img src="data:image/webp;base64,<?php echo $foto_base64; ?>" style="width: 100px;"></td>
+                            <tbody>
+                                <tr>
+                                    <td><img src=" data:image/webp;base64,<?php echo $foto_base64; ?>" style="width: 100px;">
+                                        </td>
                                     <td><?php echo $row_productos['nombre'] ?></td>
+                                    <td><?php echo $row_productos['cantidad'] ?></td>
+                                    <td><?php echo $row_productos['precio_ud'] ?>€</td>
+                                    <td><?php echo $row_productos['Precio_total'] ?>€</td>
                                 </tr>
-                                <tr>
-                                    <td><b>Cantidad: </b> <?php echo $row_productos['cantidad'] ?></td>
-                                    <td><b>Precio de unidad: </b><?php echo $row_productos['precio_ud'] ?>€</td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2"><b>Precio total: </b> <?php echo $row_productos['Precio_total'] ?>€</td>
-                                </tr>
+                                </tbody>
+                            <?php endwhile; ?>
                             </table>
-                        <?php endwhile; ?>
 
-                        <?php
-                        $query_importeTotal = "select round(sum(pedidos.cantidad*producto.precio_ud),2) as 'importe_total' from pedidos 
-                            inner join producto on pedidos.id_producto=producto.id
-                            where id_envio=$id_pedido";
-                        $result_importeTotal = $conexion->query($query_importeTotal);
+                            <?php
+                            $query_importeTotal = "select sum(pedidos.cantidad*producto.precio_ud) as 'importe_total' from pedidos 
+                    inner join producto on pedidos.id_producto=producto.id
+                    where id_envio=$id_pedido";
+                            $result_importeTotal = $conexion->query($query_importeTotal);
 
-                        $row_importeTotal = $result_importeTotal->fetch_assoc();
-                        ?>
+                            $row_importeTotal = $result_importeTotal->fetch_assoc();
+                            ?>
 
-                        <br><hr>
-                        <h5 class="card-title"><b>Importe total: </b><?php echo $row_importeTotal['importe_total'] ?>€ </h5>
+                            <h5 class="card-title">Importe total: <?php echo $row_importeTotal['importe_total'] ?>€ </h5>
+
+                        </div>
+
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
-</body>
+                </div>
+    </body>
+
 
 <?php require_once 'footer.php';
 } else {

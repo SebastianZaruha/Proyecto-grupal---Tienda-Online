@@ -18,6 +18,8 @@ if ($result->num_rows > 0) {
     $nombre = $row['nombre'];
     $descripcion = $row['descripcion'];
     $precio = $row['precio_ud'];
+
+    $categoria = $row['subcategoria'];
 }
 
 $sql_fotos = "SELECT foto FROM fotos WHERE id_producto = '$id_producto'";
@@ -51,9 +53,8 @@ $conexion->close();
 <body>
     <div class="container" style="margin-top: 15vh;">
         <div class="row flex-column-reverse flex-md-row">
-            <div
-                class="col-12 col-md-1 d-flex flex-row flex-md-column align-items-start justify-content-center mb-3 mb-md-0">
-                <?php foreach ($fotos as $foto): ?>
+            <div class="col-12 col-md-1 d-flex flex-row flex-md-column align-items-start justify-content-center mb-3 mb-md-0">
+                <?php foreach ($fotos as $foto) : ?>
                     <div class="mx-2 mx-md-0 mb-md-2" style="height: 14vh;">
                         <img class="im-cata img-fluid h-100" src="<?php echo $foto; ?>" onclick="seleccionarImagen(this)">
                     </div>
@@ -72,13 +73,23 @@ $conexion->close();
                 <h4 class="mb-5">
                     <?php echo $precio . " €"; ?>
                 </h4>
-                <h5 class="mb-3">Tallas</h5>
-                <div class="d-grid gap-2 d-md-block mb-3">
-                    <button class="btn btn-outline-secondary" type="button" onclick="selectSize('S')">S</button>
-                    <button class="btn btn-outline-secondary" type="button" onclick="selectSize('M')">M</button>
-                    <button class="btn btn-outline-secondary" type="button" onclick="selectSize('L')">L</button>
-                    <button class="btn btn-outline-secondary" type="button" onclick="selectSize('XL')">XL</button>
-                </div>
+
+                <?php if ($categoria == 'zapatillas') {
+                } elseif ($categoria == 'deportivas') {
+                } elseif ($categoria == 'formales') {
+                } elseif ($categoria == 'botas') {
+                } elseif ($categoria == 'zapatos_de_tacon') {
+                } else {
+                ?>
+
+                    <h5 class="mb-3">Tallas</h5>
+                    <div class="d-grid gap-2 d-md-block mb-3">
+                        <button class="btn btn-outline-secondary" type="button" onclick="selectSize('S')">S</button>
+                        <button class="btn btn-outline-secondary" type="button" onclick="selectSize('M')">M</button>
+                        <button class="btn btn-outline-secondary" type="button" onclick="selectSize('L')">L</button>
+                        <button class="btn btn-outline-secondary" type="button" onclick="selectSize('XL')">XL</button>
+                    </div>
+                <?php } ?>
                 <form action="agrega_carrito.php" method="post" onsubmit="return onSubmit()">
                     <input type="hidden" name="id_producto" value="<?php echo $id_producto; ?>">
                     <input type="hidden" name="id_usuario" value="<?php echo $id_usuario; ?>">
@@ -88,16 +99,15 @@ $conexion->close();
                 <div class="d-grid gap-2 d-md-block">
                     <?php
                     if (isset($_SESSION['email'])) {
-                        if ($esFavorito): ?>
+                        if ($esFavorito) : ?>
                             <form action="borrar_favoritos.php" method="post">
                                 <input type="hidden" name="id_producto" value="<?php echo $id_producto; ?>">
                                 <input type="hidden" name="id_usuario" value="<?php echo $id_usuario; ?>">
                                 <button class="btn" type="submit">
-                                    <img id="favorito" src="./assets/images/pagina_producto/corazon-negro.svg"
-                                        style="width: 150%; height: 150%;">
+                                    <img id="favorito" src="./assets/images/pagina_producto/corazon-negro.svg" style="width: 150%; height: 150%;">
                                 </button>
                             </form>
-                        <?php else: ?>
+                        <?php else : ?>
                             <form action="agrega_favoritos.php" method="post">
                                 <input type="hidden" name="id_producto" value="<?php echo $id_producto; ?>">
                                 <input type="hidden" name="id_usuario" value="<?php echo $id_usuario; ?>">
@@ -105,7 +115,7 @@ $conexion->close();
                                     <img id="favorito" src="./assets/images/pagina_producto/corazon.png">
                                 </button>
                             </form>
-                        <?php endif;
+                    <?php endif;
                     } ?>
                 </div>
             </div>
@@ -130,14 +140,20 @@ $conexion->close();
             }
         }
 
+
         function validarForm() {
-            let talla = document.getElementById('talla').value;
-            if (talla == '') {
-                alert('Por favor, selecciona una talla');
-                return false;
-            }
-            return true;
+            <?php if ($categoria != 'Zapatos') { ?>
+                return true;
+            <?php } else { ?>
+                let talla = document.getElementById('talla').value;
+                if (talla == '') {
+                    alert('Por favor, selecciona una talla');
+                    return false;
+                }
+                return true;
+            <?php } ?>
         }
+
 
         function onSubmit() {
             return validarForm() && validarSesion();
@@ -145,7 +161,7 @@ $conexion->close();
 
         function selectSize(size) {
             let buttons = document.querySelectorAll('.btn');
-            buttons.forEach(function (button) {
+            buttons.forEach(function(button) {
                 button.classList.remove('selected');
             });
             event.target.classList.add('selected');

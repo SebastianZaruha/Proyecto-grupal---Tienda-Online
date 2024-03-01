@@ -69,7 +69,7 @@ $row_usuario = $result_usuario->fetch_assoc();
     </style>
 </head>
 
-<body style="background-image: url('./assets/images/ima1.jpg');">
+<body style="background-image: url('./assets/images/ima5.jpg');">
     <div class="container">
         <div class="row" style="margin-top: 15%;">
             <div class="col-6">
