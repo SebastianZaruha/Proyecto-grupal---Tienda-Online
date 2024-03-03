@@ -16,7 +16,7 @@ if (!isset($_SESSION['email'])) {
     // Ejecutamos la consulta
     $result_factura = mysqli_query($conexion, $query_factura);
     $registro = mysqli_fetch_assoc($result_factura);
-    $bi += $registro['precio_ud'] * $registro['cantidad'];
+    $bi = $registro['precio_ud'] * $registro['cantidad'];
 ?>
 
     <head>
