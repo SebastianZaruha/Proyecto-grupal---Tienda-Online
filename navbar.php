@@ -121,6 +121,7 @@ require_once 'carrito.php';
             transform: translateY(-100%);
             transition: transform 0.2s ease-in-out;
         }
+
         /* se ejecuta este css cuando el ancho es como máximo 992px */
         @media (max-width: 992px) {
 
@@ -147,13 +148,15 @@ require_once 'carrito.php';
             /* Ojo esto */
             .modal-content {
                 height: 50vh;
-                width: 80vw !important;
+                width: 80%;
+                max-width: 400px;
+                /* Set a maximum width if needed */
                 border: 1px solid black;
             }
 
 
             .acceder {
-                width: 80vw !important;
+                width: 300%;
                 height: 5vh;
             }
 
@@ -269,7 +272,7 @@ require_once 'carrito.php';
 
 <body>
     <nav class="navbar navbar-expand-lg fixed-top py-0">
-    <!-- Aquí empieza el navbar pequeño -->
+        <!-- Aquí empieza el navbar pequeño -->
         <div class="search-responsive " style="width: 100%;">
             <div class=" d-flex justify-content-between">
                 <a class="navbar-brand mx-4" href="#">
@@ -441,14 +444,14 @@ require_once 'carrito.php';
                     </ul>
                 </div>
             </div>
-            
+
             <ul class="search navbar-nav align-items-center justify-content-end me-4">
                 <li class="nav-item ">
                     <!-- Si hay usuario registrado puede acceder al menú de usuario -->
                     <?php if (isset($_SESSION['email'])) { ?>
                         <img class="m-3" src="./assets/perfil.svg" alt="Perfil" width="38" height="38">
                         <div class="mega-menu-usuario rounded mx-2 ">
-                            <div class="container">
+                            <div class="container-fluid">
                                 <div class="row">
                                     <div class="col-12 col-md-12">
                                         <ul class="list-unstyled">
@@ -468,7 +471,7 @@ require_once 'carrito.php';
                             </div>
                         </div>
 
-                    <?php } else { ?>                        
+                    <?php } else { ?>
                         <button onclick="openModal()" class="btn btn-link text-decoration-none">
                             <img src="./assets/perfil.svg" alt="Perfil" width="38" height="38">
                         </button>
@@ -481,10 +484,10 @@ require_once 'carrito.php';
             </ul>
         </div>
         <!-- Modal de inicio de sesión -->
-        <div style="display: none;" id="myModal">        
+        <div style="display: none;" id="myModal">
             <div class="modal d-flex justify-content-center align-items-center ">
                 <div class="modal-dialog">
-                    <div class="modal-content" style="height: 48vh; width: 20vw; border: 1px solid black">
+                    <div class="modal-content" style="height: 48vh; width: 100%; border: 1px solid black">
                         <div class=" modal-header">
                             <h5 class="modal-title " id="miModalLabel">INICIA SESIÓN</h5>
                             <button type="button" class="btn-close" onclick="closeModal()"></button>
@@ -519,13 +522,13 @@ require_once 'carrito.php';
 
     </nav>
 
-    
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
 
 
-    <script>        
+    <script>
         let lastScrollTop = 0;
         const navbar = document.querySelector('.navbar');
         // Cuando el usuario hace scroll hacia abajo, se esconde el navbar
