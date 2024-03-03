@@ -156,7 +156,7 @@ require_once 'carrito.php';
 
 
             .acceder {
-                width: 300%;
+                width: 100%;
                 height: 5vh;
             }
 
@@ -504,7 +504,7 @@ require_once 'carrito.php';
                                     <input type="password" class="form-control" id="exampleInputPassword1" name="pass1">
                                     <div class=" d-flex justify-content-center mt-3">
                                         <button class="acceder btn mt-2 fs-5 text-white"
-                                            style="background-color: #847C7C; width:30vw; height: 5vh;"
+                                            style="background-color: #847C7C; width:100%; height: 5vh;"
                                             type="submit">ACCEDER</button>
                                     </div>
                                 </div>
