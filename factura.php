@@ -15,6 +15,7 @@ if (!isset($_SESSION['email'])) {
     inner join producto on producto.id = pedidos.id_producto where compran.id_usuario = $id_usuario AND facturas.id = " . $_GET['id_factura'];
     // Ejecutamos la consulta
     $result_factura = mysqli_query($conexion, $query_factura);
+    $bi=0;
     $registro = mysqli_fetch_assoc($result_factura);
     $bi = $registro['precio_ud'] * $registro['cantidad'];
 ?>
