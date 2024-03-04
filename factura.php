@@ -120,11 +120,11 @@ if (!isset($_SESSION['email'])) {
                     </tr>
                     <tr>
                         <td><?php echo "Iva(" . ($registro['iva'] * 100) . "%):" ?></td>
-                        <td class="total"> <?php echo round(($registro['importe'] * 0.21), 2);  ?> </td>
+                        <td class="total"> <?php echo round(($bi * 0.21), 2);  ?> </td>
                     </tr>
                     <tr>
                         <td>Total:</td>
-                        <td class="total"> <?php echo round(($registro['importe']), 2);  ?> </td>
+                        <td class="total"> <?php echo round(($bi * 1.21), 2);  ?> </td>
                     </tr>
                 </tbody>
             </table>
