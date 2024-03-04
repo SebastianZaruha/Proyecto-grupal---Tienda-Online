@@ -6,9 +6,9 @@ if (!isset($_SESSION['email'])) {
 }
 // Consulta para obtener los datos del usuario, con la variable de sesión
 $query_usuario = "SELECT * FROM usuario WHERE id = " . $_SESSION['id'];
-
+// En la variable $result_usuario guardamos el resultado de la consulta
 $result_usuario = $conexion->query($query_usuario);
-
+// En la variable $row_usuario guardamos el resultado de la consulta en un array asociativo, para poder mostrar los datos en el formulario
 $row_usuario = $result_usuario->fetch_assoc();
 
 

@@ -1,7 +1,7 @@
 <?php
 require_once 'navbar.php';
 
-
+// la variable categoria, y la variable subcategoria se obtienen de la URL, si no existen, se les asigna un valor vacío para evitar errores en la consulta
 $categoria = isset($_GET['categoria']) ? filter_var($_GET['categoria'], FILTER_SANITIZE_STRING) : '';
 $subcategoria = isset($_GET['subcategoria']) ? filter_var($_GET['subcategoria'], FILTER_SANITIZE_STRING) : '';
 
@@ -9,7 +9,7 @@ $sql = "SELECT producto.*,
         (SELECT fotos.foto FROM fotos WHERE fotos.id_producto = producto.id LIMIT 1) AS foto_blob 
         FROM producto 
         WHERE producto.categoria = '$categoria'";
-
+// si la subcategoria no es vacía, se añade a la consulta
 if ($subcategoria != '') {
     $sql .= " AND producto.subcategoria = '$subcategoria'";
 }
@@ -48,10 +48,13 @@ $result = $conexion->query($sql);
     <div class="container-fluid" style="margin-top: 12vh">
         <div class="row m-3 mx-5">
             <?php
+            // si hay productos, se muestran
             if ($result->num_rows > 0) {
+                // mientras haya productos, se muestran en tarjetas con su información y foto 
                 while ($row = $result->fetch_assoc()) {
+                    // se codifica la foto a base64 para mostrarla
                     $foto_base64 = base64_encode($row['foto_blob']);
-
+                    // si hay una sesión iniciada, se comprueba si el producto es favorito del usuario
                     if (isset($_SESSION['email'])) {
                         $sql_favorito = "SELECT * FROM favoritos WHERE id_producto = {$row['id']} AND id_usuario = '$id_usuario'";
                         $result_favorito = $conexion->query($sql_favorito);
@@ -78,7 +81,9 @@ $result = $conexion->query($sql);
                                         </h5>
                                         <div>
                                             <?php
+                                            
                                             if (isset($_SESSION['email'])) {
+                                                // si la variable esFavorito es true, se muestra el botón de favorito relleno, si no, se muestra el botón de favorito vacío
                                                 if ($esFavorito): ?>
                                                     <form action="borrar_favoritos.php" method="post">
                                                         <input type="hidden" name="id_producto" value="<?php echo $row['id']; ?>">

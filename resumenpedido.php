@@ -1,9 +1,10 @@
 <?php
 require_once 'navbar.php';
+// si la sesión está iniciada, mostramos el resumen del pedido, si no, redirigimos al index
 if (isset($_SESSION['id'])) {
-
+    // el id del pedido es igual al valor que se ha enviado por la url, si no se ha enviado, se muestra un mensaje de error
     $id_pedido = isset($_GET['id']) ? filter_var($_GET['id'], FILTER_SANITIZE_NUMBER_INT) : die('');
-
+    // hacemos una consulta para obtener los datos del pedido
     $query_resumenpedido = " select envios.*,compran.*,facturas.* from envios
     inner join  compran on envios.id_compra=compran.id
     left join facturas  on facturas.id=compran.id_factura
@@ -44,7 +45,7 @@ if (isset($_SESSION['id'])) {
                             </tr>
                         </thead>
                         <?php
-
+                        // hacemos una consulta para obtener los productos del pedido
                         $query_productos = "select *, pedidos.cantidad*producto.precio_ud as 'Precio_total' from pedidos 
                         inner join producto on pedidos.id_producto=producto.id
                         inner join fotos on fotos.id_producto= producto.id
@@ -52,7 +53,7 @@ if (isset($_SESSION['id'])) {
                         group by producto.id";
 
                         $result_productos = $conexion->query($query_productos);
-
+                        // si hay resultados, guardamos los datos en variables y los mostramos en una tabla
                         while ($row_productos = $result_productos->fetch_assoc()) :
                             $foto_base64 = base64_encode($row_productos['foto']);
                         ?>
@@ -70,6 +71,7 @@ if (isset($_SESSION['id'])) {
                             </table>
 
                             <?php
+                            // hacemos una consulta para obtener el importe total del pedido
                             $query_importeTotal = "select sum(pedidos.cantidad*producto.precio_ud) as 'importe_total' from pedidos 
                     inner join producto on pedidos.id_producto=producto.id
                     where id_envio=$id_pedido";
@@ -77,7 +79,7 @@ if (isset($_SESSION['id'])) {
 
                             $row_importeTotal = $result_importeTotal->fetch_assoc();
                             ?>
-
+                            <!-- mostramos el importe total del pedido -->
                             <h5 class="card-title">Importe total: <?php echo $row_importeTotal['importe_total'] ?>€ </h5>
 
                         </div>

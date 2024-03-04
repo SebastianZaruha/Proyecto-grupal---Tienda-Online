@@ -19,9 +19,10 @@
 </style>
 
 <?php
+// si no hay una sesión iniciada, no se muestra el carrito
 if (!isset($_SESSION['email'])) {
 } else {
-
+// si hay una sesión iniciada, se muestra el carrito con los productos que el usuario ha añadido
     $id_usuario = $_SESSION['id'];
     $query_carrito = "SELECT carrito.*, producto.*, fotos.foto 
 FROM carrito 
@@ -44,6 +45,7 @@ GROUP BY producto.id";
                 <div class="modal-body">
                     <div>
                         <?php
+                        // si no hay productos en el carrito, se muestra un mensaje, si no, se muestran los productos
                         if (mysqli_num_rows($result) == 0) {
                             echo "<h3 class='text-center'>No hay productos en el carrito</h3>";
                         } else {

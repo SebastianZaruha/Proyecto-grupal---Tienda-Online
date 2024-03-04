@@ -48,6 +48,7 @@ $result = $conexion->query($query_fav);
     <div class="container-fluid" style="margin-top: 12vh">
         <div class="row m-3 mx-5">
             <?php
+            // Si el resultado de la consulta es mayor que 0, se muestran los productos en tarjetas con su información y foto, si no, se muestra un mensaje 
             if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
                     $foto_base64 = base64_encode($row['foto']);
