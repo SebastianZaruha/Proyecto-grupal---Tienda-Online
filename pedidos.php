@@ -1,12 +1,12 @@
 <?php
 require_once 'navbar.php';
-
+// Si no hay sesión iniciada, redirigimos al index, si no, mostramos el formulario, si no, mostramos el formulario
 if (!isset($_SESSION['email'])) {
     header('Location: index.php');
 }
 
 
-
+// Consulta para obtener los datos del pedido del usuario, con el id de usuario de la sesión
 $query_pedidos = "SELECT envios.estado, fecha_estimada, envios.direccion,id_factura,id_envio FROM pedidos INNER JOIN producto ON pedidos.id_producto = producto.id INNER JOIN envios ON pedidos.id_envio = envios.id INNER JOIN compran ON envios.id_compra = compran.id INNER JOIN usuario ON compran.id_usuario = usuario.id WHERE id_usuario = " . $_SESSION['id'] . " GROUP BY id_envio";
 $result_pedidos = mysqli_query($conexion, $query_pedidos);
 
@@ -23,6 +23,7 @@ $result_pedidos = mysqli_query($conexion, $query_pedidos);
             <div class="row">
                 <div class="col-3 bg-white rounded p-3">
                     <h1 class="text-center">Pedidos</h1>
+                    <!-- Si no hay pedidos, mostramos un mensaje, si no, mostramos los pedidos -->
                     <?php if (mysqli_num_rows($result_pedidos) == 0) {  ?>
                         <hr>
                         <p class="text-center fs-4">No hay ningun pedido realizado aun. </p>
@@ -38,6 +39,7 @@ $result_pedidos = mysqli_query($conexion, $query_pedidos);
                                             <div class=" d-flex justify-content-between">
                                                 <p>Pedido #<?php echo $counter; ?></p>
                                                 &nbsp;
+                                                <!-- Mostramos el estado del pedido de un color distinto segun el estado -->
                                                 <p class="" style="<?php if ($row['estado'] == 'Pendiente') {
                                                                         echo "color: red";
                                                                     } elseif ($row['estado'] == 'Reparto') {
@@ -48,6 +50,7 @@ $result_pedidos = mysqli_query($conexion, $query_pedidos);
                                             </div>
                                         </button>
                                     </h2>
+                                    <!-- Mostramos los productos del pedido, la fecha estimada de entrega, la direccion de envio y un enlace para ver la factura -->
                                     <div id="collapse<?php echo $counter; ?>" class=" p-3 accordion-collapse collapse <?php echo $counter == 1 ? 'show' : ''; ?>" aria-labelledby="heading<?php echo $counter; ?>" data-bs-parent="#pedidosAccordion">
                                         <?php $query_pedidos_productos = "SELECT producto.nombre, envios.estado, fecha_estimada, envios.direccion,id_factura FROM pedidos INNER JOIN producto ON pedidos.id_producto = producto.id INNER JOIN envios ON pedidos.id_envio = envios.id INNER JOIN compran ON envios.id_compra = compran.id INNER JOIN usuario ON compran.id_usuario = usuario.id WHERE id_usuario = " . $_SESSION['id'] . " AND id_envio = " . $row['id_envio'];
 

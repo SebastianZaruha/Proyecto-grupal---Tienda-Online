@@ -1,5 +1,7 @@
 <?php
+// el rquire_once se utiliza para incluir el archivo navbar.php que contiene la barra de navegación
 require_once 'navbar.php';
+// si no hay una sesión iniciada, se redirige a la página de inicio, si no, se muestra el carrito con los productos que el usuario ha añadido 
 if (!isset($_SESSION['email'])) {
 } else {
 
@@ -47,6 +49,7 @@ $result = mysqli_query($conexion, $query_carrito);
         <div class=" col-md-5 col-sm-12">
             <h2 class="cesta">Cesta</h2>
             <?php
+            // mientras haya productos en el carrito, se muestran en tarjetas con su información y foto, y se calcula el total
             $total = 0;
             while ($row = mysqli_fetch_assoc($result)) :
                 $foto = $row['foto'];
@@ -71,6 +74,7 @@ $result = mysqli_query($conexion, $query_carrito);
                         </p>
 
                         <div class="d-flex align-items-center desc justify-content-between" style="margin-top: 45%">
+                            <!-- se crea un formulario para quitar el producto del carrito si pulsas la papelera -->
                             <form action="carrito2.php" method="POST">
                                 <input value="<?php echo $row['id'] ?>" name="producto_carrito" hidden>
                                 <button class="btn " type="submmit" style="padding: 0px !important; ">
@@ -112,6 +116,7 @@ $result = mysqli_query($conexion, $query_carrito);
     <div class="row mx-5" style="margin-top: 20vh">
         <h2 class="">También te podría interesar</h2>
     </div>
+    <!-- se incluye el archivo novedades.php que contiene los productos que se muestran en la página de inicio -->
     <?php require_once 'novedades.php'; ?>
 </div>
 

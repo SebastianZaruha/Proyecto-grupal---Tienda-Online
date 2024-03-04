@@ -1,7 +1,7 @@
 <?php
 // Incluimos la conexión a la base de datos y al resto de archivos 
 require_once 'navbar.php';
-//variable de sesión
+// Si no hay una sesión iniciada, redirigimos al index, si no, mostramos la factura
 if (!isset($_SESSION['email'])) {
 } else {
 
@@ -91,7 +91,7 @@ if (!isset($_SESSION['email'])) {
                         <td><?php echo $registro['precio_ud']; ?></td>
                         <td class="total"><?php echo $registro['precio_ud'] * $registro['cantidad']; ?></td>
                     </tr>
-                    <!-- Mientras haya registros, los mostramos -->
+                    <!-- Mientras haya registros de productos, los mostramos, y la bi se incrementa -->
                     <?php while ($registro2 = mysqli_fetch_assoc($result_factura)) {
                         $bi += $registro2['precio_ud'] * $registro2['cantidad'];
                     ?>
