@@ -1,14 +1,14 @@
 <?php
 require_once 'navbar.php';
-
+// si no hay una sesión iniciada, redirigimos al index, si no hacemos la consulta 
 if (!isset($_SESSION['email'])) {
     header('Location: index.php');
 }
-
+// Consulta para obtener los datos del usuario
 $query_usuario = "SELECT * FROM usuario WHERE id = " . $_SESSION['id'];
 
 $result_usuario = $conexion->query($query_usuario);
-
+// Obtenemos el primer registro de la consulta 
 $row_usuario = $result_usuario->fetch_assoc();
 
 
@@ -66,7 +66,7 @@ $row_usuario = $result_usuario->fetch_assoc();
         }
     </style>
 </head>
-
+<!-- Mostramos los datos del usuario -->
 <body style="background-image: url('./assets/images/fotoFondo.jpg'); background-size: 100%">
     <div class="container">
         <div class="d-flex justify-content-center align-items-center">
