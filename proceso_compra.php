@@ -72,40 +72,35 @@ $row_usuario = $result_usuario->fetch_assoc();
         <div class="d-flex justify-content-center align-items-center">
             <div class="row d-flex justify-content-center w-100" style="margin-top: 15%;">
                 <div class="col-6">
-                   
+
                     <div class="rounded bg-white p-5" style="border: 1px solid grey;">
                         <h1 style="font-size: 38px;">Revisa y confirma tus datos</h1>
                         <form method="POST" action="proceso_compra2.php">
                             <br>
                             <div class="row">
                                 <div class="col">
-                                    <input type="text" name="nombre" placeholder="Nombre"
-                                        value="<?php echo $row_usuario['nombre'] ?>" readonly>
+                                    <input type="text" name="nombre" placeholder="Nombre" value="<?php echo $row_usuario['nombre'] ?>" readonly>
                                 </div>
                                 <div class="col">
-                                    <input type="text" name="apellidos" placeholder="Apellidos"
-                                        value="<?php echo $row_usuario['apellido1'] . " " . $row_usuario['apellido2'] ?>"
-                                        readonly>
+                                    <input type="text" name="apellidos" placeholder="Apellidos" value="<?php echo $row_usuario['apellido1'] . " " . $row_usuario['apellido2'] ?>" readonly>
                                 </div>
                             </div>
 
-                            <div class="row mb-2" >
+                            <div class="row mb-2">
 
-                    
+
                                 <div class="col-4">
-                                    <input type="text" name="tlf" placeholder="Telefono"
-                                        value="<?php echo $row_usuario['tlf'] ?>" readonly>
-                                    
+                                    <input type="text" name="tlf" placeholder="Telefono" value="<?php echo $row_usuario['tlf'] ?>" readonly>
+
                                 </div>
                                 <div class="col">
-                                <input type="text" name="" placeholder="Número tarjeta" >
-                                    
+                                    <input type="text" name="" placeholder="Número tarjeta" required>
+
                                 </div>
                             </div>
                             <div class="row mb-5">
                                 <div class="col">
-                                <input type="text" name="dir" placeholder="Dirección"
-                                        value="<?php echo $row_usuario['direccion'] ?>">
+                                    <input type="text" name="dir" placeholder="Dirección" value="<?php echo $row_usuario['direccion'] ?>" required>
                                 </div>
                             </div>
                             <div class="row">
@@ -123,4 +118,4 @@ $row_usuario = $result_usuario->fetch_assoc();
 
 <?php
 require 'footer.php'
-    ?>
+?>
